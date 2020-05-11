@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using LTCSDL.Common.DAL;
+﻿using LTCSDL.Common.DAL;
 using System.Linq;
 using LTCSDL.DAL.Models;
 

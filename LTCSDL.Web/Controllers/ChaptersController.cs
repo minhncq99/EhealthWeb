@@ -9,15 +9,15 @@ namespace LTCSDL.Web.Controllers
 
     [Route("api/[controller]")]
     [ApiController]
-    public class DiseasesController : ControllerBase
+    public class ChaptersController : ControllerBase
     {
-        public DiseasesController()
+        public ChaptersController()
         {
-            _svc = new DiseasesSvc();
+            _svc = new ChaptersSvc();
         }
 
         [HttpPost("get-by-id")]
-        public IActionResult getDiseaseById([FromBody]SimpleReq req)
+        public IActionResult getChaperById([FromBody]SimpleReq req)
         {
             var res = new SingleRsp();
             res = _svc.Read(req.Id);
@@ -26,14 +26,15 @@ namespace LTCSDL.Web.Controllers
         }
 
         [HttpPost("get-all")]
-        public IActionResult getAllDiseases()
+        public IActionResult getAllChapters()
         {
             var res = new SingleRsp();
             res.Data = _svc.All;
 
+
             return Ok(res);
         }
 
-        private readonly DiseasesSvc _svc;
+        private readonly ChaptersSvc _svc;
     }
 }
