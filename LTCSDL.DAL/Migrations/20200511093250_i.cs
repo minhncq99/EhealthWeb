@@ -2,7 +2,7 @@
 
 namespace LTCSDL.DAL.Migrations
 {
-    public partial class Initial : Migration
+    public partial class i : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -105,7 +105,6 @@ namespace LTCSDL.DAL.Migrations
                 {
                     DiseaseId = table.Column<int>(nullable: false),
                     UserId = table.Column<int>(nullable: false),
-                    Id = table.Column<int>(nullable: false),
                     Saved = table.Column<bool>(nullable: false)
                 },
                 constraints: table =>

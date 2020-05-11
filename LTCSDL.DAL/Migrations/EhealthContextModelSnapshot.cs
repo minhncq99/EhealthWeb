@@ -796,9 +796,6 @@ namespace LTCSDL.DAL.Migrations
                     b.Property<int>("UserId")
                         .HasColumnType("int");
 
-                    b.Property<int>("Id")
-                        .HasColumnType("int");
-
                     b.Property<bool>("Saved")
                         .HasColumnType("bit");
 

@@ -9,8 +9,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace LTCSDL.DAL.Migrations
 {
     [DbContext(typeof(EhealthContext))]
-    [Migration("20200508142354_Initial")]
-    partial class Initial
+    [Migration("20200511093250_i")]
+    partial class i
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -796,9 +796,6 @@ namespace LTCSDL.DAL.Migrations
                         .HasColumnType("int");
 
                     b.Property<int>("UserId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("Id")
                         .HasColumnType("int");
 
                     b.Property<bool>("Saved")
