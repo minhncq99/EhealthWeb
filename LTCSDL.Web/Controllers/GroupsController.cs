@@ -9,31 +9,30 @@ namespace LTCSDL.Web.Controllers
 
     [Route("api/[controller]")]
     [ApiController]
-    public class ChaptersController : ControllerBase
+    public class GroupsController : ControllerBase
     {
-        public ChaptersController()
+        public GroupsController()
         {
-            _svc = new ChaptersSvc();
+            _svc = new GroupsSvc();
         }
 
         [HttpPost("get-by-id")]
-        public IActionResult getChaperById([FromBody]SimpleReq req)
+        public IActionResult getGroupById([FromBody]SimpleReq req)
         {
             var res = new SingleRsp();
             res = _svc.Read(req.Id);
 
             return Ok(res);
         }
-
+    
         [HttpPost("get-all")]
-        public IActionResult getAllChapters()
+        public IActionResult getAllGroups()
         {
             var res = new SingleRsp();
             res.Data = _svc.All;
 
             return Ok(res);
         }
-
-        private readonly ChaptersSvc _svc;
+        private readonly GroupsSvc _svc;
     }
 }
