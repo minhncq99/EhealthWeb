@@ -7,9 +7,35 @@ a.navbar-brand {
 html {
   font-size: 14px;
 }
-@media (min-width: 768px) {
+@media (min-width: 480px) {
   html {
     font-size: 16px;
+  }
+  ul.menu{
+    display: inline;
+    position: absolute;
+    display: none;
+    padding: 0.5rem;
+    background-color: #fff;
+  }
+
+  ul.menu li{
+    list-style-type: none;
+    padding: 2% 0;
+  }
+
+  ul.menu li a{
+    text-decoration: none;
+    color: black;
+  }
+
+  li.menu-dropdown:hover ul.menu{
+    display: block;
+  }
+
+  li.menu-dropdown{
+    position: relative;
+    padding-right: 100%;
   }
 }
 

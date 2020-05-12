@@ -1,0 +1,19 @@
+<div class="row">
+    <div class="col">
+      <div ngbDropdown class="d-inline-block" >
+        <button class="btn btn-outline-primary" id="dropdownBasic1" ngbDropdownToggle>Tài khoản</button>
+        <div ngbDropdownMenu aria-labelledby="dropdownBasic1" *ngIf=!isShow>
+          <a class="d-block text-dark my-3 mx-2" ngbDropdownItem routerLink="/form">Thông tin tài khoản</a>
+          <a class="d-block text-dark my-3 mx-2" ngbDropdownItem  href="#">Danh mục bệnh</a>
+          <a class="d-block text-dark my-3 mx-2" href="#" ngbDropdownItem>Bệnh đã xem</a>
+          <a class="d-block text-dark my-3 mx-2" href="#" ngbDropdownItem>Bệnh đã lưu</a>
+          <a class="d-block text-dark my-3 mx-2" href="#" ngbDropdownItem (click)=' showDropDownMenu();'>Đăng xuất</a>
+        </div>
+        <div ngbDropdownMenu aria-labelledby="dropdownBasic1" *ngIf=isShow>
+            <a class="d-block text-dark my-3 mx-2" ngbDropdownItem routerLink="/form" (click)=' showDropDownMenu();'>Đăng Nhập</a>
+            <a class="d-block text-dark my-3 mx-2" ngbDropdownItem routerLink="/form">Đăng Ký</a>
+          </div>
+    </div>
+    
+    </div>
+  </div>
