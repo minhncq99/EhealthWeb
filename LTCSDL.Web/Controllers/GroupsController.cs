@@ -33,6 +33,23 @@ namespace LTCSDL.Web.Controllers
 
             return Ok(res);
         }
+
+        [HttpPost("create")]
+        public IActionResult createChapter([FromBody]GroupReq req)
+        {
+            var res = _svc.CreateGroup(req);
+
+            return Ok(res);
+        }
+
+        [HttpPost("update")]
+        public IActionResult updateChapter([FromBody]GroupReq req)
+        {
+            var res = _svc.UpdateGroup(req);
+
+            return Ok(res);
+        }
+
         private readonly GroupsSvc _svc;
     }
 }
