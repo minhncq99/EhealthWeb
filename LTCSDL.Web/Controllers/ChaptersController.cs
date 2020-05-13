@@ -50,6 +50,13 @@ namespace LTCSDL.Web.Controllers
             return Ok(res);
         }
 
+        [HttpPost("delete")]
+        public IActionResult deleteChapter([FromBody]ChapterReq req)
+        {
+            var res = _svc.Delete(req.ChapterId);
+
+            return Ok(res);
+        }
 
         private readonly ChaptersSvc _svc;
     }

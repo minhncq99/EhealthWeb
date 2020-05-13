@@ -57,5 +57,19 @@ namespace LTCSDL.BLL
             res = _rep.UpdateGroup(group);
             return res;
         }
+
+        public SingleRsp GetGroupByChapterId(int chapterId)
+        {
+            var res = new SingleRsp();
+            res = _rep.GetGroupByChapterId(chapterId);
+            return res;
+        }
+
+        public SingleRsp DeleteGroup(int chapterId)
+        {
+            var res = new SingleRsp();
+            res = _rep.DeleteGroup(chapterId);
+            return res;
+        }
     }
 }

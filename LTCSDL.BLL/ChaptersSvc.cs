@@ -53,5 +53,14 @@ namespace LTCSDL.BLL
             res = _rep.UpdateChapter(chapter);
             return res;
         }
+
+        public override SingleRsp Delete(int id)
+        {
+            var res = new SingleRsp();
+            var m = _rep.DeleteChapter(id);
+            res.Data = m;
+
+            return res;
+        }
     }
 }

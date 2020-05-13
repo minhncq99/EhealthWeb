@@ -50,6 +50,23 @@ namespace LTCSDL.Web.Controllers
             return Ok(res);
         }
 
+        [HttpPost("get-by-group-id")]
+        public IActionResult getNumberByGroupId([FromBody]SimpleReq req)
+        {
+            var res = new SingleRsp();
+            res = _svc.GetNumberByGroupId(req.Id);
+
+            return Ok(res);
+        }
+
+        [HttpPost("delete")]
+        public IActionResult deleteNumber([FromBody]SimpleReq req)
+        {
+            var res = new SingleRsp();
+            res = _svc.DeleteNumber(req.Id);
+
+            return Ok(res);
+        }
         private readonly NumbersSvc _svc;
     }
 }

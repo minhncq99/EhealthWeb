@@ -79,6 +79,38 @@ namespace LTCSDL.DAL
             return res;
         }
 
+        public SingleRsp GetDiseaseByNumberId(int numberId)
+        {
+            var res = new SingleRsp();
+            res.Data = All.Where(p => p.NumberId == numberId);
+            return res;
+        }
+
+        public SingleRsp DeleteDisease(int diseaseId)
+        {
+            var res = new SingleRsp();
+
+            using (var context = new EhealthContext())
+            {
+                using (var tran = context.Database.BeginTransaction())
+                {
+                    try
+                    {
+                        var t = context.Diseases.Find(diseaseId);
+                        context.Remove(t);
+                        context.SaveChanges();
+                        tran.Commit();
+                    }
+                    catch (Exception ex)
+                    {
+                        tran.Rollback();
+                        res.SetError(ex.StackTrace);
+                    }
+                }
+            }
+
+            return res;
+        }
         #endregion
     }
 }

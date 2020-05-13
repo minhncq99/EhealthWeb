@@ -65,5 +65,25 @@ namespace LTCSDL.BLL
             res = _rep.UpdateDisease(disease);
             return res;
         }
+
+        public SingleRsp GetDiseaseByNumberId(int id)
+        {
+            var res = new SingleRsp();
+
+            var m = _rep.GetDiseaseByNumberId(id);
+            res.Data = m;
+
+            return res;
+        }
+
+        public SingleRsp DeleteDisease(int diseaseId)
+        {
+            var res = new SingleRsp();
+
+            var m = _rep.DeleteDisease(diseaseId);
+            res.Data = m;
+
+            return res;
+        }
     }
 }

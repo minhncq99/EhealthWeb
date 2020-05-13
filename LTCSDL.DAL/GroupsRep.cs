@@ -75,6 +75,38 @@ namespace LTCSDL.DAL
             return res;
         }
 
+        public SingleRsp GetGroupByChapterId(int chapterId)
+        {
+            var res = new SingleRsp();
+            var m = All.Where(p => p.ChapterId == chapterId);
+            res.Data = m;
+            return res;
+        }
+
+        public SingleRsp DeleteGroup(int groupId)
+        {
+            var res = new SingleRsp();
+            using (var context = new EhealthContext())
+            {
+                using (var tran = context.Database.BeginTransaction())
+                {
+                    try
+                    {
+                        var t = context.Groups.Find(groupId);
+                        context.Remove(t);
+                        context.SaveChanges();
+                        tran.Commit();
+                    }
+                    catch (Exception ex)
+                    {
+                        tran.Rollback();
+                        res.SetError(ex.StackTrace);
+                    }
+                }
+            }
+            return res;
+        }
+
         #endregion
     }
 }

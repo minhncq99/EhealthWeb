@@ -78,6 +78,39 @@ namespace LTCSDL.DAL
 
             return res;
         }
+
+        public SingleRsp GetNumberByGroupId(int groupId)
+        {
+            var res = new SingleRsp();
+            res.Data = All.Where(p => p.GroupId == groupId);
+            return res;
+        }
+
+        public SingleRsp DeleteNumber(int numberId)
+        {
+            var res = new SingleRsp();
+
+            using (var context = new EhealthContext())
+            {
+                using (var tran = context.Database.BeginTransaction())
+                {
+                    try
+                    {
+                        var t = context.Numbers.Find(numberId);
+                        context.Numbers.Remove(t);
+                        context.SaveChanges();
+                        tran.Commit();
+                    }
+                    catch (Exception ex)
+                    {
+                        tran.Rollback();
+                        res.SetError(ex.StackTrace);
+                    }
+                }
+            }
+
+            return res;
+        }
         #endregion
     }
 }

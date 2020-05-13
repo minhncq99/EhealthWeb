@@ -82,6 +82,29 @@ namespace LTCSDL.DAL
             return res;
         }
 
+        public SingleRsp DeleteChapter(int ChapterId)
+        {
+            var res = new SingleRsp();
+            using (var context = new EhealthContext())
+            {
+                using (var tran = context.Database.BeginTransaction())
+                {
+                    try
+                    {
+                        var t = context.Chapters.Find(ChapterId);
+                        context.Remove(t);
+                        context.SaveChanges();
+                        tran.Commit();
+                    }
+                    catch (Exception ex)
+                    {
+                        tran.Rollback();
+                        res.SetError(ex.StackTrace);
+                    }
+                }
+            }
+            return res;
+        }
         #endregion
     }
 }

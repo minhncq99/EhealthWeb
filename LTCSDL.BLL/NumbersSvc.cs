@@ -47,14 +47,27 @@ namespace LTCSDL.BLL
             return res;
         }
 
-        public SingleRsp UpdateNumber(NumberReq groupsReq)
+        public SingleRsp UpdateNumber(NumberReq numberReq)
         {
             var res = new SingleRsp();
             Number number = new Number();
-            number.NumberId = groupsReq.NumberId;
-            number.Name = groupsReq.Name;
-            number.GroupId = groupsReq.GroupId;
+            number.NumberId = numberReq.NumberId;
+            number.Name = numberReq.Name;
+            number.GroupId = numberReq.GroupId;
             res = _rep.UpdateNumber(number);
+            return res;
+        }
+
+        public SingleRsp GetNumberByGroupId(int groupId)
+        {
+            var res = _rep.GetNumberByGroupId(groupId);
+            return res;
+        }
+
+        public SingleRsp DeleteNumber(int numberId)
+        {
+            var res = new SingleRsp();
+            res = _rep.DeleteNumber(numberId);
             return res;
         }
 
