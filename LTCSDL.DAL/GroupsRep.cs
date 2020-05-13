@@ -75,6 +75,14 @@ namespace LTCSDL.DAL
             return res;
         }
 
+        public SingleRsp GetGroupByChapterId(int chapterId)
+        {
+            var res = new SingleRsp();
+            var m = All.Where(p => p.ChapterId == chapterId);
+            res.Data = m;
+            return res;
+        }
+
         #endregion
     }
 }
