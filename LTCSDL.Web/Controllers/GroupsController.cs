@@ -59,6 +59,15 @@ namespace LTCSDL.Web.Controllers
             return Ok(res);
         }
 
+        [HttpPost("delete-group")]
+        public IActionResult deleteGroup([FromBody]SimpleReq req)
+        {
+            var res = new SingleRsp();
+            res = _svc.DeleteGroup(req.Id);
+
+            return Ok(res);
+        }
+
         private readonly GroupsSvc _svc;
     }
 }
