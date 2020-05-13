@@ -1,0 +1,55 @@
+<form>
+    <h3 *ngIf=personalInformation>Thông tin cá nhân</h3>
+    <table class="table table-borderless" *ngIf=personalInformation>
+          <tr>
+            <td>
+                <div class="input-group-prepend d-block">
+                <span class="input-group-text">Họ và tên</span>
+                </div>
+            </td>
+            <td><input type="text" class="form-control d-inline" ></td>
+          </tr>
+          <tr>
+            <td>
+                <div class="input-group-prepend d-block">
+                    <span class="input-group-text">Địa chỉ mail</span>
+                </div>
+            </td>
+            <td><input type="text" class="form-control"></td>
+          </tr>
+          <tr>
+            <td>
+                <div class="input-group-prepend d-block">
+                    <span class="input-group-text">Nghề nghiệp</span>
+                </div>
+            </td>
+            <td><input type="text" class="form-control"></td>
+          </tr>
+      </table>
+      <h3 *ngIf=accountInformation>Thông tin tài khoản</h3>
+      <table class="table table-borderless" *ngIf=accountInformation>
+          <tr>
+            <td>
+                <div class="input-group-prepend d-block">
+                <span class="input-group-text">Tên tài khoản </span>
+                </div>
+            </td>
+            <td><input type="text" class="form-control d-inline" ></td>
+          </tr>
+          <tr>
+            <td>
+                <div class="input-group-prepend d-block">
+                    <span class="input-group-text">Mật khẩu</span>
+                </div>
+            </td>
+            <td><input type="text" class="form-control"></td>
+          </tr>
+          <tr>
+            <td *ngIf=btnSigout><a routerLink="/"><button class="btn btn-primary" (click)="createAccount()">Đăng ký</button></a></td>
+            <td *ngIf=btnEdit><button class="btn btn-primary">Sửa</button></td>
+            <td *ngIf=btnSignin><a routerLink="/"><button class="btn btn-primary" (click)="signin()">Đăng nhập</button></a></td>
+          </tr>
+        </table>
+        
+        
+  </form>
