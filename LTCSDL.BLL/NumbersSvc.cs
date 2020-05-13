@@ -58,6 +58,12 @@ namespace LTCSDL.BLL
             return res;
         }
 
+        public SingleRsp GetNumberByGroupId(int groupId)
+        {
+            var res = _rep.GetNumberByGroupId(groupId);
+            return res;
+        }
+
         #endregion
     }
 }

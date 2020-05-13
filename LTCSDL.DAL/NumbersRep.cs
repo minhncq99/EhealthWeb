@@ -78,6 +78,13 @@ namespace LTCSDL.DAL
 
             return res;
         }
+
+        public SingleRsp GetNumberByGroupId(int groupId)
+        {
+            var res = new SingleRsp();
+            res.Data = All.Where(p => p.GroupId == groupId);
+            return res;
+        }
         #endregion
     }
 }
