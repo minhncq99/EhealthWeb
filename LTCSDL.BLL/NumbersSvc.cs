@@ -2,6 +2,8 @@
 using LTCSDL.Common.BLL;
 using LTCSDL.DAL;
 using LTCSDL.Common.Rsp;
+using LTCSDL.Common.Req;
+
 namespace LTCSDL.BLL
 {
     public class NumbersSvc : GenericSvc<NumbersRep, Number>
@@ -33,6 +35,29 @@ namespace LTCSDL.BLL
             }
             return res;
         }
+
+        public SingleRsp CreateNumber(NumberReq groupsReq)
+        {
+            var res = new SingleRsp();
+            Number number = new Number();
+            number.NumberId= groupsReq.NumberId;
+            number.Name = groupsReq.Name;
+            number.GroupId = groupsReq.GroupId;
+            res = _rep.CreateNumber(number);
+            return res;
+        }
+
+        public SingleRsp UpdateNumber(NumberReq groupsReq)
+        {
+            var res = new SingleRsp();
+            Number number = new Number();
+            number.NumberId = groupsReq.NumberId;
+            number.Name = groupsReq.Name;
+            number.GroupId = groupsReq.GroupId;
+            res = _rep.UpdateNumber(number);
+            return res;
+        }
+
         #endregion
     }
 }
