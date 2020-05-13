@@ -59,6 +59,15 @@ namespace LTCSDL.Web.Controllers
             return Ok(res);
         }
 
+        [HttpPost("delete")]
+        public IActionResult deleteDisease([FromBody]SimpleReq req)
+        {
+            var res = new SingleRsp();
+            res = _svc.DeleteDisease(req.Id);
+
+            return Ok(res);
+        }
+
         private readonly DiseasesSvc _svc;
     }
 }
