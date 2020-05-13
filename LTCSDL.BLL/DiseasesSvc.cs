@@ -2,6 +2,7 @@
 using LTCSDL.Common.BLL;
 using LTCSDL.DAL;
 using LTCSDL.DAL.Models;
+using LTCSDL.Common.Req;
 
 namespace LTCSDL.BLL
 {
@@ -32,6 +33,36 @@ namespace LTCSDL.BLL
                 res.Data = m;
             }
 
+            return res;
+        }
+
+        public SingleRsp CreateDisease(DiseaseReq diseaseReq)
+        {
+            var res = new SingleRsp();
+            Disease disease = new Disease();
+
+            disease.DiseaseId = diseaseReq.DiseaseId;
+            disease.EnglishName = diseaseReq.EnglishName;
+            disease.VietnameseName = diseaseReq.VietnameseName;
+            disease.Symptom = diseaseReq.Symptom;
+            disease.NumberId = diseaseReq.NumberId;
+
+            res = _rep.CreateDisease(disease);
+            return res;
+        }
+
+        public SingleRsp UpdateDisease(DiseaseReq diseaseReq)
+        {
+            var res = new SingleRsp();
+            Disease disease = new Disease();
+
+            disease.DiseaseId = diseaseReq.DiseaseId;
+            disease.EnglishName = diseaseReq.EnglishName;
+            disease.VietnameseName = diseaseReq.VietnameseName;
+            disease.Symptom = diseaseReq.Symptom;
+            disease.NumberId = diseaseReq.NumberId;
+
+            res = _rep.UpdateDisease(disease);
             return res;
         }
     }

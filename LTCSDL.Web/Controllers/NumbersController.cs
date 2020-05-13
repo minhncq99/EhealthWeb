@@ -33,6 +33,23 @@ namespace LTCSDL.Web.Controllers
 
             return Ok(res);
         }
+
+        [HttpPost("create")]
+        public IActionResult createNumber([FromBody]NumberReq req)
+        {
+            var res = _svc.CreateNumber(req);
+
+            return Ok(res);
+        }
+
+        [HttpPost("update")]
+        public IActionResult updateNumber([FromBody]NumberReq req)
+        {
+            var res = _svc.UpdateNumber(req);
+
+            return Ok(res);
+        }
+
         private readonly NumbersSvc _svc;
     }
 }

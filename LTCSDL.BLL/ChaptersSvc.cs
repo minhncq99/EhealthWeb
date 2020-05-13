@@ -2,6 +2,7 @@
 using LTCSDL.Common.BLL;
 using LTCSDL.DAL;
 using LTCSDL.DAL.Models;
+using LTCSDL.Common.Req;
 
 namespace LTCSDL.BLL
 {
@@ -31,6 +32,26 @@ namespace LTCSDL.BLL
                 res.Data = m;
             }
             return base.Update(m);
+        }
+
+        public SingleRsp CreateChapter(ChapterReq chapterReq)
+        {
+            var res = new SingleRsp();
+            Chapter chapter = new Chapter();
+            chapter.ChapterId = chapterReq.ChapterId;
+            chapter.Name = chapterReq.Name;
+            res = _rep.CreateChapter(chapter);
+            return res;
+        }
+
+        public SingleRsp UpdateChapter(ChapterReq chapterReq)
+        {
+            var res = new SingleRsp();
+            Chapter chapter = new Chapter();
+            chapter.ChapterId = chapterReq.ChapterId;
+            chapter.Name = chapterReq.Name;
+            res = _rep.UpdateChapter(chapter);
+            return res;
         }
     }
 }

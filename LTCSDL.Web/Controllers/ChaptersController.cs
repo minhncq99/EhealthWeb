@@ -34,6 +34,23 @@ namespace LTCSDL.Web.Controllers
             return Ok(res);
         }
 
+        [HttpPost("create")]
+        public IActionResult createChapter([FromBody]ChapterReq req)
+        {
+            var res = _svc.CreateChapter(req);
+
+            return Ok(res);
+        }
+
+        [HttpPost("update")]
+        public IActionResult updateChapter([FromBody]ChapterReq req)
+        {
+            var res = _svc.UpdateChapter(req);
+
+            return Ok(res);
+        }
+
+
         private readonly ChaptersSvc _svc;
     }
 }

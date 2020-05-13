@@ -34,6 +34,22 @@ namespace LTCSDL.Web.Controllers
             return Ok(res);
         }
 
+        [HttpPost("create")]
+        public IActionResult createDisease([FromBody]DiseaseReq req)
+        {
+            var res = _svc.CreateDisease(req);
+
+            return Ok(res);
+        }
+
+        [HttpPost("update")]
+        public IActionResult updateDisease([FromBody]DiseaseReq req)
+        {
+            var res = _svc.UpdateDisease(req);
+
+            return Ok(res);
+        }
+
         private readonly DiseasesSvc _svc;
     }
 }
