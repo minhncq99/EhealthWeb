@@ -1,6 +1,6 @@
 <form>
-    <h3>Thông tin cá nhân</h3>
-    <table class="table table-borderless">
+    <h3 *ngIf=personalInformation>Thông tin cá nhân</h3>
+    <table class="table table-borderless" *ngIf=personalInformation>
           <tr>
             <td>
                 <div class="input-group-prepend d-block">
@@ -26,8 +26,8 @@
             <td><input type="text" class="form-control"></td>
           </tr>
       </table>
-      <h3>Thông tin tài khoản</h3>
-      <table class="table table-borderless">
+      <h3 *ngIf=accountInformation>Thông tin tài khoản</h3>
+      <table class="table table-borderless" *ngIf=accountInformation>
           <tr>
             <td>
                 <div class="input-group-prepend d-block">
@@ -45,9 +45,9 @@
             <td><input type="text" class="form-control"></td>
           </tr>
           <tr>
-            <td><button class="btn btn-primary">Đăng ký</button></td>
-            <td><button class="btn btn-primary">Sửa</button></td>
-            <td><button class="btn btn-primary">Đăng nhập</button></td>
+            <td *ngIf=btnSigout><a routerLink="/"><button class="btn btn-primary" (click)="createAccount()">Đăng ký</button></a></td>
+            <td *ngIf=btnEdit><button class="btn btn-primary">Sửa</button></td>
+            <td *ngIf=btnSignin><a routerLink="/"><button class="btn btn-primary" (click)="signin()">Đăng nhập</button></a></td>
           </tr>
         </table>
         
