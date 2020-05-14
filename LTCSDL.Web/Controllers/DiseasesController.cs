@@ -59,6 +59,15 @@ namespace LTCSDL.Web.Controllers
             return Ok(res);
         }
 
+        [HttpPost("get-by-chaper-id")]
+        public IActionResult getDiseaseByChapterId([FromBody]SimpleReq req)
+        {
+            var res = new SingleRsp();
+            res = _svc.GetDiseaseByChapterId(req.Id);
+
+            return Ok(res);
+        }
+
         [HttpPost("delete")]
         public IActionResult deleteDisease([FromBody]SimpleReq req)
         {
@@ -68,6 +77,14 @@ namespace LTCSDL.Web.Controllers
             return Ok(res);
         }
 
+
+        [HttpPost("search-vietnamese-name")]
+        public IActionResult deleteDisease(SearchDieaseReq req)
+        {
+            var res = _svc.SearchChapterVietnameseName(req.Keyword, req.Page, req.Size);
+
+            return Ok(res);
+        }
         private readonly DiseasesSvc _svc;
     }
 }

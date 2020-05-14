@@ -86,6 +86,33 @@ namespace LTCSDL.DAL
             return res;
         }
 
+        public SingleRsp GetDiseaseByChapterId(int chapterId)
+        {
+            var res = new SingleRsp();
+            var context = new EhealthContext();
+            
+            res.Data = context.Diseases
+                .Join(
+                    context.Numbers,
+                    disease => disease.DiseaseId,
+                    number => number.NumberId,
+                    (disease, number) => new { disease, number }
+                ).Join(
+                    context.Groups,
+                    x => x.number.NumberId,
+                    group => group.GroupId,
+                    (x, group) => new
+                    {
+                        name = x.disease.DiseaseId,
+                        EnglishName = x.disease.EnglishName,
+                        VietnameseName = x.disease.VietnameseName,
+                        Symptom = x.disease.Symptom,
+                        ChapterId = group.ChapterId,
+                    }
+                ).Where(p => p.ChapterId == chapterId);
+            return res;
+        }
+
         public SingleRsp DeleteDisease(int diseaseId)
         {
             var res = new SingleRsp();
