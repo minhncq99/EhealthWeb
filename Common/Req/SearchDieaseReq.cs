@@ -4,7 +4,7 @@ using System.Text;
 
 namespace LTCSDL.Common.Req
 {
-    public class SearchChapterReq
+    public class SearchDieaseReq
     {
         public int Page { get; set; }
         public int Size { get; set; }

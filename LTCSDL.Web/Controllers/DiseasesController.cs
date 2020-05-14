@@ -77,6 +77,14 @@ namespace LTCSDL.Web.Controllers
             return Ok(res);
         }
 
+
+        [HttpPost("search-vietnamese-name")]
+        public IActionResult deleteDisease(SearchDieaseReq req)
+        {
+            var res = _svc.SearchChapterVietnameseName(req.Keyword, req.Page, req.Size);
+
+            return Ok(res);
+        }
         private readonly DiseasesSvc _svc;
     }
 }
