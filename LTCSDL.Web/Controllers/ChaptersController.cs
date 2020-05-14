@@ -58,6 +58,13 @@ namespace LTCSDL.Web.Controllers
             return Ok(res);
         }
 
+        [HttpPost("search")]
+        public IActionResult searchChapter(SearchChapterReq req)
+        {
+            var res = _svc.SearchChapter(req.Keyword, req.Page, req.Size);
+
+            return Ok(res);
+        }
         private readonly ChaptersSvc _svc;
     }
 }
