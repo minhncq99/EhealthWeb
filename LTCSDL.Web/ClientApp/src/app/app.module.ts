@@ -18,6 +18,8 @@ import { SigninComponent } from './signin/signin.component';
 import { SignoutComponent } from './signout/signout.component';
 import { CookieService } from "ngx-cookie-service";
 import { DiseasesSaveComponent } from './diseases-save/diseases-save.component';
+import { BannerComponent } from './banner/banner.component';
+import { SearchComponent } from './search/search.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +33,9 @@ import { DiseasesSaveComponent } from './diseases-save/diseases-save.component';
     AccountComponent,
     SigninComponent,
     SignoutComponent,
-    DiseasesSaveComponent
+    DiseasesSaveComponent,
+    BannerComponent,
+    SearchComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -46,6 +50,8 @@ import { DiseasesSaveComponent } from './diseases-save/diseases-save.component';
       { path: 'signin', component: SigninComponent },
       { path: 'signout', component: SignoutComponent },
       { path: 'diseases-save', component: DiseasesSaveComponent },
+      { path: 'banner', component: BannerComponent },
+      { path: 'search', component: SearchComponent },
     ]),
     NgbModule.forRoot()
   ],

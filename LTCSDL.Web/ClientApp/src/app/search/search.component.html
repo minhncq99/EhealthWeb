@@ -1,0 +1,31 @@
+<p *ngIf="!list"><em>Loading...</em></p>
+
+<table class='table table-striped col-xl-11' aria-labelledby="tableLabel">
+        <tr *ngFor="let i of list" class="listview">
+            <td *ngIf="check(value,i.vietnameseName)"> 
+                <a class="text-dark text-decoration-none" routerLink="/" id="{{i.numberId}}">
+                    {{ i.numberId }}
+                </a>
+            </td>
+            <td *ngIf="check(value,i.vietnameseName)">
+                <a class="text-dark text-decoration-none" routerLink="/" id="{{i.diseaseId}}">
+                        {{ i.diseaseId }}
+                </a>
+            </td>
+            <td *ngIf="check(value,i.vietnameseName)">
+                <a class="text-dark text-decoration-none" routerLink="/" id="{{i.englishName}}">
+                    {{ i.englishName }}
+                </a>
+            </td>
+            <td *ngIf="check(value,i.vietnameseName)">
+                <a class="text-dark text-decoration-none" routerLink="/" id="{{i.vietnameseName}}">
+                    {{ i.vietnameseName }}
+                </a>
+            </td>
+            <td *ngIf="check(value,i.vietnameseName)">
+                <a class="text-dark text-decoration-none" routerLink="/" id="{{i.symptom}}">
+                    {{ i.symptom }}
+                </a>
+            </td>
+        </tr>  
+</table>

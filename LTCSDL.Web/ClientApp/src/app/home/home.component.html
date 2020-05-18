@@ -1,10 +1,20 @@
  <div class="container">
     <div class="row">
       <div class="input-group mb-3">
-        <input type="search" class="rounded-left col-xl-11">
-        <button class="rounded-right col-xl-1 bt btn-primary">Sreach</button>
+        <input type="search" class="rounded-left col-xl-11" [(ngModel)]="value">  
+        <button class="rounded-right col-xl-1 bt btn-primary">Search</button>
+        <!--
+        <table class='table table-striped col-xl-11' aria-labelledby="tableLabel">
+          <tbody>
+            <tr *ngFor="let i of lst">
+              <td *ngIf="check(value,i)">{{i}}</td>
+            </tr>
+          </tbody>
+        </table>-->
+        <app-search [value]="value"></app-search>
       </div>
     </div>
   <div class="my-3">Các bệnh được lưu nhiều</div>
+  
  </div>
  
