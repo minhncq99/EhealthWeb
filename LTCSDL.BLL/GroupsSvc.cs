@@ -4,6 +4,7 @@ using LTCSDL.DAL.Models;
 using LTCSDL.Common.BLL;
 using LTCSDL.DAL;
 using LTCSDL.Common.Rsp;
+using LTCSDL.Common.Req;
 
 namespace LTCSDL.BLL
 {
@@ -32,6 +33,42 @@ namespace LTCSDL.BLL
                 res = base.Update(m);
                 res.Data = m;
             }
+            return res;
+        }
+
+        public SingleRsp CreateGroup(GroupReq groupsReq)
+        {
+            var res = new SingleRsp();
+            Group group = new Group();
+            group.GroupId = groupsReq.GroupId;
+            group.Name = groupsReq.Name;
+            group.ChapterId = groupsReq.ChapterId;
+            res = _rep.CreateGroup(group);
+            return res;
+        }
+
+        public SingleRsp UpdateGroup(GroupReq groupsReq)
+        {
+            var res = new SingleRsp();
+            Group group = new Group();
+            group.GroupId = groupsReq.GroupId;
+            group.Name = groupsReq.Name;
+            group.ChapterId = groupsReq.ChapterId;
+            res = _rep.UpdateGroup(group);
+            return res;
+        }
+
+        public SingleRsp GetGroupByChapterId(int chapterId)
+        {
+            var res = new SingleRsp();
+            res = _rep.GetGroupByChapterId(chapterId);
+            return res;
+        }
+
+        public SingleRsp DeleteGroup(int chapterId)
+        {
+            var res = new SingleRsp();
+            res = _rep.DeleteGroup(chapterId);
             return res;
         }
     }

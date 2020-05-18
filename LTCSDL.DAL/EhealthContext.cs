@@ -53,7 +53,7 @@ namespace LTCSDL.DAL
         public virtual DbSet<User> Users { get; set; }
         public virtual DbSet<Chapter> Chapters { get; set; }
         public virtual DbSet<Group> Groups { get; set; }
-        public virtual DbSet<Group> Numbers { get; set; }
+        public virtual DbSet<Number> Numbers { get; set; }
         public virtual DbSet<Disease>  Diseases { get; set; }
         public virtual DbSet<Disease_User> Diseases_Users { get; set; }
 
