@@ -1,3 +1,5 @@
+import { DiseasesRecentComponent } from './diseases-recent/diseases-recent.component';
+import { DiseaseCatalogComponent } from './disease-catalog/disease-catalog.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
@@ -31,7 +33,9 @@ import { DiseasesSaveComponent } from './diseases-save/diseases-save.component';
     AccountComponent,
     SigninComponent,
     SignoutComponent,
-    DiseasesSaveComponent
+    DiseasesSaveComponent,
+    DiseaseCatalogComponent,
+    DiseasesRecentComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -46,6 +50,8 @@ import { DiseasesSaveComponent } from './diseases-save/diseases-save.component';
       { path: 'signin', component: SigninComponent },
       { path: 'signout', component: SignoutComponent },
       { path: 'diseases-save', component: DiseasesSaveComponent },
+      { path: 'disease-catalog', component: DiseaseCatalogComponent },
+      { path: 'diseases-recent', component: DiseasesRecentComponent },
     ]),
     NgbModule.forRoot()
   ],
