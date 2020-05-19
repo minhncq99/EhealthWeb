@@ -16,20 +16,20 @@ namespace LTCSDL.Web.Controllers
             _svc = new ChaptersSvc();
         }
 
-        [HttpPost("get-by-id")]
-        public IActionResult getChaperById([FromBody]SimpleReq req)
-        {
-            var res = new SingleRsp();
-            res = _svc.Read(req.Id);
-
-            return Ok(res);
-        }
-
-        [HttpPost("get-all")]
+        [HttpGet("get-all")]
         public IActionResult getAllChapters()
         {
             var res = new SingleRsp();
             res.Data = _svc.All;
+
+            return Ok(res);
+        }
+
+        [HttpGet("get-by-id/{id}")]
+        public IActionResult getChaperById(int id)
+        {
+            var res = new SingleRsp();
+            res = _svc.Read(id);
 
             return Ok(res);
         }
@@ -42,7 +42,7 @@ namespace LTCSDL.Web.Controllers
             return Ok(res);
         }
 
-        [HttpPost("update")]
+        [HttpPut("update")]
         public IActionResult updateChapter([FromBody]ChapterReq req)
         {
             var res = _svc.UpdateChapter(req);
@@ -50,7 +50,7 @@ namespace LTCSDL.Web.Controllers
             return Ok(res);
         }
 
-        [HttpPost("delete")]
+        [HttpDelete("delete")]
         public IActionResult deleteChapter([FromBody]ChapterReq req)
         {
             var res = _svc.Delete(req.ChapterId);
