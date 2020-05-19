@@ -16,16 +16,16 @@ namespace LTCSDL.Web.Controllers
             _svc = new NumbersSvc();
         }
 
-        [HttpPost("get-by-id")]
-        public IActionResult getNumberById([FromBody]SimpleReq req)
+        [HttpGet("get-by-id/{id}")]
+        public IActionResult getNumberById(int id)
         {
             var res = new SingleRsp();
-            res = _svc.Read(req.Id);
+            res = _svc.Read(id);
 
             return Ok(res);
         }
 
-        [HttpPost("get-all")]
+        [HttpGet("get-all")]
         public IActionResult getAllNumbers()
         {
             var res = new SingleRsp();
@@ -42,7 +42,7 @@ namespace LTCSDL.Web.Controllers
             return Ok(res);
         }
 
-        [HttpPost("update")]
+        [HttpPut("update")]
         public IActionResult updateNumber([FromBody]NumberReq req)
         {
             var res = _svc.UpdateNumber(req);
@@ -50,16 +50,16 @@ namespace LTCSDL.Web.Controllers
             return Ok(res);
         }
 
-        [HttpPost("get-by-group-id")]
-        public IActionResult getNumberByGroupId([FromBody]SimpleReq req)
+        [HttpGet("get-by-group-id/{id}")]
+        public IActionResult getNumberByGroupId(int id)
         {
             var res = new SingleRsp();
-            res = _svc.GetNumberByGroupId(req.Id);
+            res = _svc.GetNumberByGroupId(id);
 
             return Ok(res);
         }
 
-        [HttpPost("delete")]
+        [HttpDelete("delete")]
         public IActionResult deleteNumber([FromBody]SimpleReq req)
         {
             var res = new SingleRsp();
