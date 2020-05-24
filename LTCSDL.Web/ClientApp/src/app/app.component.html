@@ -1,7 +1,18 @@
-<body>
-  <app-banner></app-banner>
-  <app-nav-menu></app-nav-menu>
-  <div class="container">
-    <router-outlet></router-outlet>
+<app-nav-menu ></app-nav-menu>
+<div class="input-group" style="position:relative; margin: 0% 1% 1%; width: 98%;">
+  <input type="search" class="form-control border border-right-0" placeholder="Search" [(ngModel)]="value">
+  <div class="input-group-append">
+    <span class="input-group-text border border-left-0" id="search"><img  src="../../assets/edit-tools.png" alt="search"/></span>
   </div>
-</body>
+  <div class="mx-3%" style="position: absolute; padding: 0.1%; margin-top: 3%; z-index: 1; width: 96.85%; border-left: solid 0.5px;
+  border-bottom: solid 1px; border-right: solid 0.5px; border-bottom-left-radius: 5px; 
+  border-bottom-right-radius: 5px; border-color:  #e9ecef; background-color: #e9ecef;" 
+  *ngIf="value.length >= numChars">
+    <app-search *ngIf="value.length >= numChars"[value]="value" [numChars]="numChars"></app-search>
+  </div>
+</div>
+
+<app-banner></app-banner>
+<div class="container">
+    <router-outlet></router-outlet>
+</div>

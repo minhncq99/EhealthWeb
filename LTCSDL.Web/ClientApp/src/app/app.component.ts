@@ -6,4 +6,6 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'app';
+  public value: string = "";
+  public numChars:number=3;
 }

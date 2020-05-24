@@ -1,0 +1,28 @@
+
+<table class="  table-hover text-justify" aria-labelledby="tableLabel" *ngIf="list">
+  <thead>
+    <tr>
+      <td>Thông tin bệnh</td>
+      <td></td>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let lst of list">
+      <td *ngIf="check(lst.diseaseId)"class="text-primary td-left"><div>Số thứ tự</div></td>
+      <td *ngIf="check(lst.diseaseId)" class="td-right">{{ lst.numberId }}</td>
+    </tr>
+      <tr *ngFor="let lst of list">
+        <td *ngIf="check(lst.diseaseId)" class="text-primary td-left"><div>Mã bệnh</div></td>
+        <td *ngIf="check(lst.diseaseId)" class="td-right">{{ lst.diseaseId }}</td>
+      </tr>
+      <tr *ngFor="let lst of list">
+        <td *ngIf="check(lst.diseaseId)" class="text-primary td-left"><div>Tên tiếng anh</div></td>
+        <td *ngIf="check(lst.diseaseId)" class="td-right">{{ lst.englishName }}</td>
+      </tr>
+      <tr *ngFor="let lst of list">
+        <td  *ngIf="check(lst.diseaseId)" class="text-primary last-td td-left"><div>Tên tiếng Việt</div></td>
+        <td class="last-td td-right" *ngIf="check(lst.diseaseId)">{{ lst.vietnameseName }}</td>
+      </tr>
+  </tbody>
+</table>
+<h1>Thông tin bệnh</h1>

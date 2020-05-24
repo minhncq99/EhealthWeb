@@ -1,0 +1,7 @@
+.listview:hover{
+    background-color: lightblue;
+}
+
+.list-border{
+    border-radius: 20%;
+}

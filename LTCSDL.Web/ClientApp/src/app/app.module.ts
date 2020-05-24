@@ -20,6 +20,9 @@ import { CookieService } from "ngx-cookie-service";
 import { DiseasesSaveComponent } from './diseases-save/diseases-save.component';
 import { BannerComponent } from './banner/banner.component';
 import { SearchComponent } from './search/search.component';
+import { IDiseaseComponent } from './i-disease/i-disease.component';
+import { FooterComponent } from './footer/footer.component';
+import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -35,7 +38,9 @@ import { SearchComponent } from './search/search.component';
     SignoutComponent,
     DiseasesSaveComponent,
     BannerComponent,
-    SearchComponent
+    SearchComponent,
+    IDiseaseComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -52,6 +57,8 @@ import { SearchComponent } from './search/search.component';
       { path: 'diseases-save', component: DiseasesSaveComponent },
       { path: 'banner', component: BannerComponent },
       { path: 'search', component: SearchComponent },
+      { path: 'i-disease', component: IDiseaseComponent },
+      { path: 'footer', component: FooterComponent },
     ]),
     NgbModule.forRoot()
   ],
