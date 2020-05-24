@@ -16,16 +16,7 @@ namespace LTCSDL.Web.Controllers
             _svc = new DiseasesSvc();
         }
 
-        [HttpPost("get-by-id")]
-        public IActionResult getDiseaseById([FromBody]SimpleReq req)
-        {
-            var res = new SingleRsp();
-            res = _svc.Read(req.Id);
-
-            return Ok(res);
-        }
-
-        [HttpPost("get-all")]
+        [HttpGet("get-all")]
         public IActionResult getAllDiseases()
         {
             var res = new SingleRsp();
@@ -34,6 +25,15 @@ namespace LTCSDL.Web.Controllers
             return Ok(res);
         }
 
+        [HttpGet("get-by-id/{id}")]
+        public IActionResult getDiseaseById(int id)
+        {
+            var res = new SingleRsp();
+            res = _svc.Read(id);
+
+            return Ok(res);
+        }
+        
         [HttpPost("create")]
         public IActionResult createDisease([FromBody]DiseaseReq req)
         {
@@ -42,7 +42,7 @@ namespace LTCSDL.Web.Controllers
             return Ok(res);
         }
 
-        [HttpPost("update")]
+        [HttpPut("update")]
         public IActionResult updateDisease([FromBody]DiseaseReq req)
         {
             var res = _svc.UpdateDisease(req);
@@ -50,25 +50,25 @@ namespace LTCSDL.Web.Controllers
             return Ok(res);
         }
 
-        [HttpPost("get-by-number-id")]
-        public IActionResult getDiseaseByNumberId([FromBody]SimpleReq req)
+        [HttpGet("get-by-number-id/{id}")]
+        public IActionResult getDiseaseByNumberId(int id)
         {
             var res = new SingleRsp();
-            res = _svc.GetDiseaseByNumberId(req.Id);
+            res = _svc.GetDiseaseByNumberId(id);
 
             return Ok(res);
         }
 
-        [HttpPost("get-by-chaper-id")]
-        public IActionResult getDiseaseByChapterId([FromBody]SimpleReq req)
+        [HttpGet("get-by-chaper-id")]
+        public IActionResult getDiseaseByChapterId(int id)
         {
             var res = new SingleRsp();
-            res = _svc.GetDiseaseByChapterId(req.Id);
+            res = _svc.GetDiseaseByChapterId(id);
 
             return Ok(res);
         }
 
-        [HttpPost("delete")]
+        [HttpDelete("delete")]
         public IActionResult deleteDisease([FromBody]SimpleReq req)
         {
             var res = new SingleRsp();
