@@ -1,26 +1,34 @@
 ﻿using LTCSDL.Common.DAL;
 using System.Linq;
 using LTCSDL.DAL.Models;
-using LTCSDL.Common.Rsp;
 using System;
-
+using LTCSDL.Common.Rsp;
 namespace LTCSDL.DAL
 {
-    public class GroupsRep : GenericRep<EhealthContext, Group>
+    public class UsersRep : GenericRep<EhealthContext, User>
     {
-        #region -- Group --
-        public override Group Read(int id)
+        #region -- Overide --
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
+        public override User Read(int id)
         {
-            var res = All.FirstOrDefault(p => p.GroupId == id);
+            var res = All.FirstOrDefault(p => p.UserId == id);
             return res;
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
         public int Remove(int id)
         {
-            var res = All.First(p => p.GroupId == id);
-            res = base.Delete(res);
-            return res.GroupId;
+            var m = All.First(p => p.UserId == id);
+            m = base.Delete(m);
+            return m.UserId;
         }
+
 
         #endregion
 
@@ -29,7 +37,7 @@ namespace LTCSDL.DAL
         /// 
         /// </summary>
         /// <returns></returns>
-        public SingleRsp CreateGroup(Group gr)
+        public SingleRsp CreateUser(User user)
         {
             var res = new SingleRsp();
             using (var context = new EhealthContext())
@@ -38,7 +46,7 @@ namespace LTCSDL.DAL
                 {
                     try
                     {
-                        var t = context.Groups.Add(gr);
+                        var t = context.Users.Add(user);
                         context.SaveChanges();
                         tran.Commit();
                     }
@@ -52,7 +60,7 @@ namespace LTCSDL.DAL
             return res;
         }
 
-        public SingleRsp UpdateGroup(Group gr)
+        public SingleRsp UpdateUser(User user)
         {
             var res = new SingleRsp();
             using (var context = new EhealthContext())
@@ -61,7 +69,7 @@ namespace LTCSDL.DAL
                 {
                     try
                     {
-                        var t = context.Groups.Update(gr);
+                        var t = context.Users.Update(user);
                         context.SaveChanges();
                         tran.Commit();
                     }
@@ -75,15 +83,7 @@ namespace LTCSDL.DAL
             return res;
         }
 
-        public SingleRsp GetGroupByChapterId(int chapterId)
-        {
-            var res = new SingleRsp();
-            var m = All.Where(p => p.ChapterId == chapterId);
-            res.Data = m;
-            return res;
-        }
-
-        public SingleRsp DeleteGroup(int groupId)
+        public SingleRsp DeleteUser(int userId)
         {
             var res = new SingleRsp();
             using (var context = new EhealthContext())
@@ -92,7 +92,7 @@ namespace LTCSDL.DAL
                 {
                     try
                     {
-                        var t = context.Groups.Find(groupId);
+                        var t = context.Users.Find(userId);
                         context.Remove(t);
                         context.SaveChanges();
                         tran.Commit();
@@ -106,7 +106,6 @@ namespace LTCSDL.DAL
             }
             return res;
         }
-
         #endregion
     }
 }

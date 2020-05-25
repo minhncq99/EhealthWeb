@@ -2,6 +2,8 @@
 using LTCSDL.Common.BLL;
 using LTCSDL.DAL;
 using LTCSDL.DAL.Models;
+using LTCSDL.Common.Req;
+using System.Linq;
 
 namespace LTCSDL.BLL
 {
@@ -31,6 +33,86 @@ namespace LTCSDL.BLL
                 res = base.Update(m);
                 res.Data = m;
             }
+
+            return res;
+        }
+
+        public SingleRsp CreateDisease(DiseaseReq diseaseReq)
+        {
+            var res = new SingleRsp();
+            Disease disease = new Disease();
+
+            disease.DiseaseId = diseaseReq.DiseaseId;
+            disease.EnglishName = diseaseReq.EnglishName;
+            disease.VietnameseName = diseaseReq.VietnameseName;
+            disease.Symptom = diseaseReq.Symptom;
+            disease.NumberId = diseaseReq.NumberId;
+
+            res = _rep.CreateDisease(disease);
+            return res;
+        }
+
+        public SingleRsp UpdateDisease(DiseaseReq diseaseReq)
+        {
+            var res = new SingleRsp();
+            Disease disease = new Disease();
+
+            disease.DiseaseId = diseaseReq.DiseaseId;
+            disease.EnglishName = diseaseReq.EnglishName;
+            disease.VietnameseName = diseaseReq.VietnameseName;
+            disease.Symptom = diseaseReq.Symptom;
+            disease.NumberId = diseaseReq.NumberId;
+
+            res = _rep.UpdateDisease(disease);
+            return res;
+        }
+
+        public SingleRsp GetDiseaseByNumberId(int id)
+        {
+            var res = new SingleRsp();
+
+            var m = _rep.GetDiseaseByNumberId(id);
+            res.Data = m;
+
+            return res;
+        }
+
+        public SingleRsp GetDiseaseByChapterId(int id)
+        {
+            var res = new SingleRsp();
+
+            var m = _rep.GetDiseaseByChapterId(id);
+            res.Data = m;
+
+            return res;
+        }
+
+        public SingleRsp DeleteDisease(int diseaseId)
+        {
+            var res = new SingleRsp();
+
+            var m = _rep.DeleteDisease(diseaseId);
+            res.Data = m;
+
+            return res;
+        }
+
+        public object SearchChapterVietnameseName(string keyword, int page, int size)
+        {
+            var chap = All.Where(x => x.VietnameseName.Contains(keyword));
+            var offset = (page - 1) * size;
+            var total = chap.Count();
+            int totalPage = (total % size) == 0 ? (int)(total / size) : (int)((total / size) + 1);
+            var data = chap.OrderBy(x => x.VietnameseName).Skip(offset).Take(size).ToList();
+
+            var res = new
+            {
+                Data = data,
+                TotalRecord = total,
+                TotalPage = totalPage,
+                Page = page,
+                Size = size,
+            };
 
             return res;
         }

@@ -1,25 +1,35 @@
 ﻿using LTCSDL.Common.DAL;
 using System.Linq;
 using LTCSDL.DAL.Models;
-using LTCSDL.Common.Rsp;
 using System;
+using LTCSDL.Common.Rsp;
+using System.Dynamic;
+using System.Security.Cryptography;
 
 namespace LTCSDL.DAL
 {
-    public class GroupsRep : GenericRep<EhealthContext, Group>
+    public class Diseases_UsersRep : GenericRep<EhealthContext, Disease_User>
     {
-        #region -- Group --
-        public override Group Read(int id)
+        #region -- Overide --
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
+        public Disease_User Read(int userId, int diseaseId)
         {
-            var res = All.FirstOrDefault(p => p.GroupId == id);
+            var res = All.FirstOrDefault(p => p.UserId == userId && p.DiseaseId == diseaseId);
             return res;
         }
 
-        public int Remove(int id)
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
+        public int Remove(int userId, int diseaseId)
         {
-            var res = All.First(p => p.GroupId == id);
-            res = base.Delete(res);
-            return res.GroupId;
+            var m = All.First(p => p.UserId == userId && p.DiseaseId == diseaseId);
+            m = base.Delete(m);
+            return m.UserId;
         }
 
         #endregion
@@ -29,7 +39,7 @@ namespace LTCSDL.DAL
         /// 
         /// </summary>
         /// <returns></returns>
-        public SingleRsp CreateGroup(Group gr)
+        public SingleRsp CreateDiseasesUsers(Disease_User du)
         {
             var res = new SingleRsp();
             using (var context = new EhealthContext())
@@ -38,7 +48,7 @@ namespace LTCSDL.DAL
                 {
                     try
                     {
-                        var t = context.Groups.Add(gr);
+                        var t = context.Diseases_Users.Add(du);
                         context.SaveChanges();
                         tran.Commit();
                     }
@@ -52,7 +62,7 @@ namespace LTCSDL.DAL
             return res;
         }
 
-        public SingleRsp UpdateGroup(Group gr)
+        public SingleRsp UpdateDiseasesUsers(Disease_User du)
         {
             var res = new SingleRsp();
             using (var context = new EhealthContext())
@@ -61,7 +71,7 @@ namespace LTCSDL.DAL
                 {
                     try
                     {
-                        var t = context.Groups.Update(gr);
+                        var t = context.Diseases_Users.Update(du);
                         context.SaveChanges();
                         tran.Commit();
                     }
@@ -75,15 +85,7 @@ namespace LTCSDL.DAL
             return res;
         }
 
-        public SingleRsp GetGroupByChapterId(int chapterId)
-        {
-            var res = new SingleRsp();
-            var m = All.Where(p => p.ChapterId == chapterId);
-            res.Data = m;
-            return res;
-        }
-
-        public SingleRsp DeleteGroup(int groupId)
+        public SingleRsp DeleteDiseasesUsers(int userId, int diseaseId)
         {
             var res = new SingleRsp();
             using (var context = new EhealthContext())
@@ -92,8 +94,9 @@ namespace LTCSDL.DAL
                 {
                     try
                     {
-                        var t = context.Groups.Find(groupId);
+                        var t = context.Diseases_Users.FirstOrDefault(p => p.DiseaseId == diseaseId && p.UserId == userId);
                         context.Remove(t);
+                        res.Data = t;
                         context.SaveChanges();
                         tran.Commit();
                     }
@@ -107,6 +110,37 @@ namespace LTCSDL.DAL
             return res;
         }
 
+        public SingleRsp getByUserId(int userId)
+        {
+            var res = new SingleRsp();
+            var t = All.Where(p => p.UserId == userId);
+            res.Data = t;
+
+            return res;
+        }
+
+        public SingleRsp getByDiseaseId(int diseaseId)
+        {
+            var res = new SingleRsp();
+            var t = All.Where(p => p.DiseaseId == diseaseId);
+            res.Data = t;
+
+            return res;
+        }
+
+        public SingleRsp getTop10()
+        {
+            var res = new SingleRsp();
+            var t = All.Where(x => x.Saved == true)
+                    .GroupBy(x => x.DiseaseId)
+                    .Select(t => new {Disease = t.Key, Count = t.Count()})
+                    .OrderByDescending(z => z.Count)
+                    .Take(10)
+                    .ToList();
+            res.Data = t;
+
+            return res;
+        }
         #endregion
     }
 }
