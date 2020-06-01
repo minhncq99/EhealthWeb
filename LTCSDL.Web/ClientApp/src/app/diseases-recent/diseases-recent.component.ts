@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./diseases-recent.component.css']
 })
 export class DiseasesRecentComponent implements OnInit {
-
+  title:string = "Các bệnh đã xem gần đây";
   constructor() { }
 
   ngOnInit() {
