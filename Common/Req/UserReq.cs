@@ -15,7 +15,7 @@ namespace LTCSDL.Common.Req
         public string Email { get; set; }
 
         public string Job { get; set; }
-        
+
         public int TypeUser { get; set; }
     }
 }

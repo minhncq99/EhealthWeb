@@ -24,7 +24,7 @@ namespace LTCSDL.DAL
             if (!optionsBuilder.IsConfigured)
             {
                 //To protect potentially sensitive information in your connection string, you should move it out of source code. See http://go.microsoft.com/fwlink/?LinkId=723263 for guidance on storing connection strings.
-                optionsBuilder.UseSqlServer("Data Source=.\\SQLEXPRESS;Initial Catalog=EhealthDB;Persist Security Info=True;User ID=sa;Password=123456;Pooling=False;MultipleActiveResultSets=False;Encrypt=False;TrustServerCertificate=True;");
+                optionsBuilder.UseSqlServer("Data Source=.\\SQLEXPRESS;Initial Catalog=EhealthDB;Persist Security Info=True;User ID=sa;Password=123123;Pooling=False;MultipleActiveResultSets=False;Encrypt=False;TrustServerCertificate=True;");
             }
         }
 
@@ -39,6 +39,10 @@ namespace LTCSDL.DAL
             modelBuilder.ApplyConfiguration(new DiseaseConfiguration());
             modelBuilder.ApplyConfiguration(new UserConfiguration());
             modelBuilder.ApplyConfiguration(new Disease_UserConfiguration());
+
+
+            modelBuilder.Entity<User>().HasIndex(u => u.UserName).IsUnique(true);
+            modelBuilder.Entity<User>().HasIndex(u => u.Email).IsUnique(true);
 
             /**
              * Data seeding 
