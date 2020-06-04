@@ -71,9 +71,22 @@ namespace LTCSDL.DAL
                 {
                     try
                     {
-                        var t = context.Diseases_Users.Update(du);
-                        context.SaveChanges();
-                        tran.Commit();
+                        var t = context.Diseases_Users
+                            .FirstOrDefault(p => p.UserId == du.UserId && p.DiseaseId == du.DiseaseId);
+
+
+                        if (t == null)
+                        {
+                            res.SetError("Not found!");
+                            return res;
+                        }
+                        else
+                        {
+                            context.Entry(t).CurrentValues.SetValues(du);
+
+                            context.SaveChanges();
+                            tran.Commit();
+                        }
                     }
                     catch (Exception ex)
                     {

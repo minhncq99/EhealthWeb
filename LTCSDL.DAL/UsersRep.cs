@@ -69,9 +69,20 @@ namespace LTCSDL.DAL
                 {
                     try
                     {
-                        var t = context.Users.Update(user);
-                        context.SaveChanges();
-                        tran.Commit();
+                        var t = context.Users.Find(user.UserId);
+                        if(t == null)
+                        {
+                            res.SetError("Not found!");
+                            return res;
+                        }
+                        else
+                        {
+                            user.TypeUser = t.TypeUser;
+                            context.Entry(t).CurrentValues.SetValues(user);
+
+                            context.SaveChanges();
+                            tran.Commit();
+                        }
                     }
                     catch (Exception ex)
                     {

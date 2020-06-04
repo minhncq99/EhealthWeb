@@ -64,9 +64,19 @@ namespace LTCSDL.DAL
                 {
                     try
                     {
-                        var t = context.Diseases.Update(disease);
-                        context.SaveChanges();
-                        tran.Commit();
+                        var t = context.Diseases.Find(disease.DiseaseId);
+                        if (t == null)
+                        {
+                            res.SetError("Not found!");
+                            return res;
+                        }
+                        else
+                        {
+                            context.Entry(t).CurrentValues.SetValues(disease);
+
+                            context.SaveChanges();
+                            tran.Commit();
+                        }
                     }
                     catch (Exception ex)
                     {
