@@ -50,6 +50,7 @@
     box-shadow: none;
 }
 .btn-form--add{
+    padding: 2px 0;
     width: 100px;
     color: #fff;
     background: #1576C4 none; 
@@ -63,6 +64,7 @@
     outline: 0;
 }
 .btn-form--delete{
+    padding: 2px 0;
     margin-left: 10px;
     width: 80px;
     color: #fff;
@@ -72,6 +74,7 @@
     opacity: 0.7;
 }
 .btn-form--edit{
+    padding: 2px 0;
     width: 80px;
     color: #fff;
     background: #68b7fc none;

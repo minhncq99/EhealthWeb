@@ -68,9 +68,19 @@ namespace LTCSDL.DAL
                 {
                     try
                     {
-                        var t = context.Chapters.Update(chapter);
-                        context.SaveChanges();
-                        tran.Commit();
+                        var t = context.Chapters.Find(chapter.ChapterId);
+                        if (t == null)
+                        {
+                            res.SetError("Not found!");
+                            return res;
+                        }
+                        else
+                        {
+                            context.Entry(t).CurrentValues.SetValues(chapter);
+
+                            context.SaveChanges();
+                            tran.Commit();
+                        }
                     }
                     catch (Exception ex)
                     {

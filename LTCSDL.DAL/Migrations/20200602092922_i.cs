@@ -681,6 +681,18 @@ namespace LTCSDL.DAL.Migrations
                 name: "IX_Numbers_GroupId",
                 table: "Numbers",
                 column: "GroupId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Users_Email",
+                table: "Users",
+                column: "Email",
+                unique: true);
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Users_UserName",
+                table: "Users",
+                column: "UserName",
+                unique: true);
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)

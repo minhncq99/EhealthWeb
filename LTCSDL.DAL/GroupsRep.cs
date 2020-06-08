@@ -61,9 +61,19 @@ namespace LTCSDL.DAL
                 {
                     try
                     {
-                        var t = context.Groups.Update(gr);
-                        context.SaveChanges();
-                        tran.Commit();
+                        var t = context.Groups.Find(gr.GroupId);
+                        if (t == null)
+                        {
+                            res.SetError("Not found!");
+                            return res;
+                        }
+                        else
+                        {
+                            context.Entry(t).CurrentValues.SetValues(gr);
+
+                            context.SaveChanges();
+                            tran.Commit();
+                        }
                     }
                     catch (Exception ex)
                     {
