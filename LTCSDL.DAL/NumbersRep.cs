@@ -29,13 +29,12 @@ namespace LTCSDL.DAL
         /// 
         /// </summary>
         /// <returns></returns>
-       public SingleRsp CreateNumber(Number number)
+        public SingleRsp CreateNumber(Number number)
         {
             var res = new SingleRsp();
-
-            using(var context = new EhealthContext())
+            using (var context = new EhealthContext())
             {
-                using(var tran = context.Database.BeginTransaction())
+                using (var tran = context.Database.BeginTransaction())
                 {
                     try
                     {
@@ -43,30 +42,38 @@ namespace LTCSDL.DAL
                         context.SaveChanges();
                         tran.Commit();
                     }
-                    catch(Exception ex)
+                    catch (Exception ex)
                     {
                         tran.Rollback();
                         res.SetError(ex.StackTrace);
                     }
                 }
             }
-
             return res;
         }
 
         public SingleRsp UpdateNumber(Number number)
         {
             var res = new SingleRsp();
-
             using (var context = new EhealthContext())
             {
                 using (var tran = context.Database.BeginTransaction())
                 {
                     try
                     {
-                        var t = context.Numbers.Update(number);
-                        context.SaveChanges();
-                        tran.Commit();
+                        var t = context.Numbers.Find(number.NumberId);
+                        if (t == null)
+                        {
+                            res.SetError("Not found!");
+                            return res;
+                        }
+                        else
+                        {
+                            context.Entry(t).CurrentValues.SetValues(number);
+
+                            context.SaveChanges();
+                            tran.Commit();
+                        }
                     }
                     catch (Exception ex)
                     {

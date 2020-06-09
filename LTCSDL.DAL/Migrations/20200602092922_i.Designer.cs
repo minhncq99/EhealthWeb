@@ -9,7 +9,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace LTCSDL.DAL.Migrations
 {
     [DbContext(typeof(EhealthContext))]
-    [Migration("20200511093250_i")]
+    [Migration("20200602092922_i")]
     partial class i
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -3364,6 +3364,12 @@ namespace LTCSDL.DAL.Migrations
                         .HasMaxLength(200);
 
                     b.HasKey("UserId");
+
+                    b.HasIndex("Email")
+                        .IsUnique();
+
+                    b.HasIndex("UserName")
+                        .IsUnique();
 
                     b.ToTable("Users");
                 });

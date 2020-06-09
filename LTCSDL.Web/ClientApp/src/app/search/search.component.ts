@@ -18,10 +18,12 @@ export class SearchComponent implements OnInit {
   public isShow = false;
   private route: ActivatedRoute;
   public a: string;
-
+  public products: any ={
+    data:[]
+  }
   constructor(http: HttpClient, @Inject('BASE_URL') baseUrl: string, private _cookieService: CookieService) {
     //if (this.value != null && this.value.length >= this.numChars) {
-      http.post(`https://localhost:44381/api/Diseases/get-all`, null).subscribe(result => {
+      http.get(`https://localhost:44381/api/Diseases/get-all`).subscribe(result => {
         this.res = result;
         this.list = this.res.data;
         console.log(this.list);
@@ -35,7 +37,9 @@ export class SearchComponent implements OnInit {
       var a =value.toUpperCase();
       var b =key.toUpperCase();
       if (b.indexOf(a) != -1 && a != '' && a != null && a != undefined)
-        return true;
+          {
+            return true;
+          }
     }
     return false;
   }

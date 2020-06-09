@@ -25,5 +25,6 @@ export class DropdownComponent implements OnInit {
   deleteCookie(){
     this._cookieService.delete("login");
     this._cookieService.delete("New_Account");
+    this._cookieService.delete("userId");
   }
 }

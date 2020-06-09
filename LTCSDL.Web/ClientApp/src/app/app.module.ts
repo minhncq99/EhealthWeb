@@ -15,7 +15,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { DropdownComponent } from './dropdown/dropdown.component'; 
 import { AccountComponent } from './account/account.component';
 import { SigninComponent } from './signin/signin.component';
-import { SignoutComponent } from './signout/signout.component';
+import { CreateAccountComponent } from './create-account/create-account.component';
 import { CookieService } from "ngx-cookie-service";
 import { DiseasesSaveComponent } from './diseases-save/diseases-save.component';
 import { BannerComponent } from './banner/banner.component';
@@ -35,7 +35,7 @@ import { Router, ActivatedRoute, ParamMap } from '@angular/router';
     DropdownComponent,
     AccountComponent,
     SigninComponent,
-    SignoutComponent,
+    CreateAccountComponent,
     DiseasesSaveComponent,
     BannerComponent,
     SearchComponent,
@@ -53,7 +53,7 @@ import { Router, ActivatedRoute, ParamMap } from '@angular/router';
       { path: 'form', component: FormComponent },
       { path: 'account', component: AccountComponent },
       { path: 'signin', component: SigninComponent },
-      { path: 'signout', component: SignoutComponent },
+      { path: 'create-account', component: CreateAccountComponent },
       { path: 'diseases-save', component: DiseasesSaveComponent },
       { path: 'banner', component: BannerComponent },
       { path: 'search', component: SearchComponent },

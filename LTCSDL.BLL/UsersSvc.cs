@@ -54,13 +54,12 @@ namespace LTCSDL.BLL
         {
             var res = new SingleRsp();
             User user = new User();
+            user.UserId = userReq.UserId;
             user.FullName = userReq.FullName;
             user.UserName = userReq.UserName;
             user.Password = userReq.Password;
             user.Email = userReq.Email;
             user.Job = userReq.Job;
-            user.TypeUser = userReq.TypeUser;
-
             res = _rep.UpdateUser(user);
             return res;
         }

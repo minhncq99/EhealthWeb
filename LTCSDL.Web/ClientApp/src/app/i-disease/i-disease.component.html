@@ -1,5 +1,5 @@
 
-<table class="  table-hover text-justify" aria-labelledby="tableLabel" *ngIf="list">
+<!--<table class="  table-hover text-justify" aria-labelledby="tableLabel" *ngIf="Diseases.data">
   <thead>
     <tr>
       <td>Thông tin bệnh</td>
@@ -24,5 +24,51 @@
         <td class="last-td td-right" *ngIf="check(lst.diseaseId)">{{ lst.vietnameseName }}</td>
       </tr>
   </tbody>
-</table>
-<h1>Thông tin bệnh</h1>
+</table>-->
+<!--<div id="infomation"class="container my-3" > 
+  <div id="contain">
+    <div class="row-xl-12 my-2">
+      <div class="d-inline-block col-xl-2">Thông tin bệnh</div>
+      <div class="d-inline-block col-xl-10"></div>
+    </div>
+    <div class="row-xl-12 my-2">
+      <div class="d-inline-block col-xl-2" >Số thứ tự</div>
+      <div class="d-inline-block col-xl-10" >{{ list.numberId }}</div>
+    </div>
+    <div class="row-xl-12 my-2">
+      <div class="d-inline-block col-xl-2" >Mã bệnh</div>
+      <div class="d-inline-block col-xl-10" >{{ list.diseaseId }}</div>
+    </div>
+    <div class="row-xl-12 my-2">
+      <div class="d-inline-block col-xl-2" >Tên tiếng anh</div>
+      <div class="d-inline-block col-xl-10" >{{ list.englishName }}</div>
+    </div>
+    <div class="row-xl-12 my-2">
+      <div class="d-inline-block col-xl-2" >Tên tiếng việt</div>
+      <div class="d-inline-block col-xl-10">{{ list.vietnameseName }}</div>
+    </div>
+  </div>
+</div>-->
+<div id="i-disease">
+  <div class="row my-3">
+    <div class="col-2 d-inline-block ">Thong tin benh</div>
+    <div class="col-2 d-inline-block i-header"><button class="btn btn-success" style="width: 100%;">Save</button></div>
+  </div>
+  <div class="row my-3">
+    <div class="col-12">Số thứ tự:</div>
+    <div class="col-12">{{ list.numberId }}</div>
+  </div>
+  <div class="row my-3">
+    <div class="col-12">Mã bệnh:</div>
+    <div class="col-12">{{ list.diseaseId }}</div>
+  </div>
+  <div class="row my-3">
+    <div class="col-12">Tên tiếng anh:</div>
+    <div class="col-12">{{ list.englishName }}</div>
+  </div>
+  <div class="row my-3">
+    <div class="col-12">Tên tiếng việt:</div>
+    <div class="col-12">{{ list.vietnameseName }}</div>
+  </div>
+</div>
+

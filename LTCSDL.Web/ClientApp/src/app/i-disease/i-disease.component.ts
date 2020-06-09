@@ -1,4 +1,4 @@
-import { Component, OnInit, Inject } from '@angular/core';
+import { Component, OnInit, Inject, OnChanges } from '@angular/core';
 import { CookieService } from "ngx-cookie-service";
 import { IfStmt } from '@angular/compiler';
 import { HttpClient } from '@angular/common/http';
@@ -10,16 +10,28 @@ import { HttpClient } from '@angular/common/http';
 })
 export class IDiseaseComponent implements OnInit {
   public id: string;
+  public id1:string;
   public res: any;
   public list: [];
   public value: number;
-
+  public Diseases:any={
+    data: [],
+    success: true,
+    code: null,
+    message: "",
+    variant: "success",
+    title: "Success"
+  }
   constructor(http: HttpClient, @Inject('BASE_URL') baseUrl: string,private _cookie: CookieService) { 
     if(this.id != null || this.id != '' || this.id != undefined)
     {
-      http.post(`https://localhost:44381/api/Diseases/get-all`, null).subscribe(result => {
-        this.res = result;
-        this.list = this.res.data;
+      this.id = this._cookie.get("Id");
+      this.value = Number(this.id);
+    
+      http.get(`https://localhost:44381/api/Diseases/get-by-id/`+this.value,this.Diseases)
+      .subscribe(result => {
+        this.Diseases = result;
+        this.list = this.Diseases.data;
         console.log(this.list);
       }, error => console.error(error));
     }
@@ -35,4 +47,13 @@ export class IDiseaseComponent implements OnInit {
   ngOnInit() {
   }
 
+
+  ngDoCheck(){
+    this.id1 = this._cookie.get("Id");
+    if(this.id != this.id1)
+      {
+        location.reload();
+        this.id=this.id1;
+      }
+  }
 }
