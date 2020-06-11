@@ -30,7 +30,7 @@ tbody td{
  }
 
 thead td:first-child{
-    background-color: yellow;
+    background-color: rgb(156, 156, 148);
     text-transform: uppercase;
     border: solid 2px;
 }
@@ -45,5 +45,6 @@ thead td{
 }
 
 #i-disease{
-    background-color: var(--bg-color);
+    background-color: #d1cbb2;
+    padding: 2%;
 }
