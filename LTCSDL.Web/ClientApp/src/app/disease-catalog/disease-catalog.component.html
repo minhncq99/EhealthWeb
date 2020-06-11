@@ -9,62 +9,223 @@
     </ul>
 </div>
 <div class="body--chapter" *ngIf="isShowChapter">
-    <button type="button" class="mybtn btn-form--add">Add</button>
+    <button type="button" class="mybtn btn-form--add" (click)="openModalChapter(true, null)">Add</button>
     <div class="body-list" *ngIf="listChapter">
         <div class="row" *ngFor="let chapter of listChapter">
             <a class="col-sm-10 items--a" href="#">{{chapter.name}}</a>
             <div class="col-sm-1 items--bt">
-                <button class="mybtn btn-form--edit" >Edit</button>
+                <button class="mybtn btn-form--edit" (click)="openModalChapter(false, chapter)" >Edit</button>
             </div>
             <div class="col-sm-1 items--bt">
-                <button class="mybtn btn-form--delete" >Delete</button>
+                <button class="mybtn btn-form--delete" (click)="deleteChapter(chapter)" >Delete</button>
             </div>
         </div>
         <br>
     </div>
 </div>
 <div class="body--group" *ngIf="isShowGroup">
-    <button type="button" class="mybtn btn-form--add">Add</button>
+    <button type="button" class="mybtn btn-form--add" (click)="openModalGroup(true, null)">Add</button>
     <div class="body-list" *ngIf="listGroup">
         <div class="row" *ngFor="let group of listGroup">
             <a class="col-sm-10 items--a" href="#">{{group.name}}</a>
             <div class="col-sm-1 items--bt">
-                <button class="mybtn btn-form--edit" >Edit</button>
+                <button class="mybtn btn-form--edit" (click)="openModalGroup(false, group)" >Edit</button>
             </div>
             <div class="col-sm-1 items--bt">
-                <button class="mybtn btn-form--delete" >Delete</button>
+                <button class="mybtn btn-form--delete" (click)="deleteGroup(group)" >Delete</button>
             </div>
         </div>
     </div>
 </div>
 <div class="body--number" *ngIf="isShowNumber">
-    <button type="button" class="mybtn btn-form--add">Add</button>
+    <button type="button" class="mybtn btn-form--add" (click)="openModalNumber(true, null)">Add</button>
     <div class="body-list" *ngIf="listSTT">
         <div class="row" *ngFor="let stt of listSTT">
-            <a class="col-sm-10 items--a" href="#">Số TT {{stt.numberId}}</a>
+            <a class="col-sm-10 items--a" href="#">{{stt.name}}</a>
             <div class="col-sm-1 items--bt">
-                <button class="mybtn btn-form--edit" >Edit</button>
+                <button class="mybtn btn-form--edit" (click)="openModalNumber(false, stt)">Edit</button>
             </div>
             <div class="col-sm-1 items--bt">
-                <button class="mybtn btn-form--delete" >Delete</button>
+                <button class="mybtn btn-form--delete" (click)="deleteNumber(stt)">Delete</button>
             </div>
         </div>
     </div>
 </div>
 <div class="body--disease" *ngIf="isShowDiseases">
-    <button type="button" class="mybtn btn-form--add">Add</button>
+    <button type="button" class="mybtn btn-form--add" (click)="openModalDisease(true, null)">Add</button>
     <div class="body-list" *ngIf="listDisease">
         <div class="row" *ngFor="let disease of listDisease">
             <a class="col-sm-10 items--a" href="#">{{disease.vietnameseName}}</a>
             <div class="col-sm-1 items--bt">
-                <button class="mybtn btn-form--edit" >Edit</button>
+                <button class="mybtn btn-form--edit" (click)="openModalDisease(false, disease)">Edit</button>
             </div>
             <div class="col-sm-1 items--bt">
-                <button class="mybtn btn-form--delete" >Delete</button>
+                <button class="mybtn btn-form--delete" (click)="deleteDisease(disease)">Delete</button>
             </div>
         </div>
     </div>
 </div>
+
+  <!-- Chapter Modal -->
+<div id="chapterModal" class="modal fade" role="dialog">
+    <div class="modal-dialog modal-lg">
+  
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title" *ngIf="!isEdit">Add new chapter</h4>
+          <h4 class="modal-title" *ngIf="isEdit">Edit chapter</h4>
+        </div>
+        <div class="modal-body">
+            <div class="row" *ngIf="isEdit">
+                <div class="col-4" >Chapter Id</div>
+                <div class="col-8"><input type="number" readonly class="form-control" [(ngModel)] = "chapter.chapterId"></div>
+            </div>
+            <br/>
+            <div class="row">
+                <div class="col-4">Chapter Name</div>
+                <div class="col-8"><input class="form-control" [(ngModel)] = "chapter.name"></div>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary" (click)="updateChapter()" *ngIf="isEdit" data-dismiss="modal">Save</button>
+            <button type="button" class="btn btn-primary" (click)="addChapter()" *ngIf="!isEdit" data-dismiss="modal">Add</button>
+        </div>
+      </div>
+  
+    </div>
+  </div>
+
+<!-- Group Modal -->
+  <div id="groupModal" class="modal fade" role="dialog">
+    <div class="modal-dialog modal-lg">
+  
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title" *ngIf="!isEdit">Add new group</h4>
+          <h4 class="modal-title" *ngIf="isEdit">Edit group</h4>
+        </div>
+        <div class="modal-body">
+            <div class="row" *ngIf="isEdit">
+                <div class="col-4" >Group Id</div>
+                <div class="col-8"><input type="number" readonly class="form-control" [(ngModel)] = "group.groupId"></div>
+            </div>
+            <br/>
+            <div class="row">
+                <div class="col-4">Group Name</div>
+                <div class="col-8"><input class="form-control" [(ngModel)] = "group.name"></div>
+            </div>
+            <br/>
+            <div class="row">
+                <div class="col-4">Thuộc chương bệnh nào? </div>
+                <div class="col-8" >
+                    <select class="form-control" [(ngModel)] = "group.chapterId">
+                        <option  *ngFor="let chapter of listChapter" value={{chapter.chapterId}}>{{chapter.name}}</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary" (click)="updateGroup()" *ngIf="isEdit" data-dismiss="modal">Save</button>
+            <button type="button" class="btn btn-primary" (click)="addGroup()" *ngIf="!isEdit" data-dismiss="modal">Add</button>
+        </div>
+      </div>
+  
+    </div>
+  </div>
+
+  <!-- Number Modal -->
+  <div id="numberModal" class="modal fade" role="dialog">
+    <div class="modal-dialog modal-lg">
+  
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title" *ngIf="!isEdit">Add new number</h4>
+          <h4 class="modal-title" *ngIf="isEdit">Edit number</h4>
+        </div>
+        <div class="modal-body">
+            <div class="row" *ngIf="isEdit">
+                <div class="col-4" >Number Id</div>
+                <div class="col-8"><input type="number" readonly class="form-control" [(ngModel)] = "number.numberId"></div>
+            </div>
+            <br/>
+            <div class="row">
+                <div class="col-4">Number Name</div>
+                <div class="col-8"><input class="form-control" [(ngModel)] = "number.name"></div>
+            </div>
+            <br/>
+            <div class="row">
+                <div class="col-4">Thuộc nhóm bệnh nào? </div>
+                <div class="col-8" >
+                    <select class="form-control" [(ngModel)] = "number.groupId">
+                        <option  *ngFor="let group of listGroup" value={{group.groupId}}>{{group.name}}</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary" (click)="updateNumber()" *ngIf="isEdit" data-dismiss="modal">Save</button>
+            <button type="button" class="btn btn-primary" (click)="addNumber()" *ngIf="!isEdit" data-dismiss="modal">Add</button>
+        </div>
+      </div>
+  
+    </div>
+  </div>
+
+  <!-- Disease Modal -->
+  <div id="diseaseModal" class="modal fade" role="dialog">
+    <div class="modal-dialog modal-lg">
+  
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title" *ngIf="!isEdit">Add new disease</h4>
+          <h4 class="modal-title" *ngIf="isEdit">Edit disease</h4>
+        </div>
+        <div class="modal-body">
+            <div class="row" *ngIf="isEdit">
+                <div class="col-4" >Disease Id</div>
+                <div class="col-8"><input type="number" readonly class="form-control" [(ngModel)] = "disease.diseaseId"></div>
+            </div>
+            <br/>
+            <div class="row">
+                <div class="col-4">Disease Vietnamese Name</div>
+                <div class="col-8"><input class="form-control" [(ngModel)] = "disease.vietnameseName"></div>
+            </div>
+            <br/>
+            <div class="row">
+                <div class="col-4">Disease English Name</div>
+                <div class="col-8"><input class="form-control" [(ngModel)] = "disease.englishName"></div>
+            </div>
+            <br/>
+            <div class="row">
+                <div class="col-4">Symptom</div>
+                <div class="col-8"><input class="form-control" [(ngModel)] = "disease.symptom"></div>
+            </div>
+            <br/>
+            <div class="row">
+                <div class="col-4">Thuộc STT nào? </div>
+                <div class="col-8">
+                    <select class="form-control" [(ngModel)] = "disease.numberId">
+                        <option  *ngFor="let stt of listSTT" value={{stt.numberId}}>{{stt.name}}</option>
+                    </select>   
+                </div>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary" (click)="updateDisease()" *ngIf="isEdit" data-dismiss="modal">Save</button>
+            <button type="button" class="btn btn-primary" (click)="addDisease()" *ngIf="!isEdit" data-dismiss="modal">Add</button>
+        </div>
+      </div>
+  
+    </div>
+  </div>
 
 
 
