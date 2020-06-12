@@ -1,6 +1,5 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Component, OnInit, Inject } from '@angular/core';
-import { parse } from 'path';
 declare var $:any;
 
 @Component({
@@ -255,6 +254,7 @@ export class DiseaseCatalogComponent implements OnInit {
   updateChapter(){
     if(this.chapter.name == ""){
       alert('Chapter Name not null!!!')
+      this.loadListChapter();
     }else{
       var x = this.chapter;
       this.http.put("https://localhost:44381/" + "api/Chapters/update", x).subscribe(result =>{
@@ -272,6 +272,7 @@ export class DiseaseCatalogComponent implements OnInit {
   updateGroup(){
     if(this.group.name == ""){
       alert('Group Name not null!!!')
+      this.loadListGroup();
     }else{
       this.group.chapterId = parseInt(this.group.chapterId);
       var x = this.group;
@@ -289,6 +290,7 @@ export class DiseaseCatalogComponent implements OnInit {
   updateDisease(){
     if(this.disease.englishName == "" || this.disease.vietnameseName == "" || this.disease.symptom == "" ){
       alert('Data have values null!!!')
+      this.loadListDisease();
     }else{
       this.disease.numberId = parseInt(this.disease.numberId);
       var x = this.disease;
@@ -306,6 +308,7 @@ export class DiseaseCatalogComponent implements OnInit {
   updateNumber(){
     if(this.number.name == ""){
       alert('Number Name not null!!!')
+      this.loadListNumber();
     }else{
       this.number.groupId = parseInt(this.number.groupId);
       var x = this.number;
@@ -323,16 +326,78 @@ export class DiseaseCatalogComponent implements OnInit {
   deleteChapter(index){
     if(confirm('Bạn có chắc chắn xóa nó không?')){
       this.chapter = index;
-      console.log(index);
       var x = this.chapter;
-      this.http.delete("https://localhost:44381/" + "api/Chapters/delete").subscribe(result =>{
+      const httpOptions = {
+        headers: new HttpHeaders({ 'Content-Type': 'application/json' }), body: x
+      };
+      this.http.delete("https://localhost:44381/" + "api/Chapters/delete", httpOptions).subscribe(result =>{
       var res:any = result;
       if(res.success){
         alert('Đã xóa thành công');
+        this.loadListChapter();
       }
     }, error => console.error(error));
     }
-    
+  }
+
+  deleteGroup(index){
+    if(confirm('Bạn có chắc chắn xóa nó không?')){
+      this.group = index;
+      var x = {
+        id : this.group.groupId,
+        keyword : this.group.name
+      }
+      const httpOptions = {
+        headers: new HttpHeaders({ 'Content-Type': 'application/json' }), body: x
+      };
+      this.http.delete("https://localhost:44381/" + "api/Groups/delete-group", httpOptions).subscribe(result =>{
+      var res:any = result;
+      if(res.success){
+        alert('Đã xóa thành công');
+        this.loadListGroup();
+      }
+    }, error => console.error(error));
+    }
+  }
+
+  deleteNumber(index){
+    if(confirm('Bạn có chắc chắn xóa nó không?')){
+      this.number = index;
+      var x = {
+        id : this.number.numberId,
+        keyword : this.number.name
+      }
+      const httpOptions = {
+        headers: new HttpHeaders({ 'Content-Type': 'application/json' }), body: x
+      };
+      this.http.delete("https://localhost:44381/" + "api/Numbers/delete", httpOptions).subscribe(result =>{
+      var res:any = result;
+      if(res.success){
+        alert('Đã xóa thành công');
+        this.loadListNumber();
+      }
+    }, error => console.error(error));
+    }
+  }
+
+  deleteDisease(index){
+    if(confirm('Bạn có chắc chắn xóa nó không?')){
+      this.disease = index;
+      var x = {
+        id : this.disease.diseaseId,
+        keyword : this.disease.vietnameseName
+      }
+      const httpOptions = {
+        headers: new HttpHeaders({ 'Content-Type': 'application/json' }), body: x
+      };
+      this.http.delete("https://localhost:44381/" + "api/Diseases/delete", httpOptions).subscribe(result =>{
+      var res:any = result;
+      if(res.success){
+        alert('Đã xóa thành công');
+        this.loadListDisease();
+      }
+    }, error => console.error(error));
+    }
   }
 }
 
