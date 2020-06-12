@@ -210,45 +210,57 @@ export class DiseaseCatalogComponent implements OnInit {
   }
 
   addGroup(){
-    this.group.chapterId = parseInt(this.group.chapterId);
-    var x = this.group;
-    this.http.post("https://localhost:44381/" + "api/Groups/create", x).subscribe(result =>{
-      var res:any = result;
-      if(res.success){
-        this.group = res.data;
-        this.isEdit = true;
-        alert('Đã thêm thành công');
-        location.reload();
-      }
-    }, error => console.error(error));
+    if(this.group.name == "" || this.group.chapterId == ""){
+      alert('Data have values null!!!')
+    }else{
+      this.group.chapterId = parseInt(this.group.chapterId);
+      var x = this.group;
+      this.http.post("https://localhost:44381/" + "api/Groups/create", x).subscribe(result =>{
+        var res:any = result;
+        if(res.success){
+          this.group = res.data;
+          this.isEdit = true;
+          alert('Đã thêm thành công');
+          location.reload();
+        }
+      }, error => console.error(error));
+    }
   }
 
   addNumber(){
-    this.number.groupId = parseInt(this.number.groupId);
-    var x = this.number;
-    this.http.post("https://localhost:44381/" + "api/Numbers/create", x).subscribe(result =>{
-      var res:any = result;
-      if(res.success){
-        this.number = res.data;
-        this.isEdit = true;
-        alert('Đã thêm thành công');
-        location.reload();
-      }
-    }, error => console.error(error));
+    if(this.number.name == "" || this.number.groupId == ""){
+      alert('Data have values null!!!')
+    }else{
+      this.number.groupId = parseInt(this.number.groupId);
+      var x = this.number;
+      this.http.post("https://localhost:44381/" + "api/Numbers/create", x).subscribe(result =>{
+        var res:any = result;
+        if(res.success){
+          this.number = res.data;
+          this.isEdit = true;
+          alert('Đã thêm thành công');
+          location.reload();
+        }
+     }, error => console.error(error));
+    }
   }
 
   addDisease(){
-    this.disease.numberId = parseInt(this.disease.numberId);
-    var x = this.disease;
-    this.http.post("https://localhost:44381/" + "api/Diseases/create", x).subscribe(result =>{
-      var res:any = result;
-      if(res.success){
-        this.disease = res.data;
-        this.isEdit = true;
-        alert('Đã thêm thành công');
-        location.reload();
-      }
-    }, error => console.error(error));
+    if(this.disease.vietnameseName == "" || this.disease.englishName == "" || this.disease.symptom == "" || this.disease.numberId == ""){
+      alert('Data have values null!!!')
+    }else{
+      this.disease.numberId = parseInt(this.disease.numberId);
+      var x = this.disease;
+      this.http.post("https://localhost:44381/" + "api/Diseases/create", x).subscribe(result =>{
+        var res:any = result;
+        if(res.success){
+          this.disease = res.data;
+          this.isEdit = true;
+          alert('Đã thêm thành công');
+          location.reload();
+        }
+      }, error => console.error(error));
+    }
   }
 
   updateChapter(){
