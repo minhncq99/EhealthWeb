@@ -2,7 +2,6 @@ import { Component, OnInit, Inject, OnChanges } from '@angular/core';
 import { CookieService } from "ngx-cookie-service";
 import { IfStmt } from '@angular/compiler';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { parse } from 'path';
 
 @Component({
   selector: 'app-i-disease',
@@ -84,27 +83,41 @@ export class IDiseaseComponent implements OnInit {
     this.create.diseaseId = parseInt(this._cookie.get("Id"));
     this.create.userId = parseInt(this._cookie.get("userId"));
     this.create.saved = true;
-    this.http.post(`https://localhost:44381/api/DiseasesUsers/create`,this.create).subscribe(result=>{
-      var res: any;
-      res = result;
-      this.isShow = !this.isShow;
-    })
+    if(this.create.userId === NaN)
+      window.alert("Ban chu dang nhap!")
+    else{
+        this.http.post(`https://localhost:44381/api/DiseasesUsers/create`,this.create).subscribe(result=>{
+          var res: any;
+          res = result;
+          this.isShow = !this.isShow;
+        })
+    }
+    
   }
 
   public isNotSave(){
-    const httpOptions = {
-      headers: new HttpHeaders({ 'Content-Type': 'application/json' }), body: this.create
-  };
+    
   
     this.create.diseaseId = parseInt(this._cookie.get("Id"));
     this.create.userId = parseInt(this._cookie.get("userId"));
+    console.log( parseInt(this._cookie.get("userId")));
+    console.log(this.create.userId);
     this.create.saved = false;
-    this.http.delete(`https://localhost:44381/api/DiseasesUsers/delete`,httpOptions).subscribe(result=>{
-      var res: any;
-      res = result;
-      this.isShow = !this.isShow;
-    })
+    if(this.create.userId === NaN)
+    window.alert("Ban chu dang nhap!")
+    else{
+        const httpOptions1 = {
+          headers: new HttpHeaders({ 'Content-Type': 'application/json' }), body: this.create
+      };
+        this.http.delete(`https://localhost:44381/api/DiseasesUsers/delete`,httpOptions1)
+        .subscribe(result=>{
+          var res: any;
+          res = result;
+          this.isShow = !this.isShow;
+        })
+    }
   }
+
 }
 
 interface DiseasesUsers{
