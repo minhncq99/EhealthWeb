@@ -1,6 +1,20 @@
 <h1>Các bệnh đã lưu lại</h1>
-<table>
-    <tr>
-        <td></td>
-    </tr>
-</table>
+
+<table class='table table-striped' aria-labelledby="tableLabel" *ngIf="listDiseases">
+    <thead>
+      <tr style="background-color: #06c7be;">
+        <th>numberId</th>
+        <th>diseaseId</th>
+        <th>englishName</th>
+        <th>vietnameseName</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let lt of listDiseases" style="background-color: #d2faf9;">
+        <td>{{ lt.numberId }}</td>
+        <td>{{ lt.diseaseId }}</td>
+        <td>{{ lt.englishName }}</td>
+        <td>{{ lt.vietnameseName }}</td>
+      </tr>
+    </tbody>
+  </table>

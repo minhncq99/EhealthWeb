@@ -45,6 +45,11 @@ thead td{
 }
 
 #i-disease{
-    background-color: #d1cbb2;
+    background-color: #d2faf9;
     padding: 2%;
+    margin-bottom: 2%;
+    width: 50%;
+    margin-left: 25%;
+    border-radius: 10px;
+
 }

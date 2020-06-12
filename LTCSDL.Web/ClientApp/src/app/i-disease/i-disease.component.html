@@ -51,24 +51,27 @@
 </div>-->
 <div id="i-disease">
   <div class="row my-3">
-    <div class="col-2 d-inline-block ">Thong tin benh</div>
-    <div class="col-2 d-inline-block i-header"><button class="btn btn-success" style="width: 100%;">Save</button></div>
+    <div class="col-5 d-inline-block ">Thong tin benh</div>
+    <div class="col-5 d-inline-block i-header">
+      <button *ngIf="isShow"class="btn btn-success" style="width: 100%;" (click)=" isSave()">Luu</button>
+      <button *ngIf="!isShow"class="btn btn-success" style="width: 100%;" (click)="isNotSave()">Huy Luu</button>
+    </div>
   </div>
   <div class="row my-3">
-    <div class="col-12">Số thứ tự:</div>
-    <div class="col-12">{{ list.numberId }}</div>
+    <div class="col-5">Số thứ tự:</div>
+    <div class="col-5">{{ list.numberId }}</div>
   </div>
   <div class="row my-3">
-    <div class="col-12">Mã bệnh:</div>
-    <div class="col-12">{{ list.diseaseId }}</div>
+    <div class="col-5">Mã bệnh:</div>
+    <div class="col-5">{{ list.diseaseId }}</div>
   </div>
   <div class="row my-3">
-    <div class="col-12">Tên tiếng anh:</div>
-    <div class="col-12">{{ list.englishName }}</div>
+    <div class="col-5">Tên tiếng anh:</div>
+    <div class="col-5">{{ list.englishName }}</div>
   </div>
   <div class="row my-3">
-    <div class="col-12">Tên tiếng việt:</div>
-    <div class="col-12">{{ list.vietnameseName }}</div>
+    <div class="col-5">Tên tiếng việt:</div>
+    <div class="col-5">{{ list.vietnameseName }}</div>
   </div>
 </div>
 
