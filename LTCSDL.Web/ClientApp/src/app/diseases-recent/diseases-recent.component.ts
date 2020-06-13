@@ -7,9 +7,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DiseasesRecentComponent implements OnInit {
   title:string = "Các bệnh đã xem gần đây";
+  public listDiseaseWatched:any = [];
   constructor() { }
 
   ngOnInit() {
+    this.listDiseaseWatched = JSON.parse(sessionStorage.getItem('$watched'));
+    this.listDiseaseWatched.reverse();
   }
 
 }

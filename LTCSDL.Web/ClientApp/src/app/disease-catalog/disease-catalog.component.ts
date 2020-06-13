@@ -20,6 +20,7 @@ export class DiseaseCatalogComponent implements OnInit {
   public listSTT: [];
   public listDisease: [];
   public tmpChapter:any;
+  public listDiseaseWatched:any = [];
 
   public chapter:any={
     chapterId : 0,
@@ -52,7 +53,7 @@ export class DiseaseCatalogComponent implements OnInit {
   }
 
   ngOnInit() {
-
+    this.listDiseaseWatched = JSON.parse(sessionStorage.getItem('$watched'));
   }
 
   loadListChapter(){
@@ -410,6 +411,11 @@ export class DiseaseCatalogComponent implements OnInit {
       }
     }, error => console.error(error));
     }
+  }
+
+  saveDiseaseWatched(index){
+    this.listDiseaseWatched.push(index);
+    sessionStorage.setItem('$watched', JSON.stringify(this.listDiseaseWatched));
   }
 }
 

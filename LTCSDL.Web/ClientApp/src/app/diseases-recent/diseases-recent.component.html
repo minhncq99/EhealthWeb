@@ -1,6 +1,8 @@
-<div class="title d-flex justify-content-start body-tl">{{title}}</div>
-<div class="list-items">
-    <div> <a class="items--a" href="#">covid-19</a> </div>
-    <div> <a class="items--a" href="#">covid-19</a> </div>
-    <div> <a class="items--a" href="#">covid-19</a> </div>
+<div class="title d-flex justify-content-center body-tl">{{title}}</div>
+<hr/>
+<div class="list-items" *ngFor="let diseaseWatched of listDiseaseWatched">
+    <div>
+        <i class="fas fa-disease iconDisease"></i>
+        <a class="items--a" href="#">{{diseaseWatched.vietnameseName}}</a> 
+    </div>
 </div>
