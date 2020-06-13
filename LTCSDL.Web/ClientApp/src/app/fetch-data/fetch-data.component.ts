@@ -14,12 +14,26 @@ export class FetchDataComponent {
     id: 1,
     key: 'a' 
   }
-
+  public y: ct ={
+    mact: "a",
+    macv: 15,
+    makn:[],
+    matd: 1
+  }
+  public listy: ct[] = [];
   constructor(http: HttpClient, @Inject('BASE_URL') baseUrl: string) {
     var x = this.product;
     http.get(baseUrl + 'weatherforecast',x).subscribe(result => {
       this.product = result;
     }, error => console.error(error));
+
+    for (let index = 0; index <10; index++) {
+      this.y.makn.push(32);
+      this.y.makn.push(45);
+      this.y.makn.push(22);
+      this.listy.push(this.y);
+      this.y.makn = null;
+    }
   }
 }
 
@@ -28,4 +42,11 @@ interface WeatherForecast {
   temperatureC: number;
   temperatureF: number;
   summary: string;
+}
+
+interface ct{
+  mact: string,
+  macv: number,
+  makn: number[],
+  matd: number,
 }

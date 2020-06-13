@@ -1404,20 +1404,20 @@ namespace LTCSDL.DAL.Extensions
                  /// chapter
                  // Group 
                  // Number 
-                 new Disease { DiseaseId = ++_dID, EnglishName = "", VietnameseName = "", Symptom = "Đang chờ cập nhập!", NumberId =  },
-                 new Disease { DiseaseId = ++_dID, EnglishName = "", VietnameseName = "", Symptom = "Đang chờ cập nhập!", NumberId =  },
-                 new Disease { DiseaseId = ++_dID, EnglishName = "", VietnameseName = "", Symptom = "Đang chờ cập nhập!", NumberId =  },
-                 new Disease { DiseaseId = ++_dID, EnglishName = "", VietnameseName = "", Symptom = "Đang chờ cập nhập!", NumberId =  },
-                 new Disease { DiseaseId = ++_dID, EnglishName = "", VietnameseName = "", Symptom = "Đang chờ cập nhập!", NumberId =  }
+                 new Disease { DiseaseId = ++_dID, EnglishName = "", VietnameseName = "", Symptom = "Đang chờ cập nhập!", NumberId =  92},
+                 new Disease { DiseaseId = ++_dID, EnglishName = "", VietnameseName = "", Symptom = "Đang chờ cập nhập!", NumberId =  92},
+                 new Disease { DiseaseId = ++_dID, EnglishName = "", VietnameseName = "", Symptom = "Đang chờ cập nhập!", NumberId =  92},
+                 new Disease { DiseaseId = ++_dID, EnglishName = "", VietnameseName = "", Symptom = "Đang chờ cập nhập!", NumberId =  92},
+                 new Disease { DiseaseId = ++_dID, EnglishName = "", VietnameseName = "", Symptom = "Đang chờ cập nhập!", NumberId =  92},
 
                  /// chapter
                  // Group 
                  // Number 
-                 new Disease { DiseaseId = ++_dID, EnglishName = "", VietnameseName = "", Symptom = "Đang chờ cập nhập!", NumberId =  },
-                 new Disease { DiseaseId = ++_dID, EnglishName = "", VietnameseName = "", Symptom = "Đang chờ cập nhập!", NumberId =  },
-                 new Disease { DiseaseId = ++_dID, EnglishName = "", VietnameseName = "", Symptom = "Đang chờ cập nhập!", NumberId =  },
-                 new Disease { DiseaseId = ++_dID, EnglishName = "", VietnameseName = "", Symptom = "Đang chờ cập nhập!", NumberId =  },
-                 new Disease { DiseaseId = ++_dID, EnglishName = "", VietnameseName = "", Symptom = "Đang chờ cập nhập!", NumberId =  }
+                 new Disease { DiseaseId = ++_dID, EnglishName = "", VietnameseName = "", Symptom = "Đang chờ cập nhập!", NumberId =  93},
+                 new Disease { DiseaseId = ++_dID, EnglishName = "", VietnameseName = "", Symptom = "Đang chờ cập nhập!", NumberId =  93},
+                 new Disease { DiseaseId = ++_dID, EnglishName = "", VietnameseName = "", Symptom = "Đang chờ cập nhập!", NumberId =  93},
+                 new Disease { DiseaseId = ++_dID, EnglishName = "", VietnameseName = "", Symptom = "Đang chờ cập nhập!", NumberId =  93},
+                 new Disease { DiseaseId = ++_dID, EnglishName = "", VietnameseName = "", Symptom = "Đang chờ cập nhập!", NumberId =  93}
              );
         }
     }

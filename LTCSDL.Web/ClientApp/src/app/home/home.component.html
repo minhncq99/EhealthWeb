@@ -16,6 +16,27 @@
       
     </div>
   <div class="my-3" style="z-index: -1;">Các bệnh được lưu nhiều</div>
-  
+  <google-chart
+   [title]="title"
+   [type]="type"
+   [data]="data"
+   [options]="options"
+   [width]="width"
+   [height]="height">
+</google-chart>
 </div>
+
+<table class='table table-striped' aria-labelledby="tableLabel" *ngIf="listy">
+  <tr *ngFor="let lt of listy">
+    <td>
+      <div>
+        <p>{{lt.mact}}</p>
+        <p>{{lt.macv}}</p>
+        <p>{{lt.matd}}</p>
+        <p>{{lt.makn}}</p>
+      </div>
+    </td>
+  </tr>
+</table>
+
  

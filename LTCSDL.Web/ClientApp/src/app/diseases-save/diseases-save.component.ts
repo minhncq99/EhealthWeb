@@ -16,6 +16,7 @@ export class DiseasesSaveComponent implements OnInit {
     title: ""
   };
 
+ 
   public item:Diseases ={
     diseaseId: 0,
     englishName: "",
@@ -35,6 +36,7 @@ export class DiseasesSaveComponent implements OnInit {
       this.res = r;
       console.log(this.res.data);
       this.res.data.forEach(index =>{
+
         this.http.get(`https://localhost:44381/api/Diseases/get-by-id/`+index.diseaseId).subscribe(result=>{
           var h : any;
           h = result;
