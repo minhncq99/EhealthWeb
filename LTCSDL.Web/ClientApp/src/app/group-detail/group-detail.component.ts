@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Inject } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-group-detail',
@@ -7,9 +8,27 @@ import { Component, OnInit } from '@angular/core';
 })
 export class GroupDetailComponent implements OnInit {
 
-  constructor() { }
-
-  ngOnInit() {
+  public group:any={
+    groupId : 0,
+    name : "",
+    chapterId: 0
+  }
+  public res:any;
+  public listNumber: [];
+  title:string = "gồm:"
+  
+  constructor(private http: HttpClient, @Inject('BASE_URL') baseurl: string) { 
   }
 
+  ngOnInit() {
+    this.group = JSON.parse(sessionStorage.getItem('$dataGroup'));
+    this.http.get("https://localhost:44381/" + "api/Numbers/get-by-group-id/" + this.group.groupId).subscribe(result =>{
+        this.res = result;
+        this.listNumber = this.res.data;
+      }, error => console.error(error));
+  }
+
+  saveNumberData(index){
+    sessionStorage.setItem('$dataNumber', JSON.stringify(index));
+  }
 }

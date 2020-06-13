@@ -1,3 +1,6 @@
+import { NumberDetailComponent } from './number-detail/number-detail.component';
+import { GroupDetailComponent } from './group-detail/group-detail.component';
+import { ChapterDetailComponent } from './chapter-detail/chapter-detail.component';
 import { DiseasesRecentComponent } from './diseases-recent/diseases-recent.component';
 import { DiseaseCatalogComponent } from './disease-catalog/disease-catalog.component';
 import { BrowserModule } from '@angular/platform-browser';
@@ -35,7 +38,10 @@ import { DiseasesSaveComponent } from './diseases-save/diseases-save.component';
     SignoutComponent,
     DiseasesSaveComponent,
     DiseaseCatalogComponent,
-    DiseasesRecentComponent
+    DiseasesRecentComponent,
+    ChapterDetailComponent,
+    GroupDetailComponent,
+    NumberDetailComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -52,6 +58,9 @@ import { DiseasesSaveComponent } from './diseases-save/diseases-save.component';
       { path: 'diseases-save', component: DiseasesSaveComponent },
       { path: 'disease-catalog', component: DiseaseCatalogComponent },
       { path: 'diseases-recent', component: DiseasesRecentComponent },
+      { path: 'chapter-detail', component: ChapterDetailComponent },
+      { path: 'group-detail', component: GroupDetailComponent },
+      { path: 'number-detail', component: NumberDetailComponent },
     ]),
     NgbModule.forRoot()
   ],

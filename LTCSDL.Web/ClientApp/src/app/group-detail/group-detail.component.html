@@ -1,1 +1,10 @@
-<p>group-detail works!</p>
+<div class="title d-flex justify-content-start body-tl">{{group.name}} {{title}}</div>
+<hr/>
+<div class="row" *ngFor="let number of listNumber">
+    <div>
+        <i class="fas fa-disease iconDisease"></i>
+        <a class="col-sm-11 items--a" routerLink="/number-detail" (click)="saveNumberData(number)">{{number.name}}</a> 
+    </div>
+</div>
+<div *ngIf="listNumber.length == 0">Chưa có STT nào!!!</div>
+

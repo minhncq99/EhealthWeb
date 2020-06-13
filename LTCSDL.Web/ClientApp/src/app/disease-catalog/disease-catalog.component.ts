@@ -19,7 +19,6 @@ export class DiseaseCatalogComponent implements OnInit {
   public listGroup: [];
   public listSTT: [];
   public listDisease: [];
-  public tmpChapter:any;
   public listDiseaseWatched:any = [];
 
   public chapter:any={
@@ -416,6 +415,16 @@ export class DiseaseCatalogComponent implements OnInit {
   saveDiseaseWatched(index){
     this.listDiseaseWatched.push(index);
     sessionStorage.setItem('$watched', JSON.stringify(this.listDiseaseWatched));
+  }
+
+  saveChapterData(index){
+    sessionStorage.setItem('$dataChapter', JSON.stringify(index));
+  }
+  saveGroupData(index){
+    sessionStorage.setItem('$dataGroup', JSON.stringify(index));
+  }
+  saveNumberData(index){
+    sessionStorage.setItem('$dataNumber', JSON.stringify(index));
   }
 }
 

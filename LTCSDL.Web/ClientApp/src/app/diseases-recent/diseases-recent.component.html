@@ -1,8 +1,8 @@
 <div class="title d-flex justify-content-center body-tl">{{title}}</div>
 <hr/>
-<div class="list-items" *ngFor="let diseaseWatched of listDiseaseWatched">
+<div class="row" *ngFor="let diseaseWatched of listDiseaseWatched">
     <div>
         <i class="fas fa-disease iconDisease"></i>
-        <a class="items--a" href="#">{{diseaseWatched.vietnameseName}}</a> 
+        <a class="col-sm-11 items--a" href="#">{{diseaseWatched.vietnameseName}}</a> 
     </div>
 </div>
