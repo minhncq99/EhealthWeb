@@ -19,8 +19,7 @@ namespace LTCSDL.Web.Controllers
         [HttpGet("get-by-id/{id}")]
         public IActionResult getNumberById(int id)
         {
-            var res = new SingleRsp();
-            res = _svc.Read(id);
+            var res = _svc.Read(id);
 
             return Ok(res);
         }
@@ -37,7 +36,7 @@ namespace LTCSDL.Web.Controllers
         [HttpPost("create")]
         public IActionResult createNumber([FromBody]NumberReq req)
         {
-            var res = _svc.CreateNumber(req);
+            var res = _svc.CreateNumber(req.Name, req.GroupId);
 
             return Ok(res);
         }
@@ -45,7 +44,7 @@ namespace LTCSDL.Web.Controllers
         [HttpPut("update")]
         public IActionResult updateNumber([FromBody]NumberReq req)
         {
-            var res = _svc.UpdateNumber(req);
+            var res = _svc.UpdateNumber(req.NumberId, req.Name, req.GroupId);
 
             return Ok(res);
         }

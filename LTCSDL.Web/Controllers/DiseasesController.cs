@@ -28,8 +28,7 @@ namespace LTCSDL.Web.Controllers
         [HttpGet("get-by-id/{id}")]
         public IActionResult getDiseaseById(int id)
         {
-            var res = new SingleRsp();
-            res = _svc.Read(id);
+            var res = _svc.Read(id);
 
             return Ok(res);
         }
@@ -37,15 +36,14 @@ namespace LTCSDL.Web.Controllers
         [HttpPost("create")]
         public IActionResult createDisease([FromBody]DiseaseReq req)
         {
-            var res = _svc.CreateDisease(req);
-
+            var res = _svc.CreateDisease(req.EnglishName, req.VietnameseName, req.Symptom, req.NumberId);
             return Ok(res);
         }
 
         [HttpPut("update")]
         public IActionResult updateDisease([FromBody]DiseaseReq req)
         {
-            var res = _svc.UpdateDisease(req);
+            var res = _svc.UpdateDisease(req.DiseaseId, req.EnglishName, req.VietnameseName, req.Symptom, req.NumberId);
 
             return Ok(res);
         }
@@ -53,8 +51,7 @@ namespace LTCSDL.Web.Controllers
         [HttpGet("get-by-number-id/{id}")]
         public IActionResult getDiseaseByNumberId(int id)
         {
-            var res = new SingleRsp();
-            res = _svc.GetDiseaseByNumberId(id);
+            var res = _svc.GetDiseaseByNumberId(id);
 
             return Ok(res);
         }
@@ -62,8 +59,7 @@ namespace LTCSDL.Web.Controllers
         [HttpGet("get-by-chaper-id")]
         public IActionResult getDiseaseByChapterId(int id)
         {
-            var res = new SingleRsp();
-            res = _svc.GetDiseaseByChapterId(id);
+            var res = _svc.GetDiseaseByChapterId(id);
 
             return Ok(res);
         }
@@ -71,15 +67,14 @@ namespace LTCSDL.Web.Controllers
         [HttpDelete("delete")]
         public IActionResult deleteDisease([FromBody]SimpleReq req)
         {
-            var res = new SingleRsp();
-            res = _svc.DeleteDisease(req.Id);
+            var res = _svc.DeleteDisease(req.Id);
 
             return Ok(res);
         }
 
 
         [HttpPost("search-vietnamese-name")]
-        public IActionResult deleteDisease(SearchDieaseReq req)
+        public IActionResult deleteDisease(SearchReq req)
         {
             var res = _svc.SearchChapterVietnameseName(req.Keyword, req.Page, req.Size);
 
