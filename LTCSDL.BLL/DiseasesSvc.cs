@@ -19,80 +19,37 @@ namespace LTCSDL.BLL
             return res;
         }
 
-        public override SingleRsp Update(Disease m)
+        public SingleRsp CreateDisease(string EnglishName, string VietnameseName,
+            string Symptom, int NumberId)
         {
-            var res = new SingleRsp();
-
-            var m1 = m.DiseaseId > 0 ? _rep.Read(m.DiseaseId) : null;
-            if(m1 == null)
-            {
-                res.SetError("EZ103", "No data");
-            }
-            else
-            {
-                res = base.Update(m);
-                res.Data = m;
-            }
-
+            var res = _rep.CreateDisease(EnglishName, VietnameseName, Symptom, NumberId);
             return res;
         }
 
-        public SingleRsp CreateDisease(DiseaseReq diseaseReq)
+        public SingleRsp UpdateDisease(int DiseaseId, string EnglishName,
+            string VietnameseName, string Symptom, int NumberId)
         {
-            var res = new SingleRsp();
-            Disease disease = new Disease();
-
-            disease.DiseaseId = diseaseReq.DiseaseId;
-            disease.EnglishName = diseaseReq.EnglishName;
-            disease.VietnameseName = diseaseReq.VietnameseName;
-            disease.Symptom = diseaseReq.Symptom;
-            disease.NumberId = diseaseReq.NumberId;
-
-            res = _rep.CreateDisease(disease);
-            return res;
-        }
-
-        public SingleRsp UpdateDisease(DiseaseReq diseaseReq)
-        {
-            var res = new SingleRsp();
-            Disease disease = new Disease();
-
-            disease.DiseaseId = diseaseReq.DiseaseId;
-            disease.EnglishName = diseaseReq.EnglishName;
-            disease.VietnameseName = diseaseReq.VietnameseName;
-            disease.Symptom = diseaseReq.Symptom;
-            disease.NumberId = diseaseReq.NumberId;
-
-            res = _rep.UpdateDisease(disease);
+            var res = _rep.UpdateDisease(DiseaseId, EnglishName, VietnameseName, Symptom, NumberId);
             return res;
         }
 
         public SingleRsp GetDiseaseByNumberId(int id)
         {
-            var res = new SingleRsp();
-
-            var m = _rep.GetDiseaseByNumberId(id);
-            res.Data = m;
+            var res = _rep.GetDiseaseByNumberId(id);
 
             return res;
         }
 
         public SingleRsp GetDiseaseByChapterId(int id)
         {
-            var res = new SingleRsp();
-
-            var m = _rep.GetDiseaseByChapterId(id);
-            res.Data = m;
+            var res = _rep.GetDiseaseByChapterId(id);
 
             return res;
         }
 
         public SingleRsp DeleteDisease(int diseaseId)
         {
-            var res = new SingleRsp();
-
-            var m = _rep.DeleteDisease(diseaseId);
-            res.Data = m;
+            var res = _rep.DeleteDisease(diseaseId);
 
             return res;
         }

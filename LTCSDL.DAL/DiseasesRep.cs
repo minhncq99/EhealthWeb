@@ -29,7 +29,8 @@ namespace LTCSDL.DAL
         /// 
         /// </summary>
         /// <returns></returns>
-        public SingleRsp CreateDisease(Disease disease)
+        public SingleRsp CreateDisease(string EnglishName, string VietnameseName, 
+            string Symptom, int NumberId)
         {
             var res = new SingleRsp();
 
@@ -39,7 +40,12 @@ namespace LTCSDL.DAL
                 {
                     try
                     {
-                        var t = context.Diseases.Add(disease);
+                        Disease newDisease = new Disease();
+                        newDisease.EnglishName = EnglishName;
+                        newDisease.VietnameseName = VietnameseName;
+                        newDisease.Symptom = Symptom;
+                        newDisease.NumberId = NumberId;
+                        var t = context.Diseases.Add(newDisease);
                         context.SaveChanges();
                         tran.Commit();
                     }
@@ -54,7 +60,8 @@ namespace LTCSDL.DAL
             return res;
         }
 
-        public SingleRsp UpdateDisease(Disease disease)
+        public SingleRsp UpdateDisease(int DiseaseId, string EnglishName, 
+            string VietnameseName, string Symptom, int NumberId)
         {
             var res = new SingleRsp();
 
@@ -64,15 +71,22 @@ namespace LTCSDL.DAL
                 {
                     try
                     {
-                        var t = context.Diseases.Find(disease.DiseaseId);
-                        if (t == null)
+                        res.Data = context.Diseases.Find(DiseaseId);
+                        if (res.Data == null)
                         {
                             res.SetError("Not found!");
                             return res;
                         }
                         else
                         {
-                            context.Entry(t).CurrentValues.SetValues(disease);
+                            Disease newDisease = new Disease();
+                            newDisease.DiseaseId = DiseaseId;
+                            newDisease.EnglishName = EnglishName;
+                            newDisease.VietnameseName = VietnameseName;
+                            newDisease.Symptom = Symptom;
+                            newDisease.NumberId = NumberId;
+
+                            context.Entry(res.Data).CurrentValues.SetValues(newDisease);
 
                             context.SaveChanges();
                             tran.Commit();
@@ -133,8 +147,8 @@ namespace LTCSDL.DAL
                 {
                     try
                     {
-                        var t = context.Diseases.Find(diseaseId);
-                        context.Remove(t);
+                        res.Data = context.Diseases.Find(diseaseId);
+                        context.Remove(res.Data);
                         context.SaveChanges();
                         tran.Commit();
                     }

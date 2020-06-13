@@ -36,7 +36,7 @@ namespace LTCSDL.DAL
         /// 
         /// </summary>
         /// <returns></returns>
-        public SingleRsp CreateChapter(Chapter chapter)
+        public SingleRsp CreateChapter(string ChapterName)
         {
             var res = new SingleRsp();
             using (var context = new EhealthContext())
@@ -45,7 +45,10 @@ namespace LTCSDL.DAL
                 {
                     try
                     {
-                        var t = context.Chapters.Add(chapter);
+                        Chapter newChapter = new Chapter();
+                        newChapter.ChapterId = 0;
+                        newChapter.Name = ChapterName;
+                        var t = context.Chapters.Add(newChapter);
                         context.SaveChanges();
                         tran.Commit();
                     }
@@ -59,7 +62,7 @@ namespace LTCSDL.DAL
             return res;
         }
 
-        public SingleRsp UpdateChapter(Chapter chapter)
+        public SingleRsp UpdateChapter(int ChapterId, string ChapterName)
         {
             var res = new SingleRsp();
             using (var context = new EhealthContext())
@@ -68,16 +71,18 @@ namespace LTCSDL.DAL
                 {
                     try
                     {
-                        var t = context.Chapters.Find(chapter.ChapterId);
-                        if (t == null)
+                        res.Data = context.Chapters.Find(ChapterId);
+                        if (res.Data == null)
                         {
                             res.SetError("Not found!");
                             return res;
                         }
                         else
                         {
-                            context.Entry(t).CurrentValues.SetValues(chapter);
-
+                            Chapter newChapter = new Chapter();
+                            newChapter.ChapterId = ChapterId;
+                            newChapter.Name = ChapterName;
+                            context.Entry(res.Data).CurrentValues.SetValues(newChapter);
                             context.SaveChanges();
                             tran.Commit();
                         }
@@ -101,8 +106,8 @@ namespace LTCSDL.DAL
                 {
                     try
                     {
-                        var t = context.Chapters.Find(ChapterId);
-                        context.Remove(t);
+                        res.Data = context.Chapters.Find(ChapterId);
+                        context.Remove(res.Data);
                         context.SaveChanges();
                         tran.Commit();
                     }
@@ -113,6 +118,27 @@ namespace LTCSDL.DAL
                     }
                 }
             }
+            return res;
+        }
+
+        public SingleRsp SearchChapter(string keyword, int page, int size)
+        {
+            var res = new SingleRsp();
+
+            var chap = All.Where(x => x.Name.Contains(keyword));
+            var offset = (page - 1) * size;
+            var total = chap.Count();
+            int totalPage = (total % size) == 0 ? (int)(total / size) : (int)((total / size) + 1);
+            var data = chap.OrderBy(x => x.Name).Skip(offset).Take(size).ToList();
+
+            res.Data = new
+            {
+                Data = data,
+                TotalRecord = total,
+                TotalPage = totalPage,
+                Page = page,
+                Size = size,
+            };
             return res;
         }
         #endregion

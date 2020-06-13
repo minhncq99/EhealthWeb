@@ -18,56 +18,25 @@ namespace LTCSDL.BLL
             return res;
         }
 
-        public override SingleRsp Update(User m)
-        {
-            var res = new SingleRsp();
 
-            var m1 = m.UserId > 0 ? _rep.Read(m.UserId) : null;
-            if (m1 == null)
-            {
-                res.SetError("EZ103", "No data");
-            }
-            else
-            {
-                res = base.Update(m);
-                res.Data = m;
-            }
-            return base.Update(m);
-        }
-
-        public SingleRsp CreateUser(UserReq userReq)
+        public SingleRsp CreateUser(string FullName, string UserName, string Password,
+            string Email, string Job, int TypeUser)
         {
-            var res = new SingleRsp();
-            User user = new User();
-            user.FullName = userReq.FullName;
-            user.UserName = userReq.UserName;
-            user.Password = userReq.Password;
-            user.Email = userReq.Email;
-            user.Job = userReq.Job;
-            user.TypeUser = userReq.TypeUser;
-            res = _rep.CreateUser(user);
+            var res = _rep.CreateUser(FullName, UserName, Password, Email, Job, TypeUser);
 
             return res;
         }
 
-        public SingleRsp UpdateUser(UserReq userReq)
+        public SingleRsp UpdateUser(int UserId, string FullName, string UserName, string Password,
+            string Email, string Job, int TypeUser)
         {
-            var res = new SingleRsp();
-            User user = new User();
-            user.UserId = userReq.UserId;
-            user.FullName = userReq.FullName;
-            user.UserName = userReq.UserName;
-            user.Password = userReq.Password;
-            user.Email = userReq.Email;
-            user.Job = userReq.Job;
-            res = _rep.UpdateUser(user);
+            var res = _rep.UpdateUser(UserId, FullName, UserName, Password, Email, Job, TypeUser);
             return res;
         }
 
         public override SingleRsp Delete(int id)
         {
-            var res = new SingleRsp();
-            var m = _rep.DeleteUser(id);
+            var res = _rep.DeleteUser(id);
 
             return res;
         }

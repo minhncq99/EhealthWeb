@@ -29,7 +29,7 @@ namespace LTCSDL.DAL
         /// 
         /// </summary>
         /// <returns></returns>
-        public SingleRsp CreateNumber(Number number)
+        public SingleRsp CreateNumber(string Name, int GroupId)
         {
             var res = new SingleRsp();
             using (var context = new EhealthContext())
@@ -38,7 +38,10 @@ namespace LTCSDL.DAL
                 {
                     try
                     {
-                        var t = context.Numbers.Add(number);
+                        Number newNumber = new Number();
+                        newNumber.Name = Name;
+                        newNumber.GroupId = GroupId;
+                        var t = context.Numbers.Add(newNumber);
                         context.SaveChanges();
                         tran.Commit();
                     }
@@ -52,7 +55,7 @@ namespace LTCSDL.DAL
             return res;
         }
 
-        public SingleRsp UpdateNumber(Number number)
+        public SingleRsp UpdateNumber(int NumberId, string Name, int GroupId)
         {
             var res = new SingleRsp();
             using (var context = new EhealthContext())
@@ -61,15 +64,19 @@ namespace LTCSDL.DAL
                 {
                     try
                     {
-                        var t = context.Numbers.Find(number.NumberId);
-                        if (t == null)
+                        res.Data = context.Numbers.Find(NumberId);
+                        if (res.Data == null)
                         {
                             res.SetError("Not found!");
                             return res;
                         }
                         else
                         {
-                            context.Entry(t).CurrentValues.SetValues(number);
+                            Number newNumber = new Number();
+                            newNumber.NumberId = NumberId;
+                            newNumber.Name = Name;
+                            newNumber.GroupId = GroupId;
+                            context.Entry(res.Data).CurrentValues.SetValues(newNumber);
 
                             context.SaveChanges();
                             tran.Commit();
@@ -103,8 +110,8 @@ namespace LTCSDL.DAL
                 {
                     try
                     {
-                        var t = context.Numbers.Find(numberId);
-                        context.Numbers.Remove(t);
+                        res.Data = context.Numbers.Find(numberId);
+                        context.Remove(res.Data);
                         context.SaveChanges();
                         tran.Commit();
                     }
@@ -115,7 +122,6 @@ namespace LTCSDL.DAL
                     }
                 }
             }
-
             return res;
         }
         #endregion
