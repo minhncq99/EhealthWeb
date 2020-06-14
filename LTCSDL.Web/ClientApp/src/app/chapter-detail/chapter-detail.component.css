@@ -1,0 +1,15 @@
+.body-tl{
+    font-size: 30px;
+}
+.items--a{
+    vertical-align: middle;
+    font-size: 20px;
+    margin: 30px 30px 30px 10px;
+}
+.items--a:hover{
+    text-decoration: none;
+}
+.iconDisease{
+    color: red;
+    margin-left: 30px;
+}

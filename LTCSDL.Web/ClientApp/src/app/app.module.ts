@@ -1,3 +1,8 @@
+import { NumberDetailComponent } from './number-detail/number-detail.component';
+import { GroupDetailComponent } from './group-detail/group-detail.component';
+import { ChapterDetailComponent } from './chapter-detail/chapter-detail.component';
+import { DiseasesRecentComponent } from './diseases-recent/diseases-recent.component';
+import { DiseaseCatalogComponent } from './disease-catalog/disease-catalog.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { FormsModule } from '@angular/forms';
@@ -41,13 +46,18 @@ import { Router, ActivatedRoute, ParamMap } from '@angular/router';
     BannerComponent,
     SearchComponent,
     IDiseaseComponent,
-    FooterComponent
+    FooterComponent,
+    DiseasesSaveComponent,
+    DiseaseCatalogComponent,
+    DiseasesRecentComponent,
+    ChapterDetailComponent,
+    GroupDetailComponent,
+    NumberDetailComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
     HttpClientModule,
     FormsModule,
-    BrowserModule,
     GoogleChartsModule,
     RouterModule.forRoot([
       { path: '', component: HomeComponent, pathMatch: 'full' },
@@ -58,10 +68,18 @@ import { Router, ActivatedRoute, ParamMap } from '@angular/router';
       { path: 'signin', component: SigninComponent },
       { path: 'create-account', component: CreateAccountComponent },
       { path: 'diseases-save', component: DiseasesSaveComponent },
+
       { path: 'banner', component: BannerComponent },
       { path: 'search', component: SearchComponent },
       { path: 'i-disease', component: IDiseaseComponent },
       { path: 'footer', component: FooterComponent },
+
+      { path: 'disease-catalog', component: DiseaseCatalogComponent },
+      { path: 'diseases-recent', component: DiseasesRecentComponent },
+      { path: 'chapter-detail', component: ChapterDetailComponent },
+      { path: 'group-detail', component: GroupDetailComponent },
+      { path: 'number-detail', component: NumberDetailComponent },
+
     ]),
     NgbModule.forRoot()
   ],

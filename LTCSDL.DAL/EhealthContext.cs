@@ -23,7 +23,9 @@ namespace LTCSDL.DAL
         {
             if (!optionsBuilder.IsConfigured)
             {
+
                  optionsBuilder.UseSqlServer("Data Source=.\\SQLEXPRESS;Initial Catalog=EhealthDB;Persist Security Info=True;User ID=sa;Password=123;Pooling=False;MultipleActiveResultSets=False;Encrypt=False;TrustServerCertificate=True;");
+
             }
         }
 

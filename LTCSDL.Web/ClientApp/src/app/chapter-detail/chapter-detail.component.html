@@ -1,0 +1,9 @@
+<div class="title d-flex justify-content-start body-tl">{{chapter.name}} {{title}}</div>
+<hr/>
+<div class="row" *ngFor="let group of listGroup">
+    <div>
+        <i class="fas fa-disease iconDisease"></i>
+        <a class="col-sm-12 items--a" routerLink="/group-detail" (click)="saveGroupData(group)">{{group.name}}</a> 
+    </div>
+</div>
+<div *ngIf="listGroup.length == 0">Chưa có nhóm nào!!!</div>
