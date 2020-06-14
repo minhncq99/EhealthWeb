@@ -29,8 +29,7 @@ namespace LTCSDL.Web.Controllers
         [HttpGet("get-by-id/{id}")]
         public IActionResult getGroupById(int id)
         {
-            var res = new SingleRsp();
-            res = _svc.Read(id);
+            var res = _svc.Read(id);
 
             return Ok(res);
         }
@@ -38,7 +37,7 @@ namespace LTCSDL.Web.Controllers
         [HttpPost("create")]
         public IActionResult createGroup([FromBody]GroupReq req)
         {
-            var res = _svc.CreateGroup(req);
+            var res = _svc.CreateGroup(req.Name, req.ChapterId);
 
             return Ok(res);
         }
@@ -46,7 +45,7 @@ namespace LTCSDL.Web.Controllers
         [HttpPut("update")]
         public IActionResult updateGroup([FromBody]GroupReq req)
         {
-            var res = _svc.UpdateGroup(req);
+            var res = _svc.UpdateGroup(req.GroupId, req.Name, req.ChapterId);
 
             return Ok(res);
         }
@@ -54,8 +53,7 @@ namespace LTCSDL.Web.Controllers
         [HttpGet("get-by-chapter-id/{id}")]
         public IActionResult getGroupByChapterId(int id)
         {
-            var res = new SingleRsp();
-            res = _svc.GetGroupByChapterId(id);
+            var res = _svc.GetGroupByChapterId(id);
 
             return Ok(res);
         }
@@ -63,8 +61,7 @@ namespace LTCSDL.Web.Controllers
         [HttpDelete("delete-group")]
         public IActionResult deleteGroup([FromBody]SimpleReq req)
         {
-            var res = new SingleRsp();
-            res = _svc.DeleteGroup(req.Id);
+            var res = _svc.DeleteGroup(req.Id);
 
             return Ok(res);
         }

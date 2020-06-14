@@ -28,8 +28,7 @@ namespace LTCSDL.Web.Controllers
         [HttpGet("get-by-id/{id}")]
         public IActionResult getChaperById(int id)
         {
-            var res = new SingleRsp();
-            res = _svc.Read(id);
+            var res = _svc.Read(id);
 
             return Ok(res);
         }
@@ -37,7 +36,7 @@ namespace LTCSDL.Web.Controllers
         [HttpPost("create")]
         public IActionResult createChapter([FromBody]ChapterReq req)
         {
-            var res = _svc.CreateChapter(req);
+            var res = _svc.CreateChapter(req.Name);
 
             return Ok(res);
         }
@@ -45,7 +44,7 @@ namespace LTCSDL.Web.Controllers
         [HttpPut("update")]
         public IActionResult updateChapter([FromBody]ChapterReq req)
         {
-            var res = _svc.UpdateChapter(req);
+            var res = _svc.UpdateChapter(req.ChapterId, req.Name);
 
             return Ok(res);
         }
@@ -59,7 +58,7 @@ namespace LTCSDL.Web.Controllers
         }
 
         [HttpPost("search")]
-        public IActionResult searchChapter(SearchChapterReq req)
+        public IActionResult searchChapter([FromBody]SearchReq req)
         {
             var res = _svc.SearchChapter(req.Keyword, req.Page, req.Size);
 

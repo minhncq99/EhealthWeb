@@ -32,19 +32,16 @@ namespace LTCSDL.Web.Controllers
         [HttpGet("get-by-user-id/{id}")]
         public IActionResult getUserById(int id)
         {
-            var res = new SingleRsp();
-
-            res.Data = _svc.Read(id);
+            var res = _svc.Read(id);
 
             return Ok(res);
         }
 
         [HttpPost("create")]
-        public IActionResult createUser(UserReq userReq)
+        public IActionResult createUser([FromBody]UserReq req)
         {
-            var res = new SingleRsp();
 
-            res.Data = _svc.CreateUser(userReq);
+            var res = _svc.CreateUser(req.FullName, req.UserName, req.Password, req.Email, req.Job, req.TypeUser);
 
             return Ok(res);
         }
@@ -52,9 +49,7 @@ namespace LTCSDL.Web.Controllers
         [HttpPut("update")]
         public IActionResult updateUser(UserReq req)
         {
-            var res = new SingleRsp();
-
-            res.Data = _svc.UpdateUser(req);
+            var res = _svc.UpdateUser(req.UserId ,req.FullName, req.UserName, req.Password, req.Email, req.Job, req.TypeUser);
 
             return Ok(res);
         }
@@ -62,8 +57,7 @@ namespace LTCSDL.Web.Controllers
         [HttpDelete("delete")]
         public IActionResult deleteUser([FromBody]UserReq req)
         {
-            var res = new SingleRsp();
-            res.Data = _svc.Delete(req.UserId);
+            var res = _svc.Delete(req.UserId);
             return Ok(res);
         }
 

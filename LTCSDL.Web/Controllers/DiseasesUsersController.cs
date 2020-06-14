@@ -38,7 +38,6 @@ namespace LTCSDL.Web.Controllers
             return Ok(res);
         }
         
-
         [HttpPost("create")]
         public IActionResult Create([FromBody]Diseases_UsersReq req)
         {

@@ -19,56 +19,27 @@ namespace LTCSDL.BLL
             return res;
         }
 
-        public override SingleRsp Update(Group m)
+        public SingleRsp CreateGroup(string GroupName, int ChapterId)
         {
-            var res = new SingleRsp();
-
-            var m1 = m.GroupId > 0 ? _rep.Read(m.GroupId) : null;
-            if(m1 == null)
-            {
-                res.SetError("EZ103", "No data");
-            }
-            else
-            {
-                res = base.Update(m);
-                res.Data = m;
-            }
+            var res = _rep.CreateGroup(GroupName, ChapterId);
             return res;
         }
 
-        public SingleRsp CreateGroup(GroupReq groupsReq)
+        public SingleRsp UpdateGroup(int GroupId, string GroupName, int ChapterId)
         {
-            var res = new SingleRsp();
-            Group group = new Group();
-            group.GroupId = groupsReq.GroupId;
-            group.Name = groupsReq.Name;
-            group.ChapterId = groupsReq.ChapterId;
-            res = _rep.CreateGroup(group);
-            return res;
-        }
-
-        public SingleRsp UpdateGroup(GroupReq groupsReq)
-        {
-            var res = new SingleRsp();
-            Group group = new Group();
-            group.GroupId = groupsReq.GroupId;
-            group.Name = groupsReq.Name;
-            group.ChapterId = groupsReq.ChapterId;
-            res = _rep.UpdateGroup(group);
+            var res = _rep.UpdateGroup(GroupId, GroupName, ChapterId);
             return res;
         }
 
         public SingleRsp GetGroupByChapterId(int chapterId)
         {
-            var res = new SingleRsp();
-            res = _rep.GetGroupByChapterId(chapterId);
+            var res = _rep.GetGroupByChapterId(chapterId);
             return res;
         }
 
         public SingleRsp DeleteGroup(int chapterId)
         {
-            var res = new SingleRsp();
-            res = _rep.DeleteGroup(chapterId);
+            var res = _rep.DeleteGroup(chapterId);
             return res;
         }
     }

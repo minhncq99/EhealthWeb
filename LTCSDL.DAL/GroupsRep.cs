@@ -29,7 +29,7 @@ namespace LTCSDL.DAL
         /// 
         /// </summary>
         /// <returns></returns>
-        public SingleRsp CreateGroup(Group gr)
+        public SingleRsp CreateGroup(string GroupName, int ChapterId)
         {
             var res = new SingleRsp();
             using (var context = new EhealthContext())
@@ -38,7 +38,10 @@ namespace LTCSDL.DAL
                 {
                     try
                     {
-                        var t = context.Groups.Add(gr);
+                        Group NewGroup = new Group();
+                        NewGroup.Name = GroupName;
+                        NewGroup.ChapterId = ChapterId;
+                        var t = context.Groups.Add(NewGroup);
                         context.SaveChanges();
                         tran.Commit();
                     }
@@ -52,7 +55,7 @@ namespace LTCSDL.DAL
             return res;
         }
 
-        public SingleRsp UpdateGroup(Group gr)
+        public SingleRsp UpdateGroup(int GroupId, string GroupName, int ChapterId)
         {
             var res = new SingleRsp();
             using (var context = new EhealthContext())
@@ -61,16 +64,19 @@ namespace LTCSDL.DAL
                 {
                     try
                     {
-                        var t = context.Groups.Find(gr.GroupId);
-                        if (t == null)
+                        res.Data = context.Groups.Find(GroupId);
+                        if (res.Data == null)
                         {
                             res.SetError("Not found!");
                             return res;
                         }
                         else
                         {
-                            context.Entry(t).CurrentValues.SetValues(gr);
-
+                            Group NewGroup = new Group();
+                            NewGroup.GroupId = GroupId;
+                            NewGroup.Name = GroupName;
+                            NewGroup.ChapterId = ChapterId;
+                            context.Entry(res.Data).CurrentValues.SetValues(NewGroup);
                             context.SaveChanges();
                             tran.Commit();
                         }
@@ -102,8 +108,8 @@ namespace LTCSDL.DAL
                 {
                     try
                     {
-                        var t = context.Groups.Find(groupId);
-                        context.Remove(t);
+                        res.Data = context.Groups.Find(groupId);
+                        context.Remove(res.Data);
                         context.SaveChanges();
                         tran.Commit();
                     }

@@ -17,44 +17,17 @@ namespace LTCSDL.BLL
 
             return res;
         }
+        #endregion
 
-        public override SingleRsp Update(Number m)
+        public SingleRsp CreateNumber(string Name, int GroupId)
         {
-            var res = new SingleRsp();
-
-            var m1 = m.NumberId > 0 ? _rep.Read(m.NumberId) : null;
-
-            if (m1 != null)
-            {
-                res.SetError("EZ103", "No data");
-            }
-            else
-            {
-                res = base.Update(m);
-                res.Data = m;
-            }
+            var res = _rep.CreateNumber(Name, GroupId);
             return res;
         }
 
-        public SingleRsp CreateNumber(NumberReq groupsReq)
+        public SingleRsp UpdateNumber(int NumberId, string Name, int GroupId)
         {
-            var res = new SingleRsp();
-            Number number = new Number();
-            number.NumberId= groupsReq.NumberId;
-            number.Name = groupsReq.Name;
-            number.GroupId = groupsReq.GroupId;
-            res = _rep.CreateNumber(number);
-            return res;
-        }
-
-        public SingleRsp UpdateNumber(NumberReq numberReq)
-        {
-            var res = new SingleRsp();
-            Number number = new Number();
-            number.NumberId = numberReq.NumberId;
-            number.Name = numberReq.Name;
-            number.GroupId = numberReq.GroupId;
-            res = _rep.UpdateNumber(number);
+            var res = _rep.UpdateNumber(NumberId, Name, GroupId);
             return res;
         }
 
@@ -66,11 +39,8 @@ namespace LTCSDL.BLL
 
         public SingleRsp DeleteNumber(int numberId)
         {
-            var res = new SingleRsp();
-            res = _rep.DeleteNumber(numberId);
+            var res = _rep.DeleteNumber(numberId);
             return res;
         }
-
-        #endregion
     }
 }

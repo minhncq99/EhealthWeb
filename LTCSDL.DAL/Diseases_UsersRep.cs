@@ -39,7 +39,7 @@ namespace LTCSDL.DAL
         /// 
         /// </summary>
         /// <returns></returns>
-        public SingleRsp CreateDiseasesUsers(Disease_User du)
+        public SingleRsp CreateDiseasesUsers(int DiseaseId, int UserId, bool Saved)
         {
             var res = new SingleRsp();
             using (var context = new EhealthContext())
@@ -48,6 +48,10 @@ namespace LTCSDL.DAL
                 {
                     try
                     {
+                        Disease_User du = new Disease_User();
+                        du.DiseaseId = DiseaseId;
+                        du.UserId = UserId;
+                        du.Saved = Saved;
                         var t = context.Diseases_Users.Add(du);
                         context.SaveChanges();
                         tran.Commit();
@@ -62,7 +66,7 @@ namespace LTCSDL.DAL
             return res;
         }
 
-        public SingleRsp UpdateDiseasesUsers(Disease_User du)
+        public SingleRsp UpdateDiseasesUsers(int DiseaseId, int UserId, bool Saved)
         {
             var res = new SingleRsp();
             using (var context = new EhealthContext())
@@ -71,18 +75,22 @@ namespace LTCSDL.DAL
                 {
                     try
                     {
-                        var t = context.Diseases_Users
-                            .FirstOrDefault(p => p.UserId == du.UserId && p.DiseaseId == du.DiseaseId);
+                        res.Data = context.Diseases_Users
+                            .FirstOrDefault(p => p.UserId == UserId && p.DiseaseId == DiseaseId);
 
 
-                        if (t == null)
+                        if (res.Data == null)
                         {
                             res.SetError("Not found!");
                             return res;
                         }
                         else
                         {
-                            context.Entry(t).CurrentValues.SetValues(du);
+                            Disease_User du = new Disease_User();
+                            du.DiseaseId = DiseaseId;
+                            du.UserId = UserId;
+                            du.Saved = Saved;
+                            context.Entry(res.Data).CurrentValues.SetValues(du);
 
                             context.SaveChanges();
                             tran.Commit();
@@ -107,9 +115,8 @@ namespace LTCSDL.DAL
                 {
                     try
                     {
-                        var t = context.Diseases_Users.FirstOrDefault(p => p.DiseaseId == diseaseId && p.UserId == userId);
-                        context.Remove(t);
-                        res.Data = t;
+                        res.Data = context.Diseases_Users.FirstOrDefault(p => p.DiseaseId == diseaseId && p.UserId == userId);
+                        context.Remove(res.Data);
                         context.SaveChanges();
                         tran.Commit();
                     }
