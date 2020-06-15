@@ -1867,7 +1867,7 @@ namespace LTCSDL.DAL.Extensions
 
 
 
-<<<<<<< HEAD
+
                  /// chapter 10 Bệnh Hô hấp
                  // Group 97
                  // Number 91
@@ -1894,8 +1894,7 @@ namespace LTCSDL.DAL.Extensions
                  new Disease { DiseaseId = ++_dID, EnglishName = "", VietnameseName = "", Symptom = "Đang chờ cập nhập!", NumberId =  93},
                  new Disease { DiseaseId = ++_dID, EnglishName = "", VietnameseName = "", Symptom = "Đang chờ cập nhập!", NumberId =  93},
                  new Disease { DiseaseId = ++_dID, EnglishName = "", VietnameseName = "", Symptom = "Đang chờ cập nhập!", NumberId =  93}
-=======
->>>>>>> 8c5f7ca4602c3df33f83d5efc296a8858cdeccfa
+
              );
         }
     }
