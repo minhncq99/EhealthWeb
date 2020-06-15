@@ -1364,60 +1364,509 @@ namespace LTCSDL.DAL.Extensions
                  new Disease { DiseaseId = ++_dID, EnglishName = "Abscess of lung with pneumonia", VietnameseName = "Áp xe phổi có viêm phổi", Symptom = "Đang chờ cập nhập!", NumberId = 89 },
                  new Disease { DiseaseId = ++_dID, EnglishName = "Abscess of lung without pneumonia", VietnameseName = "Áp xe phổi không có viêm phổi", Symptom = "Đang chờ cập nhập!", NumberId = 89 },
                  new Disease { DiseaseId = ++_dID, EnglishName = "Abscess of mediastinum", VietnameseName = "Áp xe trung thất", Symptom = "Đang chờ cập nhập!", NumberId = 89 },
-                
+
                  /// chapter 10 Bệnh Hô hấp
-                 // Group 96
+                 // Group 96 Nhiễm trùng hô hấp trên cấp
                  // Number 90
-                 new Disease { DiseaseId = ++_dID, EnglishName = "", VietnameseName = "", Symptom = "Đang chờ cập nhập!", NumberId = 90 },
-                 new Disease { DiseaseId = ++_dID, EnglishName = "", VietnameseName = "", Symptom = "Đang chờ cập nhập!", NumberId = 90 },
-                 new Disease { DiseaseId = ++_dID, EnglishName = "", VietnameseName = "", Symptom = "Đang chờ cập nhập!", NumberId = 90 },
-                 new Disease { DiseaseId = ++_dID, EnglishName = "", VietnameseName = "", Symptom = "Đang chờ cập nhập!", NumberId = 90 },
-                 new Disease { DiseaseId = ++_dID, EnglishName = "", VietnameseName = "", Symptom = "Đang chờ cập nhập!", NumberId = 90 },
+                 new Disease { DiseaseId = ++_dID, EnglishName = "Acute nasopharyngitis [common cold]", VietnameseName = "Viêm mũi họng cấp [cảm thường]", Symptom = "Đang chờ cập nhập!", NumberId = 90 },
+                 new Disease { DiseaseId = ++_dID, EnglishName = "Acute sinusitis", VietnameseName = "Viêm xoang cấp", Symptom = "Đang chờ cập nhập!", NumberId = 90 },
+                 new Disease { DiseaseId = ++_dID, EnglishName = "Acute maxillary sinusitis", VietnameseName = "Viêm xoang hàm cấp", Symptom = "Đang chờ cập nhập!", NumberId = 90 },
+                 new Disease { DiseaseId = ++_dID, EnglishName = "Acute frontal sinusitis", VietnameseName = "Viêm xoang trán cấp", Symptom = "Đang chờ cập nhập!", NumberId = 90 },
+                 new Disease { DiseaseId = ++_dID, EnglishName = "Acute ethmoidal sinusitis", VietnameseName = "Viêm xoang sàng cấp", Symptom = "Đang chờ cập nhập!", NumberId = 90 },
 
                  /// chapter 10 Bệnh Hô hấp
-                 // Group 97
+                 // Group 97 Các bệnh phổi do tác nhân bên ngoài
                  // Number 91
-                 new Disease { DiseaseId = ++_dID, EnglishName = "", VietnameseName = "", Symptom = "Đang chờ cập nhập!", NumberId = 91 },
-                 new Disease { DiseaseId = ++_dID, EnglishName = "", VietnameseName = "", Symptom = "Đang chờ cập nhập!", NumberId = 91 },
-                 new Disease { DiseaseId = ++_dID, EnglishName = "", VietnameseName = "", Symptom = "Đang chờ cập nhập!", NumberId = 91 },
-                 new Disease { DiseaseId = ++_dID, EnglishName = "", VietnameseName = "", Symptom = "Đang chờ cập nhập!", NumberId = 91 },
-                 new Disease { DiseaseId = ++_dID, EnglishName = "", VietnameseName = "", Symptom = "Đang chờ cập nhập!", NumberId = 91 },
+                 new Disease { DiseaseId = ++_dID, EnglishName = "Coalworker pneumoconsiosis", VietnameseName = "Bệnh bụi phổi của công nhân ngành than", Symptom = "Đang chờ cập nhập!", NumberId = 91 },
+                 new Disease { DiseaseId = ++_dID, EnglishName = "Pneumoconiosis due to asbestos and other mineral fibres", VietnameseName = "Bệnh bụi phổi amian và các sợi khoáng khác", Symptom = "Đang chờ cập nhập!", NumberId = 91 },
+                 new Disease { DiseaseId = ++_dID, EnglishName = "Pneumoconiosis due to dust containing silica", VietnameseName = "Bệnh bụi phổi do bụi silic", Symptom = "Đang chờ cập nhập!", NumberId = 91 },
+                 new Disease { DiseaseId = ++_dID, EnglishName = "Pneumoconiosis due to talc dust", VietnameseName = "Bệnh bụi phổi do bột talc", Symptom = "Đang chờ cập nhập!", NumberId = 91 },
+                 new Disease { DiseaseId = ++_dID, EnglishName = "Pneumoconiosis due to other dust containing silica", VietnameseName = "Bệnh bụi phổi do bụi khác chứa silic", Symptom = "Đang chờ cập nhập!", NumberId = 91 },
 
-                 /// chapter 10 Bệnh Hô hấp
-                 // Group 96
-                 // Number 90
-                 new Disease { DiseaseId = ++_dID, EnglishName = "", VietnameseName = "", Symptom = "Đang chờ cập nhập!", NumberId = 90 },
-                 new Disease { DiseaseId = ++_dID, EnglishName = "", VietnameseName = "", Symptom = "Đang chờ cập nhập!", NumberId = 90 },
-                 new Disease { DiseaseId = ++_dID, EnglishName = "", VietnameseName = "", Symptom = "Đang chờ cập nhập!", NumberId = 90 },
-                 new Disease { DiseaseId = ++_dID, EnglishName = "", VietnameseName = "", Symptom = "Đang chờ cập nhập!", NumberId = 90 },
-                 new Disease { DiseaseId = ++_dID, EnglishName = "", VietnameseName = "", Symptom = "Đang chờ cập nhập!", NumberId = 90 },
+                 /// chapter 11 Bệnh hệ tiêu hoá
+                 // Group 98 Bệnh đường ruột khác
+                 // Number 92
+                 new Disease { DiseaseId = ++_dID, EnglishName = "Vascular disorders of intestine", VietnameseName = "Rối loạn mạch máu của ruột", Symptom = "Đang chờ cập nhập!", NumberId = 92 },
+                 new Disease { DiseaseId = ++_dID, EnglishName = "Acute vascular disorders of intestine", VietnameseName = "Rối loạn mạch máu ruột cấp tính", Symptom = "Đang chờ cập nhập!", NumberId = 92 },
+                 new Disease { DiseaseId = ++_dID, EnglishName = "Chronic vascular disorders of intestine", VietnameseName = "Rối loạn mạch máu ruột mạn", Symptom = "Đang chờ cập nhập!", NumberId = 92 },
+                 new Disease { DiseaseId = ++_dID, EnglishName = "Angiodysplasia of colon", VietnameseName = "Loạn sản mạch máu đại tràng", Symptom = "Đang chờ cập nhập!", NumberId = 92 },
+                 new Disease { DiseaseId = ++_dID, EnglishName = "Other vascular disorders of intestine", VietnameseName = "Rối loạn mạch máu khác của ruột", Symptom = "Đang chờ cập nhập!", NumberId = 92 },
 
-                 /// chapter 10 Bệnh Hô hấp
-                 // Group 97
-                 // Number 91
-                 new Disease { DiseaseId = ++_dID, EnglishName = "", VietnameseName = "", Symptom = "Đang chờ cập nhập!", NumberId = 91 },
-                 new Disease { DiseaseId = ++_dID, EnglishName = "", VietnameseName = "", Symptom = "Đang chờ cập nhập!", NumberId = 91 },
-                 new Disease { DiseaseId = ++_dID, EnglishName = "", VietnameseName = "", Symptom = "Đang chờ cập nhập!", NumberId = 91 },
-                 new Disease { DiseaseId = ++_dID, EnglishName = "", VietnameseName = "", Symptom = "Đang chờ cập nhập!", NumberId = 91 },
-                 new Disease { DiseaseId = ++_dID, EnglishName = "", VietnameseName = "", Symptom = "Đang chờ cập nhập!", NumberId = 91 },
+                 /// chapter 11 Bệnh hệ tiêu hoá
+                 // Group 99 Bệnh túi mật, ống mật và tụy
+                 // Number 93
+                 new Disease { DiseaseId = ++_dID, EnglishName = "Cholelithiasis", VietnameseName = "Sỏi mật", Symptom = "Đang chờ cập nhập!", NumberId = 93 },
+                 new Disease { DiseaseId = ++_dID, EnglishName = "Calculus of gallbladder with acute cholecystitis", VietnameseName = "Sỏi túi mật có viêm túi mật cấp", Symptom = "Đang chờ cập nhập!", NumberId = 93 },
+                 new Disease { DiseaseId = ++_dID, EnglishName = "Calculus of gallbladder with other cholecystitis", VietnameseName = "Sỏi túi mật có viêm túi mật khác", Symptom = "Đang chờ cập nhập!", NumberId = 93 },
+                 new Disease { DiseaseId = ++_dID, EnglishName = "Calculus of gallbladder without cholecystitis", VietnameseName = "Sỏi túi mật không có viêm túi mật", Symptom = "Đang chờ cập nhập!", NumberId = 93 },
+                 new Disease { DiseaseId = ++_dID, EnglishName = "Calculus of bile duct with cholangitis", VietnameseName = "Sỏi ống mật có viêm đường mật", Symptom = "Đang chờ cập nhập!", NumberId = 93 },
 
-                 /// chapter
-                 // Group 
-                 // Number 
-                 new Disease { DiseaseId = ++_dID, EnglishName = "", VietnameseName = "", Symptom = "Đang chờ cập nhập!", NumberId =  },
-                 new Disease { DiseaseId = ++_dID, EnglishName = "", VietnameseName = "", Symptom = "Đang chờ cập nhập!", NumberId =  },
-                 new Disease { DiseaseId = ++_dID, EnglishName = "", VietnameseName = "", Symptom = "Đang chờ cập nhập!", NumberId =  },
-                 new Disease { DiseaseId = ++_dID, EnglishName = "", VietnameseName = "", Symptom = "Đang chờ cập nhập!", NumberId =  },
-                 new Disease { DiseaseId = ++_dID, EnglishName = "", VietnameseName = "", Symptom = "Đang chờ cập nhập!", NumberId =  }
+                 /// chapter 11 Bệnh hệ tiêu hoá
+                 // Group 100 Bệnh của gan
+                 // Number 94
+                 new Disease { DiseaseId = ++_dID, EnglishName = "Alcoholic liver disease", VietnameseName = "Bệnh gan do rượu", Symptom = "Đang chờ cập nhập!", NumberId = 94 },
+                 new Disease { DiseaseId = ++_dID, EnglishName = "Alcoholic fatty liver", VietnameseName = "Gan nhiễm mỡ do rượu", Symptom = "Đang chờ cập nhập!", NumberId = 94 },
+                 new Disease { DiseaseId = ++_dID, EnglishName = "Alcoholic hepatitis", VietnameseName = "Viêm gan do rượu", Symptom = "Đang chờ cập nhập!", NumberId = 94 },
+                 new Disease { DiseaseId = ++_dID, EnglishName = "Alcoholic fibrosis and sclerosis of liver", VietnameseName = "Bệnh xơ hóa gan do rượu", Symptom = "Đang chờ cập nhập!", NumberId = 94 },
+                 new Disease { DiseaseId = ++_dID, EnglishName = "Alcoholic cirrhosis of liver", VietnameseName = "Xơ gan do rượu", Symptom = "Đang chờ cập nhập!", NumberId = 94 },
 
-                 /// chapter
-                 // Group 
-                 // Number 
-                 new Disease { DiseaseId = ++_dID, EnglishName = "", VietnameseName = "", Symptom = "Đang chờ cập nhập!", NumberId =  },
-                 new Disease { DiseaseId = ++_dID, EnglishName = "", VietnameseName = "", Symptom = "Đang chờ cập nhập!", NumberId =  },
-                 new Disease { DiseaseId = ++_dID, EnglishName = "", VietnameseName = "", Symptom = "Đang chờ cập nhập!", NumberId =  },
-                 new Disease { DiseaseId = ++_dID, EnglishName = "", VietnameseName = "", Symptom = "Đang chờ cập nhập!", NumberId =  },
-                 new Disease { DiseaseId = ++_dID, EnglishName = "", VietnameseName = "", Symptom = "Đang chờ cập nhập!", NumberId =  }
+                 /// chapter 11 Bệnh hệ tiêu hoá
+                 // Group 101 Bệnh của phúc mạc
+                 // Number 95
+                 new Disease { DiseaseId = ++_dID, EnglishName = "Peritonitis", VietnameseName = "Viêm phúc mạc", Symptom = "Đang chờ cập nhập!", NumberId = 95 },
+                 new Disease { DiseaseId = ++_dID, EnglishName = "Acute peritonitis", VietnameseName = "Viêm phúc mạc cấp", Symptom = "Đang chờ cập nhập!", NumberId = 95 },
+                 new Disease { DiseaseId = ++_dID, EnglishName = "Other peritonitis", VietnameseName = "Viêm phúc mạc khác", Symptom = "Đang chờ cập nhập!", NumberId = 95 },
+                 new Disease { DiseaseId = ++_dID, EnglishName = "Peritonitis, unspecified", VietnameseName = "Viêm phúc mạc, không đặc hiệu", Symptom = "Đang chờ cập nhập!", NumberId = 95 },
+                 new Disease { DiseaseId = ++_dID, EnglishName = "Other disorders of peritoneum", VietnameseName = "Rối loạn khác của phúc mạc", Symptom = "Đang chờ cập nhập!", NumberId = 95 },
+
+                 /// chapter 11 Bệnh hệ tiêu hoá
+                 // Group 102 Bệnh của thực quản, dạ dày và tá tràng
+                 // Number 96
+                 new Disease { DiseaseId = ++_dID, EnglishName = "Oesophagitis", VietnameseName = "Viêm thực quản", Symptom = "Đang chờ cập nhập!", NumberId = 96 },
+                 new Disease { DiseaseId = ++_dID, EnglishName = "Gastro-oesophageal reflux disease", VietnameseName = "Bệnh trào ngược dạ dày - thực quản", Symptom = "Đang chờ cập nhập!", NumberId = 96 },
+                 new Disease { DiseaseId = ++_dID, EnglishName = "Gastro-oesophageal reflux disease with oesophagitis", VietnameseName = "Bệnh trào ngược dạ dày - thực quản với viêm thực quản", Symptom = "Đang chờ cập nhập!", NumberId = 96 },
+                 new Disease { DiseaseId = ++_dID, EnglishName = "Gastro-oesophageal reflux disease without oesophagitis", VietnameseName = "Bệnh trào ngược dạ dày - thực quản không có viêm thực quản", Symptom = "Đang chờ cập nhập!", NumberId = 96 },
+                 new Disease { DiseaseId = ++_dID, EnglishName = "Other diseases of oesophagus", VietnameseName = "Bệnh khác của thực quản", Symptom = "Đang chờ cập nhập!", NumberId = 96 },
+
+                 /// chapter 11 Bệnh hệ tiêu hoá
+                 // Group 103 Thoát vị
+                 // Number 97
+                 new Disease { DiseaseId = ++_dID, EnglishName = "Inguinal hernia", VietnameseName = "Thoát vị bẹn", Symptom = "Đang chờ cập nhập!", NumberId = 97 },
+                 new Disease { DiseaseId = ++_dID, EnglishName = "Bilateral inguinal hernia, with obstruction, without gangrene", VietnameseName = "Thoát vị bẹn hai bên, có tắc, không hoại tử", Symptom = "Đang chờ cập nhập!", NumberId = 97 },
+                 new Disease { DiseaseId = ++_dID, EnglishName = "Bilateral inguinal hernia, with gangrene", VietnameseName = "Thoát vị bẹn hai bên, có hoại tử", Symptom = "Đang chờ cập nhập!", NumberId = 97 },
+                 new Disease { DiseaseId = ++_dID, EnglishName = "Bilateral inguinal hernia, without obstruction or gangrene", VietnameseName = "Thoát vị bẹn hai bên, không tắc hay hoại thư", Symptom = "Đang chờ cập nhập!", NumberId = 97 },
+                 new Disease { DiseaseId = ++_dID, EnglishName = "Unilateral or unspecified inguinal hernia, with obstruction, without gangrene", VietnameseName = "Thoát vị bẹn một bên hay không đặc hiệu, có tắc, không hoại tử", Symptom = "Đang chờ cập nhập!", NumberId = 97 },
+
+                 /// chapter 11 Bệnh hệ tiêu hoá
+                 // Group 104 Bệnh của khoang miệng, tuyến nước bọt và xương hàm
+                 // Number 98
+                 new Disease { DiseaseId = ++_dID, EnglishName = "Disorders of tooth development and eruption", VietnameseName = "Rối loạn phát triển răng và mọc răng", Symptom = "Đang chờ cập nhập!", NumberId = 98 },
+                 new Disease { DiseaseId = ++_dID, EnglishName = "Anodontia", VietnameseName = "Không đủ răng", Symptom = "Đang chờ cập nhập!", NumberId = 98 },
+                 new Disease { DiseaseId = ++_dID, EnglishName = "Supernumerary teeth", VietnameseName = "Răng thừa", Symptom = "Đang chờ cập nhập!", NumberId = 98 },
+                 new Disease { DiseaseId = ++_dID, EnglishName = "Abnormalities of size and form of teeth", VietnameseName = "Bất thường kích thước và hình dạng răng", Symptom = "Đang chờ cập nhập!", NumberId = 98 },
+                 new Disease { DiseaseId = ++_dID, EnglishName = "Mottled teeth", VietnameseName = "Răng lốm đốm", Symptom = "Đang chờ cập nhập!", NumberId = 98 },
+
+
+                 /// chapter 11 Bệnh hệ tiêu hoá
+                 // Group 105 Bệnh khác của hệ tiêu hoá
+                 // Number 99
+                 new Disease { DiseaseId = ++_dID, EnglishName = "Intestinal malabsorption", VietnameseName = "Ruột kém hấp thu", Symptom = "Đang chờ cập nhập!", NumberId = 99 },
+                 new Disease { DiseaseId = ++_dID, EnglishName = "Coeliac disease", VietnameseName = "Bệnh Coeliac", Symptom = "Đang chờ cập nhập!", NumberId = 99 },
+                 new Disease { DiseaseId = ++_dID, EnglishName = "Tropical sprue", VietnameseName = "Tiêu chảy nhiệt đới", Symptom = "Đang chờ cập nhập!", NumberId = 99 },
+                 new Disease { DiseaseId = ++_dID, EnglishName = "Blind loop syndrome, not elsewhere classified", VietnameseName = "Hội chứng quai tới, không phân loại nơi khác", Symptom = "Đang chờ cập nhập!", NumberId = 99 },
+                 new Disease { DiseaseId = ++_dID, EnglishName = "Pancreatic steatorrhoea", VietnameseName = "Tiêu chảy phân mỡ do tụy", Symptom = "Đang chờ cập nhập!", NumberId = 99 },
+
+                 /// chapter 11 Bệnh hệ tiêu hoá
+                 // Group 106  Bệnh ruột thừa
+                 // Number 100
+                 new Disease { DiseaseId = ++_dID, EnglishName = "Acute appendicitis", VietnameseName = "Viêm ruột thừa cấp", Symptom = "Đang chờ cập nhập!", NumberId = 100 },
+                 new Disease { DiseaseId = ++_dID, EnglishName = "Acute appendicitis with generalized peritonitis", VietnameseName = "Viêm ruột thừa với viêm phúc mạc toàn bộ", Symptom = "Đang chờ cập nhập!", NumberId = 100 },
+                 new Disease { DiseaseId = ++_dID, EnglishName = "Acute appendicitis with peritoneal abscess", VietnameseName = "Viêm ruột thừa cấp với áp xe phúc mạc", Symptom = "Đang chờ cập nhập!", NumberId = 100 },
+                 new Disease { DiseaseId = ++_dID, EnglishName = "Acute appendicitis with generalized peritonitis", VietnameseName = "Viêm ruột thừa cấp tính kèm viêm phúc mạc toàn bộ", Symptom = "Đang chờ cập nhập!", NumberId = 100 },
+                 new Disease { DiseaseId = ++_dID, EnglishName = "Acute appendicitis with localized peritonitis", VietnameseName = "Viêm ruột thừa cấp tính kèm viêm phúc mạc khu trú", Symptom = "Đang chờ cập nhập!", NumberId = 100 },
+
+                 /// chapter 11 Bệnh hệ tiêu hoá
+                 // Group 107 Viêm ruột non và đại tràng không do nhiễm trùng
+                 // Number 101
+                 new Disease { DiseaseId = ++_dID, EnglishName = "Crohn s disease [regional enteritis]", VietnameseName = "Bệnh Crohn (viêm ruột từng vùng)", Symptom = "Đang chờ cập nhập!", NumberId = 101 },
+                 new Disease { DiseaseId = ++_dID, EnglishName = "Crohn s disease of small intestine", VietnameseName = "Bệnh Crohn của ruột non", Symptom = "Đang chờ cập nhập!", NumberId = 101 },
+                 new Disease { DiseaseId = ++_dID, EnglishName = "Crohn s disease of large intestine", VietnameseName = "Bênh Crohn của đại tràng", Symptom = "Đang chờ cập nhập!", NumberId = 101 },
+                 new Disease { DiseaseId = ++_dID, EnglishName = "Other Crohn s disease", VietnameseName = "Bệnh Crohn khác", Symptom = "Đang chờ cập nhập!", NumberId = 101 },
+                 new Disease { DiseaseId = ++_dID, EnglishName = "Crohn s disease, unspecified", VietnameseName = "Bệnh Crohn không đặc hiệu", Symptom = "Đang chờ cập nhập!", NumberId = 101 },
+
+
+
+                 /// chapter 12 Nhiễm trùng da và tổ chức dưới da
+                 // Group 108 Nhiễm khuẩn da và mô dưới da
+                 // Number 102
+                 new Disease { DiseaseId = ++_dID, EnglishName = "Staphylococcal scalded skin syndrome", VietnameseName = "Hội chứng bong vảy da do tụ cầu", Symptom = "Đang chờ cập nhập!", NumberId = 102 },
+                 new Disease { DiseaseId = ++_dID, EnglishName = "Impetigo", VietnameseName = "Chốc", Symptom = "Đang chờ cập nhập!", NumberId = 102 },
+                 new Disease { DiseaseId = ++_dID, EnglishName = "Impetigo [any organism] [any site]", VietnameseName = "Chốc [bất kỳ sinh vật nào] [cơ quan nào] [bất kỳ vị trí nào]", Symptom = "Đang chờ cập nhập!", NumberId = 102 },
+                 new Disease { DiseaseId = ++_dID, EnglishName = "Impetiginization of other dermatoses", VietnameseName = "Chốc hoá của các bệnh da khác ", Symptom = "Đang chờ cập nhập!", NumberId = 102 },
+                 new Disease { DiseaseId = ++_dID, EnglishName = "Cutaneous abscess, furuncle and carbuncle", VietnameseName = "Áp xe da, nhọt, nhọt cụm", Symptom = "Đang chờ cập nhập!", NumberId = 102 },
+
+                 /// chapter  12 Nhiễm trùng da và tổ chức dưới da
+                 // Group 109 Các bệnh khác của da và tổ chức dưới da
+                 // Number 103
+                 new Disease { DiseaseId = ++_dID, EnglishName = "Vitiligo", VietnameseName = "Bạch biến", Symptom = "Đang chờ cập nhập!", NumberId = 103 },
+                 new Disease { DiseaseId = ++_dID, EnglishName = "Other disorders of pigmentation", VietnameseName = "Bệnh rối loạn sắc tố khác", Symptom = "Đang chờ cập nhập!", NumberId = 103 },
+                 new Disease { DiseaseId = ++_dID, EnglishName = "Postinflammatory hyperpigmentation", VietnameseName = "Tăng sắc tố sau viêm", Symptom = "Đang chờ cập nhập!", NumberId = 103 },
+                 new Disease { DiseaseId = ++_dID, EnglishName = "Chloasma", VietnameseName = "Rám má", Symptom = "Đang chờ cập nhập!", NumberId = 103 },
+                 new Disease { DiseaseId = ++_dID, EnglishName = "Freckles", VietnameseName = "Tàn nhang", Symptom = "Đang chờ cập nhập!", NumberId = 103 },
+
+                 /// chapter 12 Nhiễm trùng da và tổ chức dưới da
+                 // Group 110 Các bệnh da và tổ chức dưới da liên quan đến bức xạ
+                 // Number 104
+                 new Disease { DiseaseId = ++_dID, EnglishName = "Sunburn", VietnameseName = "Bỏng nắng", Symptom = "Đang chờ cập nhập!", NumberId = 104 },
+                 new Disease { DiseaseId = ++_dID, EnglishName = "Sunburn of first degree", VietnameseName = "Bỏng nắng độ một", Symptom = "Đang chờ cập nhập!", NumberId = 104 },
+                 new Disease { DiseaseId = ++_dID, EnglishName = "Sunburn of second degree", VietnameseName = "Bỏng nắng độ hai", Symptom = "Đang chờ cập nhập!", NumberId = 104 },
+                 new Disease { DiseaseId = ++_dID, EnglishName = "Sunburn of third degree", VietnameseName = "Bỏng nắng độ ba", Symptom = "Đang chờ cập nhập!", NumberId = 104 },
+                 new Disease { DiseaseId = ++_dID, EnglishName = "Other sunburn", VietnameseName = "Bỏng nắng khác", Symptom = "Đang chờ cập nhập!", NumberId = 104 },
+
+                 /// chapter 12 Nhiễm trùng da và tổ chức dưới da
+                 // Group 111 Bệnh da bọng nước
+                 // Number 105
+                 new Disease { DiseaseId = ++_dID, EnglishName = "Pemphigus", VietnameseName = "Pemphigus", Symptom = "Đang chờ cập nhập!", NumberId = 105 },
+                 new Disease { DiseaseId = ++_dID, EnglishName = "Pemphigus vulgaris", VietnameseName = "Pemphigus thông thường", Symptom = "Đang chờ cập nhập!", NumberId = 105 },
+                 new Disease { DiseaseId = ++_dID, EnglishName = "Pemphigus vegetans", VietnameseName = "Pemphigus sùi", Symptom = "Đang chờ cập nhập!", NumberId = 105 },
+                 new Disease { DiseaseId = ++_dID, EnglishName = "Pemphigus foliaceus", VietnameseName = "Pemphigus vảy lá", Symptom = "Đang chờ cập nhập!", NumberId = 105 },
+                 new Disease { DiseaseId = ++_dID, EnglishName = "Brazilian pemphigus [fogo selvagem]", VietnameseName = "Pemphigus Brazil", Symptom = "Đang chờ cập nhập!", NumberId = 105 },
+
+                 /// chapter 12 Nhiễm trùng da và tổ chức dưới da
+                 // Group 112 Viêm da và chàm
+                 // Number 106
+                 new Disease { DiseaseId = ++_dID, EnglishName = "Atopic dermatitis", VietnameseName = "Viêm da cơ địa", Symptom = "Đang chờ cập nhập!", NumberId = 106 },
+                 new Disease { DiseaseId = ++_dID, EnglishName = "Besnier s prurigo", VietnameseName = "Sẩn ngứa Besnier", Symptom = "Đang chờ cập nhập!", NumberId = 106 },
+                 new Disease { DiseaseId = ++_dID, EnglishName = "Other atopic dermatitis", VietnameseName = "Viêm da cơ địa khác", Symptom = "Đang chờ cập nhập!", NumberId = 106 },
+                 new Disease { DiseaseId = ++_dID, EnglishName = "Atopic dermatitis, unspecified", VietnameseName = "Viêm da cơ địa, không đặc hiệu", Symptom = "Đang chờ cập nhập!", NumberId = 106 },
+                 new Disease { DiseaseId = ++_dID, EnglishName = "Seborrhoeic dermatitis", VietnameseName = "Viêm da dầu", Symptom = "Đang chờ cập nhập!", NumberId = 106 },
+
+                 /// chapter 12 Nhiễm trùng da và tổ chức dưới da
+                 // Group 113 Mày đay và hồng ban
+                 // Number 107
+                 new Disease { DiseaseId = ++_dID, EnglishName = "Urticaria", VietnameseName = "Mày đay", Symptom = "Đang chờ cập nhập!", NumberId = 107 },
+                 new Disease { DiseaseId = ++_dID, EnglishName = "Allergic urticaria", VietnameseName = "Mày đay dị ứng", Symptom = "Đang chờ cập nhập!", NumberId = 107 },
+                 new Disease { DiseaseId = ++_dID, EnglishName = "Idiopathic urticaria", VietnameseName = "Mày đay tự phát", Symptom = "Đang chờ cập nhập!", NumberId = 107 },
+                 new Disease { DiseaseId = ++_dID, EnglishName = "Urticaria due to cold and heat", VietnameseName = "Mày đay do lạnh và nóng", Symptom = "Đang chờ cập nhập!", NumberId = 107 },
+                 new Disease { DiseaseId = ++_dID, EnglishName = "Dermatographic urticaria", VietnameseName = "Da vẽ nổi", Symptom = "Đang chờ cập nhập!", NumberId = 107 },
+
+                 /// chapter 12 Nhiễm trùng da và tổ chức dưới da
+                 // Group 114  Các bệnh phần phụ của da
+                 // Number 108
+                 new Disease { DiseaseId = ++_dID, EnglishName = "Nail disorders", VietnameseName = "Các bệnh về móng", Symptom = "Đang chờ cập nhập!", NumberId = 108 },
+                 new Disease { DiseaseId = ++_dID, EnglishName = "Ingrowing nail", VietnameseName = "Móng chọc thịt", Symptom = "Đang chờ cập nhập!", NumberId = 108 },
+                 new Disease { DiseaseId = ++_dID, EnglishName = "Onycholysis", VietnameseName = "Móng tách", Symptom = "Đang chờ cập nhập!", NumberId = 108 },
+                 new Disease { DiseaseId = ++_dID, EnglishName = "Onychogryphosis", VietnameseName = "Móng quặp", Symptom = "Đang chờ cập nhập!", NumberId = 108 },
+                 new Disease { DiseaseId = ++_dID, EnglishName = "Nail dystrophy", VietnameseName = "Loạn dưỡng móng", Symptom = "Đang chờ cập nhập!", NumberId = 108 },
+
+                 /// chapter 12 Nhiễm trùng da và tổ chức dưới da
+                 // Group 115 Bệnh sẩn có vảy
+                 // Number 109
+                 new Disease { DiseaseId = ++_dID, EnglishName = "Psoriasis", VietnameseName = "Vảy nến", Symptom = "Đang chờ cập nhập!", NumberId = 109 },
+                 new Disease { DiseaseId = ++_dID, EnglishName = "Psoriasis vulgaris", VietnameseName = "Vảy nến thông thường", Symptom = "Đang chờ cập nhập!", NumberId = 109 },
+                 new Disease { DiseaseId = ++_dID, EnglishName = "Generalized pustular psoriasis", VietnameseName = "Vảy nến mủ toàn thân", Symptom = "Đang chờ cập nhập!", NumberId = 109 },
+                 new Disease { DiseaseId = ++_dID, EnglishName = "Acrodermatitis continua ", VietnameseName = "Viêm da đầu chi liên tục", Symptom = "Đang chờ cập nhập!", NumberId = 109 },
+                 new Disease { DiseaseId = ++_dID, EnglishName = "Pustulosis palmaris et plantaris", VietnameseName = "Vảy nến thể mủ ở gan bàn tay - bàn chân", Symptom = "Đang chờ cập nhập!", NumberId = 109 },
+
+                 /// chapter 13 Bệnh của hệ cơ – xương khớp và mô liên kết
+                 // Group 116 Bệnh của xương và sụn
+                 // Number 110
+                 new Disease { DiseaseId = ++_dID, EnglishName = "Osteoporosis with pathological fracture", VietnameseName = "Loãng xương có kèm gẫy xương bệnh lý", Symptom = "Đang chờ cập nhập!", NumberId = 110 },
+                 new Disease { DiseaseId = ++_dID, EnglishName = "Postmenopausal osteoporosis with pathological fracture", VietnameseName = "Loãng xương sau mãn kinh có kèm gẫy xương bệnh lý", Symptom = "Đang chờ cập nhập!", NumberId = 110 },
+                 new Disease { DiseaseId = ++_dID, EnglishName = "Postoophorectomy osteoporosis with pathological fracture", VietnameseName = "Loãng xương sau cắt buồng trứng có kèm gẫy xương bệnh lý", Symptom = "Đang chờ cập nhập!", NumberId = 110 },
+                 new Disease { DiseaseId = ++_dID, EnglishName = "Osteoporosis of disuse with pathological fracture", VietnameseName = "Loãng xương do bất động có kèm gẫy xương bệnh lý", Symptom = "Đang chờ cập nhập!", NumberId = 110 },
+                 new Disease { DiseaseId = ++_dID, EnglishName = "Postsurgical malabsorption osteoporosis with pathological fracture", VietnameseName = "Loãng xương do kém hấp thu sau phẫu thuật có kèm gẫy xương bệnh lý", Symptom = "Đang chờ cập nhập!", NumberId = 110 },
+
+                 /// chapter 13 Bệnh của hệ cơ – xương khớp và mô liên kết
+                 // Group 117 Bệnh khớp
+                 // Number 111
+                 new Disease { DiseaseId = ++_dID, EnglishName = "Pyogenic arthritis", VietnameseName = "", Symptom = "Đang chờ cập nhập!", NumberId = 111 },
+                 new Disease { DiseaseId = ++_dID, EnglishName = "Staphylococcal arthritis and polyarthritis", VietnameseName = "Viêm khớp và viêm đa khớp do tụ cầu khuẩn", Symptom = "Đang chờ cập nhập!", NumberId = 111 },
+                 new Disease { DiseaseId = ++_dID, EnglishName = "Pneumococcal arthritis and polyarthritis", VietnameseName = "Viêm khớp và viêm đa khớp do phế cầu", Symptom = "Đang chờ cập nhập!", NumberId = 111 },
+                 new Disease { DiseaseId = ++_dID, EnglishName = "Other streptococcal arthritis and polyarthritis", VietnameseName = "Viêm khớp và viêm đa khớp khác do liên cầu", Symptom = "Đang chờ cập nhập!", NumberId = 111 },
+                 new Disease { DiseaseId = ++_dID, EnglishName = "Arthritis and polyarthritis due to other specified bacterial agents", VietnameseName = "Viêm khớp và đa khớp do các vi khuẩn đặc hiệu khác", Symptom = "Đang chờ cập nhập!", NumberId = 111 },
+
+                 /// chapter 13 Bệnh của hệ cơ – xương khớp và mô liên kết
+                 // Group 118  Bệnh cột sống
+                 // Number 112
+                 new Disease { DiseaseId = ++_dID, EnglishName = "Kyphosis and lordosis", VietnameseName = "Gù và ưỡn cột sống", Symptom = "Đang chờ cập nhập!", NumberId = 112 },
+                 new Disease { DiseaseId = ++_dID, EnglishName = "Postural kyphosis", VietnameseName = "Gù do tư thế", Symptom = "Đang chờ cập nhập!", NumberId = 112 },
+                 new Disease { DiseaseId = ++_dID, EnglishName = "Other secondary kyphosis", VietnameseName = "Các gù cột sống thứ phát khác", Symptom = "Đang chờ cập nhập!", NumberId = 112 },
+                 new Disease { DiseaseId = ++_dID, EnglishName = "Other and unspecified kyphosis", VietnameseName = "Các gù không đặc hiệu khác", Symptom = "Đang chờ cập nhập!", NumberId = 112 },
+                 new Disease { DiseaseId = ++_dID, EnglishName = "Flatback syndrome", VietnameseName = "Hội chứng lưng phẳng", Symptom = "Đang chờ cập nhập!", NumberId = 112 },
+
+                 /// chapter 13 Bệnh của hệ cơ – xương khớp và mô liên kết
+                 // Group 119 Các bệnh khác của hệ cơ - xương - khớp và mô liên kết
+                 // Number 113
+                 new Disease { DiseaseId = ++_dID, EnglishName = "Other acquired deformities of musculoskeletal system and connective tissue", VietnameseName = "Các biến dạng mắc phải của hệ cơ-xương-khớp và mô liên kết", Symptom = "Đang chờ cập nhập!", NumberId = 113 },
+                 new Disease { DiseaseId = ++_dID, EnglishName = "Acquired deformity of nose", VietnameseName = "Biến dạng mắc phải của mũi", Symptom = "Đang chờ cập nhập!", NumberId = 113 },
+                 new Disease { DiseaseId = ++_dID, EnglishName = "Cauliflower ear", VietnameseName = "Vành tai sùi", Symptom = "Đang chờ cập nhập!", NumberId = 113 },
+                 new Disease { DiseaseId = ++_dID, EnglishName = "Other acquired deformity of head", VietnameseName = "Biến dạng mắc phải khác của đầu", Symptom = "Đang chờ cập nhập!", NumberId = 113 },
+                 new Disease { DiseaseId = ++_dID, EnglishName = "Acquired deformity of neck", VietnameseName = "Biến dạng mắc phải của cổ", Symptom = "Đang chờ cập nhập!", NumberId = 113 },
+
+                 /// chapter 13 Bệnh của hệ cơ – xương khớp và mô liên kết
+                 // Group 120 Bệnh mô liên kết hệ thống
+                 // Number 114
+                 new Disease { DiseaseId = ++_dID, EnglishName = "Polyarteritis nodosa and related conditions", VietnameseName = "Viêm nút quanh động mạch và bệnh liên quan", Symptom = "Đang chờ cập nhập!", NumberId = 114 },
+                 new Disease { DiseaseId = ++_dID, EnglishName = "Polyarteritis nodosa", VietnameseName = "Viêm đa động mạch hình nút", Symptom = "Đang chờ cập nhập!", NumberId = 114 },
+                 new Disease { DiseaseId = ++_dID, EnglishName = "Polyarteritis with lung involvement [Churg-Strauss]", VietnameseName = "Viêm đa động mạch có tổn thương phổi (Churg-Strauss)", Symptom = "Đang chờ cập nhập!", NumberId = 114 },
+                 new Disease { DiseaseId = ++_dID, EnglishName = "Juvenile polyarteritis", VietnameseName = "Viêm đa động mạch trẻ em", Symptom = "Đang chờ cập nhập!", NumberId = 114 },
+                 new Disease { DiseaseId = ++_dID, EnglishName = "Mucocutaneous lymph node syndrome [Kawasaki]", VietnameseName = "Hội chứng hạch-da-niêm mạc (Kawasaki)", Symptom = "Đang chờ cập nhập!", NumberId = 114 },
+
+                 /// chapter 13 Bệnh của hệ cơ – xương khớp và mô liên kết
+                 // Group 121 Các bệnh lý mô mềm
+                 // Number 115
+                 new Disease { DiseaseId = ++_dID, EnglishName = "Myositis", VietnameseName = "Viêm cơ", Symptom = "Đang chờ cập nhập!", NumberId = 115 },
+                 new Disease { DiseaseId = ++_dID, EnglishName = "Infective myositis", VietnameseName = "Viêm cơ nhiễm khuẩn", Symptom = "Đang chờ cập nhập!", NumberId = 115 },
+                 new Disease { DiseaseId = ++_dID, EnglishName = "Interstitial myositis", VietnameseName = "Viêm tổ chức kẽ của cơ", Symptom = "Đang chờ cập nhập!", NumberId = 115 },
+                 new Disease { DiseaseId = ++_dID, EnglishName = "Foreign body granuloma of soft tissue, not elsewhere classified", VietnameseName = "U hạt mô mềm do dị vật, không được xếp loại ở mụckhác", Symptom = "Đang chờ cập nhập!", NumberId = 115 },
+                 new Disease { DiseaseId = ++_dID, EnglishName = "Other myositis", VietnameseName = "Các loại viêm cơ khác", Symptom = "Đang chờ cập nhập!", NumberId = 115 },
+
+                 /// chapter 14 Bệnh hệ sinh dục – Tiết niệu
+                 // Group 122 Bệnh cầu thận
+                 // Number 116
+                 new Disease { DiseaseId = ++_dID, EnglishName = "Acute nephritic syndrome", VietnameseName = "Hội chứng viêm cầu thận cấp", Symptom = "Đang chờ cập nhập!", NumberId = 116 },
+                 new Disease { DiseaseId = ++_dID, EnglishName = "Rapidly progressive nephritic syndrome", VietnameseName = "Hội chứng viêm thận tiến triển nhanh", Symptom = "Đang chờ cập nhập!", NumberId = 116 },
+                 new Disease { DiseaseId = ++_dID, EnglishName = "Recurrent and persistent haematuria", VietnameseName = "Đái máu dai dẳng và tái phát", Symptom = "Đang chờ cập nhập!", NumberId = 116 },
+                 new Disease { DiseaseId = ++_dID, EnglishName = "Chronic nephritic syndrome", VietnameseName = "Hội chứng viêm thận mạn", Symptom = "Đang chờ cập nhập!", NumberId = 116 },
+                 new Disease { DiseaseId = ++_dID, EnglishName = "Nephrotic syndrome", VietnameseName = "Hội chứng thận hư", Symptom = "Đang chờ cập nhập!", NumberId = 116 },
+
+                 /// chapter 14 Bệnh hệ sinh dục – Tiết niệu
+                 // Group 123  Sỏi tiết niệu
+                 // Number 117
+                 new Disease { DiseaseId = ++_dID, EnglishName = "Calculus of kidney and ureter", VietnameseName = "Sỏi thận và niệu quản ", Symptom = "Đang chờ cập nhập!", NumberId = 117 },
+                 new Disease { DiseaseId = ++_dID, EnglishName = "Calculus of kidney", VietnameseName = "Sỏi thận", Symptom = "Đang chờ cập nhập!", NumberId = 117 },
+                 new Disease { DiseaseId = ++_dID, EnglishName = "Calculus of ureter", VietnameseName = "Sỏi niệu quản", Symptom = "Đang chờ cập nhập!", NumberId = 117 },
+                 new Disease { DiseaseId = ++_dID, EnglishName = "Calculus of kidney with calculus of ureter", VietnameseName = "Sỏi thận và sỏi niệu quản", Symptom = "Đang chờ cập nhập!", NumberId = 117 },
+                 new Disease { DiseaseId = ++_dID, EnglishName = "Urinary calculus, unspecified", VietnameseName = "Sỏi tiết niệu, không đặc hiệu", Symptom = "Đang chờ cập nhập!", NumberId = 118 },
+
+                 /// chapter 14 Bệnh hệ sinh dục – Tiết niệu
+                 // Group 124  Các rối loạn khác của hệ sinh dục tiết niệu
+                 // Number 118
+                 new Disease { DiseaseId = ++_dID, EnglishName = "Postprocedural disorders of genitourinary system, not elsewhere classified", VietnameseName = "Các rối loạn sau can thiệp của hệ sinh dục tiết niệu không phân loại nơi khác", Symptom = "Đang chờ cập nhập!", NumberId = 118 },
+                 new Disease { DiseaseId = ++_dID, EnglishName = "Postprocedural renal failure", VietnameseName = "Suy thận sau can thiệp", Symptom = "Đang chờ cập nhập!", NumberId = 118 }, 
+                 new Disease { DiseaseId = ++_dID, EnglishName = "Postprocedural urethral stricture", VietnameseName = "Hẹp niệu đạo sau can thiệp", Symptom = "Đang chờ cập nhập!", NumberId = 118 },
+                 new Disease { DiseaseId = ++_dID, EnglishName = "Postoperative adhesions of vagina", VietnameseName = "Dính âm đạo sau phẫu thuật", Symptom = "Đang chờ cập nhập!", NumberId = 118 },
+                 new Disease { DiseaseId = ++_dID, EnglishName = "Prolapse of vaginal vault after hysterectomy", VietnameseName = "Sa vòm âm đạo sau cắt tử cung", Symptom = "Đang chờ cập nhập!", NumberId = 118 },
+
+                 /// chapter 14 Bệnh hệ sinh dục – Tiết niệu
+                 // Group 125 Biến đổi không do viêm của đường sinh dục nữ
+                 // Number 119
+                 new Disease { DiseaseId = ++_dID, EnglishName = "Endometriosis", VietnameseName = "Bệnh lạc nội mạc tử cung", Symptom = "Đang chờ cập nhập!", NumberId = 119 },
+                 new Disease { DiseaseId = ++_dID, EnglishName = "Endometriosis of uterus", VietnameseName = "Bệnh lạc nội mạc tử cung", Symptom = "Đang chờ cập nhập!", NumberId = 119 },
+                 new Disease { DiseaseId = ++_dID, EnglishName = "Endometriosis of ovary", VietnameseName = "Bệnh lạc nội mạc tử cung ở buồng trứng", Symptom = "Đang chờ cập nhập!", NumberId = 119 },
+                 new Disease { DiseaseId = ++_dID, EnglishName = "Endometriosis of fallopian tube", VietnameseName = "Bệnh lạc nội mạc tử cung ở vòi trứng", Symptom = "Đang chờ cập nhập!", NumberId = 119 },
+                 new Disease { DiseaseId = ++_dID, EnglishName = "Endometriosis of pelvic peritoneum", VietnameseName = "Bệnh lạc nội mạc tử cung ở phúc mạc chậu", Symptom = "Đang chờ cập nhập!", NumberId = 119 },
+
+                 /// chapter 14 Bệnh hệ sinh dục – Tiết niệu
+                 // Group 126 Bệnh cơ quan sinh dục nam
+                 // Number 120
+                 new Disease { DiseaseId = ++_dID, EnglishName = "Hyperplasia of prostate", VietnameseName = "Tăng sản xuất tuyến tiền liệt ", Symptom = "Đang chờ cập nhập!", NumberId = 120 },
+                 new Disease { DiseaseId = ++_dID, EnglishName = "Inflammatory diseases of prostate", VietnameseName = "Các bệnh viêm tuyến tiền liệt", Symptom = "Đang chờ cập nhập!", NumberId = 120 },
+                 new Disease { DiseaseId = ++_dID, EnglishName = "Acute prostatitis", VietnameseName = "Viêm tuyến tiền liệt cấp", Symptom = "Đang chờ cập nhập!", NumberId = 120 },
+                 new Disease { DiseaseId = ++_dID, EnglishName = "Chronic prostatitis", VietnameseName = "Viêm tuyến tiền liệt mạn", Symptom = "Đang chờ cập nhập!", NumberId = 120 },
+                 new Disease { DiseaseId = ++_dID, EnglishName = "Prostatocystitis", VietnameseName = "Viêm tuyến tiền liệt - bàng quang", Symptom = "Đang chờ cập nhập!", NumberId = 120 },
+
+                 /// chapter 14 Bệnh hệ sinh dục – Tiết niệu
+                 // Group 127 Các bệnh khác của hệ tiết niệu
+                 // Number 121
+                 new Disease { DiseaseId = ++_dID, EnglishName = "Cystitis", VietnameseName = "Viêm bàng quang", Symptom = "Đang chờ cập nhập!", NumberId = 121 },
+                 new Disease { DiseaseId = ++_dID, EnglishName = "Acute cystitis", VietnameseName = "Viêm bàng quang cấp", Symptom = "Đang chờ cập nhập!", NumberId = 121 },
+                 new Disease { DiseaseId = ++_dID, EnglishName = "Interstitial cystitis (chronic)", VietnameseName = "Viêm bàng quang kẽ (mạn)", Symptom = "Đang chờ cập nhập!", NumberId = 121 },
+                 new Disease { DiseaseId = ++_dID, EnglishName = "Other chronic cystitis", VietnameseName = "Viêm bàng quang mạn khác", Symptom = "Đang chờ cập nhập!", NumberId = 121 },
+                 new Disease { DiseaseId = ++_dID, EnglishName = "Trigonitis", VietnameseName = "Viêm tam giác bàng quang", Symptom = "Đang chờ cập nhập!", NumberId = 121 },
+
+                 /// chapter 14 Bệnh hệ sinh dục – Tiết niệu
+                 // Group 128 Bệnh kẽ ống thận
+                 // Number 122
+                 new Disease { DiseaseId = ++_dID, EnglishName = "Acute tubulo-interstitial nephritis", VietnameseName = "Viêm kẽ ống thận cấp", Symptom = "Đang chờ cập nhập!", NumberId = 122 },
+                 new Disease { DiseaseId = ++_dID, EnglishName = "Chronic tubulo-interstitial nephritis", VietnameseName = "Viêm kẽ ống thận mạn", Symptom = "Đang chờ cập nhập!", NumberId = 122 },
+                 new Disease { DiseaseId = ++_dID, EnglishName = "Nonobstructive reflux-associated chronic pyelonephritis", VietnameseName = "Viêm thận bể thận mạn có trào ngược không tắc nghẽn", Symptom = "Đang chờ cập nhập!", NumberId = 122 },
+                 new Disease { DiseaseId = ++_dID, EnglishName = "Chronic obstructive pyelonephritis", VietnameseName = "Viêm thận bể thận mạn có tắc nghẽn", Symptom = "Đang chờ cập nhập!", NumberId = 122 },
+                 new Disease { DiseaseId = ++_dID, EnglishName = "Other chronic tubulo-interstitial nephritis", VietnameseName = "Viêm kẽ ống thận mạn khác", Symptom = "Đang chờ cập nhập!", NumberId = 122 },
+
+                 /// chapter 14 Bệnh hệ sinh dục – Tiết niệu
+                 // Group 129 Suy thận
+                 // Number 123
+                 new Disease { DiseaseId = ++_dID, EnglishName = "Acute renal failure", VietnameseName = "Suy thận cấp", Symptom = "Đang chờ cập nhập!", NumberId = 123 },
+                 new Disease { DiseaseId = ++_dID, EnglishName = "Acute renal failure with tubular necrosis", VietnameseName = "Suy thận cấp có hoại tử ống thận", Symptom = "Đang chờ cập nhập!", NumberId = 123 },
+                 new Disease { DiseaseId = ++_dID, EnglishName = "Acute renal failure with acute cortical necrosis", VietnameseName = "Suy thận cấp có hoại tử cấp vỏ thận", Symptom = "Đang chờ cập nhập!", NumberId = 123 },
+                 new Disease { DiseaseId = ++_dID, EnglishName = "Acute renal failure with medullary necrosis", VietnameseName = "Suy thận cấp có hoại tử tuỷ thận", Symptom = "Đang chờ cập nhập!", NumberId = 123 },
+                 new Disease { DiseaseId = ++_dID, EnglishName = "Other acute renal failure", VietnameseName = "Suy thận cấp khác", Symptom = "Đang chờ cập nhập!", NumberId = 123 },
+
+                 /// chapter 14 Bệnh hệ sinh dục – Tiết niệu
+                 // Group 130 Các rối loạn khác của thận và niệu quản
+                 // Number 124
+                 new Disease { DiseaseId = ++_dID, EnglishName = "Disorders resulting from impaired renal tubular function", VietnameseName = "Rối loạn do suy giảm chức năng ống thận", Symptom = "Đang chờ cập nhập!", NumberId = 124 },
+                 new Disease { DiseaseId = ++_dID, EnglishName = "Renal osteodystrophy", VietnameseName = "Loạn dưỡng xương do thận", Symptom = "Đang chờ cập nhập!", NumberId = 124 },
+                 new Disease { DiseaseId = ++_dID, EnglishName = "Nephrogenic diabetes insipidus", VietnameseName = "Đái tháo nhạt do thận", Symptom = "Đang chờ cập nhập!", NumberId = 124 },
+                 new Disease { DiseaseId = ++_dID, EnglishName = "Other disorders resulting from impaired renal tubular function", VietnameseName = "Các rối loạn khác do suy giảm chức năng ống thận", Symptom = "Đang chờ cập nhập!", NumberId = 124 },
+                 new Disease { DiseaseId = ++_dID, EnglishName = "Disorder resulting from impaired renal tubular function, unspecified", VietnameseName = "Rối loạn do suy giảm chức năng ống thận, không đặc hiệu", Symptom = "Đang chờ cập nhập!", NumberId = 124 },
+
+                 /// chapter 14 Bệnh hệ sinh dục – Tiết niệu
+                 // Group 131 Các biến đổi của vú
+                 // Number 125
+                 new Disease { DiseaseId = ++_dID, EnglishName = "Benign mammary dysplasia", VietnameseName = "Loạn sản vú lành tính", Symptom = "Đang chờ cập nhập!", NumberId = 125 },
+                 new Disease { DiseaseId = ++_dID, EnglishName = "Solitary cyst of breast", VietnameseName = "Nang đơn vú   ", Symptom = "Đang chờ cập nhập!", NumberId = 125 },
+                 new Disease { DiseaseId = ++_dID, EnglishName = "Diffuse cystic mastopathy", VietnameseName = "Nang lan toả vú", Symptom = "Đang chờ cập nhập!", NumberId = 125 },
+                 new Disease { DiseaseId = ++_dID, EnglishName = "Fibroadenosis of breast", VietnameseName = "U xơ tuyến vú", Symptom = "Đang chờ cập nhập!", NumberId = 125 },
+                 new Disease { DiseaseId = ++_dID, EnglishName = "Fibrosclerosis of breast", VietnameseName = "Xơ teo tuyến vú", Symptom = "Đang chờ cập nhập!", NumberId = 125 },
+
+                 /// chapter 14 Bệnh hệ sinh dục – Tiết niệu
+                 // Group 132 Viêm cơ quan sinh dục vùng chậu nữ
+                 // Number 126
+                 new Disease { DiseaseId = ++_dID, EnglishName = "Salpingitis and oophoritis", VietnameseName = "Viêm vòi và viêm buồng trứng", Symptom = "Đang chờ cập nhập!", NumberId = 126 },
+                 new Disease { DiseaseId = ++_dID, EnglishName = "Acute salpingitis and oophoritis", VietnameseName = "Viêm vòi và viêm buồng trứng cấp", Symptom = "Đang chờ cập nhập!", NumberId = 126 },
+                 new Disease { DiseaseId = ++_dID, EnglishName = "Chronic salpingitis and oophoritis", VietnameseName = "Viêm vòi và viêm buồng trứng mạn", Symptom = "Đang chờ cập nhập!", NumberId = 126 },
+                 new Disease { DiseaseId = ++_dID, EnglishName = "Salpingitis and oophoritis, unspecified", VietnameseName = "Viêm vòi và buồng trứng, không đặc hiệu", Symptom = "Đang chờ cập nhập!", NumberId = 126 },
+                 new Disease { DiseaseId = ++_dID, EnglishName = "Inflammatory disease of uterus, except cervix", VietnameseName = "Viêm tử cung, trừ cổ tử cung", Symptom = "Đang chờ cập nhập!", NumberId = 126 },
+
+                 /// chapter 15 Thai nghén, sinh đẻ và hậu sản
+                 // Group 133 Biến chứng của chuyển dạ và đẻ
+                 // Number 127
+                 new Disease { DiseaseId = ++_dID, EnglishName = "Preterm labour", VietnameseName = "Chuyển dạ sớm và đẻ", Symptom = "Đang chờ cập nhập!", NumberId = 127 },
+                 new Disease { DiseaseId = ++_dID, EnglishName = "Preterm labour without delivery", VietnameseName = "Chuyển dạ sớm không đẻ", Symptom = "Đang chờ cập nhập!", NumberId = 127 },
+                 new Disease { DiseaseId = ++_dID, EnglishName = "Preterm labour with preterm delivery", VietnameseName = "Chuyển dạ sớm và đẻ sớm ", Symptom = "Đang chờ cập nhập!", NumberId = 127 },
+                 new Disease { DiseaseId = ++_dID, EnglishName = "Preterm labour with term delivery", VietnameseName = "Chuyển dạ sớm và đẻ đúng kỳ", Symptom = "Đang chờ cập nhập!", NumberId = 127 },
+                 new Disease { DiseaseId = ++_dID, EnglishName = "Preterm delivery without spontaneous labour", VietnameseName = "Đẻ sớm không có chuyển dạ tự nhiên", Symptom = "Đang chờ cập nhập!", NumberId = 127 },
+
+                 /// chapter 15 Thai nghén, sinh đẻ và hậu sản
+                 // Group 134 Cuộc đẻ
+                 // Number 128
+                 new Disease { DiseaseId = ++_dID, EnglishName = "Single spontaneous delivery", VietnameseName = "Đẻ thường một thai", Symptom = "Đang chờ cập nhập!", NumberId = 128 },
+                 new Disease { DiseaseId = ++_dID, EnglishName = "Spontaneous vertex delivery", VietnameseName = "Đẻ thường ngôi đầu", Symptom = "Đang chờ cập nhập!", NumberId = 128 },
+                 new Disease { DiseaseId = ++_dID, EnglishName = "Spontaneous breech delivery", VietnameseName = "Đẻ thường ngôi mông", Symptom = "Đang chờ cập nhập!", NumberId = 128 },
+                 new Disease { DiseaseId = ++_dID, EnglishName = "Other single spontaneous delivery", VietnameseName = "Đẻ thường một thai khác", Symptom = "Đang chờ cập nhập!", NumberId = 128 },
+                 new Disease { DiseaseId = ++_dID, EnglishName = "Single spontaneous delivery, unspecified", VietnameseName = "Đẻ thường một thai chưa xác định rõ", Symptom = "Đang chờ cập nhập!", NumberId = 128 },
+
+                 /// chapter 15 Thai nghén, sinh đẻ và hậu sản
+                 // Group 135 Phù, protein niệu và tăng huyết áp trong khi có thai, khi đẻ và sau đẻ
+                 // Number 129
+                 new Disease { DiseaseId = ++_dID, EnglishName = "Pre-existing hypertension complicating pregnancy, childbirth and the puerperium", VietnameseName = "Tăng huyết áp có sẵn gây biến chứng cho thai nghén, cuộc đẻ và sau khi đẻ", Symptom = "Đang chờ cập nhập!", NumberId = 129 },
+                 new Disease { DiseaseId = ++_dID, EnglishName = "Pre-existing essential hypertension complicating pregnancy, childbirth and the puerperium", VietnameseName = "Tăng huyết áp chủ yếu có sẵn gây biến chứng cho thai nghén, khi đẻ và sau khi đẻ", Symptom = "Đang chờ cập nhập!", NumberId = 129 },
+                 new Disease { DiseaseId = ++_dID, EnglishName = "Pre-existing hypertensive heart disease complicating pregnancy, childbirth and the puerperium", VietnameseName = "Bệnh tim do tăng huyết áp có sẵn gây biến chứng cho thai nghén, khi đẻ và sau khi đẻ", Symptom = "Đang chờ cập nhập!", NumberId = 129 },
+                 new Disease { DiseaseId = ++_dID, EnglishName = "Pre-existing hypertensive renal disease complicating pregnancy, childbirth and the puerperium", VietnameseName = "Bệnh thận do tăng huyết áp có sẵn gây biến chứng cho thai nghén, khi đẻ và sau khi đẻ", Symptom = "Đang chờ cập nhập!", NumberId = 129 },
+                 new Disease { DiseaseId = ++_dID, EnglishName = "Pre-existing hypertensive heart and renal disease complicating pregnancy, childbirth and the puerperium", VietnameseName = "Bệnh tim và thận do tăng huyết áp có sẵn gây biến chứng cho thai nghén, khi đẻ và sau khi đẻ", Symptom = "Đang chờ cập nhập!", NumberId = 129 },
+
+                 /// chapter 15 Thai nghén, sinh đẻ và hậu sản
+                 // Group 136 Chăm sóc bà mẹ liên quan đến thai, buồng ối và có thể là các vấn đề khi đẻ
+                 // Number 130
+                 new Disease { DiseaseId = ++_dID, EnglishName = "Multiple gestation", VietnameseName = "Đa thai", Symptom = "Đang chờ cập nhập!", NumberId = 130 },
+                 new Disease { DiseaseId = ++_dID, EnglishName = "Twin pregnancy", VietnameseName = "Song thai", Symptom = "Đang chờ cập nhập!", NumberId = 130 },
+                 new Disease { DiseaseId = ++_dID, EnglishName = "Triplet pregnancy", VietnameseName = "Thai ba", Symptom = "Đang chờ cập nhập!", NumberId = 130 },
+                 new Disease { DiseaseId = ++_dID, EnglishName = "Quadruplet pregnancy", VietnameseName = "Thai tư", Symptom = "Đang chờ cập nhập!", NumberId = 130 },
+                 new Disease { DiseaseId = ++_dID, EnglishName = "Other multiple gestation", VietnameseName = "Đa thai khác", Symptom = "Đang chờ cập nhập!", NumberId = 130 },
+
+                 /// chapter 15 Thai nghén, sinh đẻ và hậu sản
+                 // Group 137 Các bệnh lý khác của bà mẹ chủ yếu liên quan đến thai nghén
+                 // Number 131
+                 new Disease { DiseaseId = ++_dID, EnglishName = "Haemorrhage in early pregnancy", VietnameseName = "Ra máu trong thời kỳ đầu thai nghén", Symptom = "Đang chờ cập nhập!", NumberId = 131 },
+                 new Disease { DiseaseId = ++_dID, EnglishName = "Threatened abortion", VietnameseName = "Doạ sẩy thai", Symptom = "Đang chờ cập nhập!", NumberId = 131 },
+                 new Disease { DiseaseId = ++_dID, EnglishName = "Other haemorrhage in early pregnancy", VietnameseName = "Các ra máu khác trong thời kỳ đầu thai nghén", Symptom = "Đang chờ cập nhập!", NumberId = 131 },
+                 new Disease { DiseaseId = ++_dID, EnglishName = "Haemorrhage in early pregnancy, unspecified", VietnameseName = "Ra máu trong thời kỳ đầu thai nghén, không đặc hiệu", Symptom = "Đang chờ cập nhập!", NumberId = 131 },
+                 new Disease { DiseaseId = ++_dID, EnglishName = "Excessive vomiting in pregnancy", VietnameseName = "Nôn quá mức trong lúc có thai", Symptom = "Đang chờ cập nhập!", NumberId = 131 },
+
+                 /// chapter 15 Thai nghén, sinh đẻ và hậu sản
+                 // Group 138 Thai nghén và sẩy thai
+                 // Number 132
+                 new Disease { DiseaseId = ++_dID, EnglishName = "Ectopic pregnancy", VietnameseName = "Chửa ngoài tử cung", Symptom = "Đang chờ cập nhập!", NumberId = 132 },
+                 new Disease { DiseaseId = ++_dID, EnglishName = "Abdominal pregnancy", VietnameseName = "Chửa trong ổ bụng", Symptom = "Đang chờ cập nhập!", NumberId = 132 },
+                 new Disease { DiseaseId = ++_dID, EnglishName = "Tubal pregnancy", VietnameseName = "Chửa ở vòi tử cung", Symptom = "Đang chờ cập nhập!", NumberId = 132 },
+                 new Disease { DiseaseId = ++_dID, EnglishName = "Ovarian pregnancy", VietnameseName = "Chửa ở buồng trứng", Symptom = "Đang chờ cập nhập!", NumberId = 132 },
+                 new Disease { DiseaseId = ++_dID, EnglishName = "Other ectopic pregnancy", VietnameseName = "Chửa ngoài tử cung khác", Symptom = "Đang chờ cập nhập!", NumberId = 132 },
+
+                 /// chapter 15 Thai nghén, sinh đẻ và hậu sản
+                 // Group 139 Biến chứng chủ yếu liên quan đến sau đẻ
+                 // Number 133
+                 new Disease { DiseaseId = ++_dID, EnglishName = "Puerperal pepsis", VietnameseName = "Nhiễm khuẩn sau đẻ", Symptom = "Đang chờ cập nhập!", NumberId = 133 },
+                 new Disease { DiseaseId = ++_dID, EnglishName = "Other puerperal infections", VietnameseName = "Nhiễm khuẩn sau đẻ khác", Symptom = "Đang chờ cập nhập!", NumberId = 133 },
+                 new Disease { DiseaseId = ++_dID, EnglishName = "Infection of obstetric surgical wound", VietnameseName = "Nhiễm khuẩn vết thương do phẫu thuật sản khoa", Symptom = "Đang chờ cập nhập!", NumberId = 133 },
+                 new Disease { DiseaseId = ++_dID, EnglishName = "Other infection of genital tract following delivery", VietnameseName = "Nhiễm khuẩn đường sinh dục khác sau đẻ", Symptom = "Đang chờ cập nhập!", NumberId = 133 },
+                 new Disease { DiseaseId = ++_dID, EnglishName = "Urinary tract infection following delivery", VietnameseName = "Nhiễm khuẩn đường tiết niệu sau đẻ", Symptom = "Đang chờ cập nhập!", NumberId = 133 },
+
+                 /// chapter 15 Thai nghén, sinh đẻ và hậu sản
+                 // Group 140  Các tình trạng sản khoa khác, chưa được phân loại ở phần khác (O94-O99)
+                 // Number 134
+                 new Disease { DiseaseId = ++_dID, EnglishName = "Sequelae of complication of prenancy, childbirth and the puerperium", VietnameseName = "Di chứng của biến chứng do thai nghén, sinh đẻ và sau đẻ", Symptom = "Đang chờ cập nhập!", NumberId = 134 },
+                 new Disease { DiseaseId = ++_dID, EnglishName = "Obstetric death of unspecified cause", VietnameseName = "Tử vong sản khoa vi nguyên nhân chưa xác định rõ", Symptom = "Đang chờ cập nhập!", NumberId = 134 },
+                 new Disease { DiseaseId = ++_dID, EnglishName = "Death from any obstetric cause occurring more than 42 days but less than one year after deliver", VietnameseName = "Tử vong vì bất kỳ nguyên nhân sản khoa nào khác sau khi đẻ 42 ngày và dưới 1 năm", Symptom = "Đang chờ cập nhập!", NumberId = 134 },
+                 new Disease { DiseaseId = ++_dID, EnglishName = "Death from direct obstetric cause", VietnameseName = "Tử vong do nguyên nhân sản khoa trực tiếp", Symptom = "Đang chờ cập nhập!", NumberId = 134 },
+                 new Disease { DiseaseId = ++_dID, EnglishName = "Death from indirect obstetric cause", VietnameseName = "Tử vong do nguyên nhân sản khoa gián tiếp", Symptom = "Đang chờ cập nhập!", NumberId = 134 },
+
+                 /// chapter 16 Một số bệnh lý xuất phát trong thời kỳ chu sinh
+                 // Group 141 Thai nhi và trẻ sơ sinh bị ảnh hưởng do các yếu tố về phía mẹ và bởi các biến chứng của thời kỳ thai nghén, chuyển dạ và cuộc đẻ
+                 // Number 135
+                 new Disease { DiseaseId = ++_dID, EnglishName = "Fetus and newborn affected by maternal conditions that may be unrelated to present pregnancy", VietnameseName = "Thai nhi và trẻ sơ sinh bị ảnh hưởng do các yếu tố của mẹ có thể không liên quan đến lần thai nghén hiện nay", Symptom = "Đang chờ cập nhập!", NumberId = 135 },
+                 new Disease { DiseaseId = ++_dID, EnglishName = "Fetus and newborn affected by maternal hypertensive disorders", VietnameseName = "Thai nhi và trẻ sơ sinh ảnh hưởng do các rối loạn tăng huyết áp của mẹ", Symptom = "Đang chờ cập nhập!", NumberId = 135 },
+                 new Disease { DiseaseId = ++_dID, EnglishName = "Fetus and newborn affected by maternal renal and urinary tract diseases", VietnameseName = "Thai nhi và trẻ sơ sinh bị ảnh hưởng do bệnh thận và bệnh đường tiết niệu của mẹ", Symptom = "Đang chờ cập nhập!", NumberId = 135 },
+                 new Disease { DiseaseId = ++_dID, EnglishName = "Fetus and newborn affected by maternal infectious and parasitic diseases", VietnameseName = "Thai nhi và trẻ sơ sinh bị ảnh hưởng do các bệnh nhiễm khuẩn và nhiễm ký sinh trùng của mẹ", Symptom = "Đang chờ cập nhập!", NumberId = 135 },
+                 new Disease { DiseaseId = ++_dID, EnglishName = "Fetus and newborn affected by other maternal circulatory and respiratory diseases", VietnameseName = "Thai nhi và trẻ sơ sinh bị ảnh hưởng do các bệnh lý khác về tuần hoàn và hô hấp của mẹ", Symptom = "Đang chờ cập nhập!", NumberId = 135 },
+
+                 /// chapter 16 Một số bệnh lý xuất phát trong thời kỳ chu sinh
+                 // Group 142 Các rối loạn nội tiết, chuyển hóa tạm thời đặc hiệu cho thai và trẻ sơ sinh
+                 // Number 136
+                 new Disease { DiseaseId = ++_dID, EnglishName = "Transitory disorders of carbohydrate metabolism specific to fetus and newborn", VietnameseName = "Các rối loạn chuyển hóa carbon hydrat thoáng qua đặc hiệu với thai và trẻ sơ sinh", Symptom = "Đang chờ cập nhập!", NumberId = 136 },
+                 new Disease { DiseaseId = ++_dID, EnglishName = "Syndrome of infant of mother with gestational diabetes", VietnameseName = "Hội chứng trẻ sơ sinh của bà mẹ bị đái tháo đường thai nghén", Symptom = "Đang chờ cập nhập!", NumberId = 136 },
+                 new Disease { DiseaseId = ++_dID, EnglishName = "Syndrome of infant of a diabetic motherSyndrome of infant of a diabetic mother", VietnameseName = "Hội chứng trẻ sơ sinh của bà mẹ bị đái tháo đường", Symptom = "Đang chờ cập nhập!", NumberId = 136 },
+                 new Disease { DiseaseId = ++_dID, EnglishName = "Neonatal diabetes mellitus ", VietnameseName = "Đái tháo đường sơ sinh", Symptom = "Đang chờ cập nhập!", NumberId = 136 },
+                 new Disease { DiseaseId = ++_dID, EnglishName = "Iatrogenic neonatal hypoglycaemia", VietnameseName = "Hạ đường huyết sơ sinh do thầy thuốc", Symptom = "Đang chờ cập nhập!", NumberId = 136 },
+
+                 /// chapter 16 Một số bệnh lý xuất phát trong thời kỳ chu sinh
+                 // Group 143 Rối loạn chảy máu và huyết học của thai và trẻ sơ sinh
+                 // Number 137
+                 new Disease { DiseaseId = ++_dID, EnglishName = "Fetal blood loss", VietnameseName = "Mất máu thai", Symptom = "Đang chờ cập nhập!", NumberId = 137 },
+                 new Disease { DiseaseId = ++_dID, EnglishName = "Fetal blood loss from vasa praevia", VietnameseName = "Mất máu thai vì mạch máu tiền đạo", Symptom = "Đang chờ cập nhập!", NumberId = 137 },
+                 new Disease { DiseaseId = ++_dID, EnglishName = "Fetal blood loss from ruptured cord", VietnameseName = "Mất máu thai vì vỡ dây rốn", Symptom = "Đang chờ cập nhập!", NumberId = 137 },
+                 new Disease { DiseaseId = ++_dID, EnglishName = "Fetal blood loss from placenta", VietnameseName = "Mất máu thai từ rau    ", Symptom = "Đang chờ cập nhập!", NumberId = 137 },
+                 new Disease { DiseaseId = ++_dID, EnglishName = "Haemorrhage into co-twin", VietnameseName = "Chảy máu giữa hai thai sinh đôi (truyền máu thai sang thai)", Symptom = "Đang chờ cập nhập!", NumberId = 137 },
+
+                 /// chapter 16 Một số bệnh lý xuất phát trong thời kỳ chu sinh
+                 // Group 144 Chấn thương khi sinh
+                 // Number 138
+                 new Disease { DiseaseId = ++_dID, EnglishName = "Intracranial laceration and haemorrhage due to birth injury", VietnameseName = "Rách, vỡ và chảy máu nội sọ do chấn thương khi sinh", Symptom = "Đang chờ cập nhập!", NumberId = 138 },
+                 new Disease { DiseaseId = ++_dID, EnglishName = "Subdural haemorrhage due to birth injury", VietnameseName = "Chảy máu dưới màng cứng do chấn thương khi sinh", Symptom = "Đang chờ cập nhập!", NumberId = 138 },
+                 new Disease { DiseaseId = ++_dID, EnglishName = "Cerebral haemorrhage due to birth injury", VietnameseName = "Chảy máu não do chấn thương khi sinh", Symptom = "Đang chờ cập nhập!", NumberId = 138 },
+                 new Disease { DiseaseId = ++_dID, EnglishName = "Intraventricular haemorrhage due to birth injury", VietnameseName = "Chảy máu trong não thất do chấn thương khi sinh", Symptom = "Đang chờ cập nhập!", NumberId = 138 },
+                 new Disease { DiseaseId = ++_dID, EnglishName = "Subarachnoid haemorrhage due to birth injury", VietnameseName = "Chảy máu dưới màng nhện do chấn thương khi sinh", Symptom = "Đang chờ cập nhập!", NumberId = 138 },
+
+                 /// chapter 16 Một số bệnh lý xuất phát trong thời kỳ chu sinh
+                 // Group 145 Rối loạn hô hấp và tim mạch đặc hiệu cho giai đoạn chu sinh
+                 // Number 139
+                 new Disease { DiseaseId = ++_dID, EnglishName = "Intrauterine hypoxia", VietnameseName = "Thiếu oxy trong tử cung", Symptom = "Đang chờ cập nhập!", NumberId = 139 },
+                 new Disease { DiseaseId = ++_dID, EnglishName = "Intrauterine hypoxia first noted before onset of labour", VietnameseName = "Giảm oxy máu của thai nhi trong tử cung từ trước khi bắt đầu chuyển dạ", Symptom = "Đang chờ cập nhập!", NumberId = 139 },
+                 new Disease { DiseaseId = ++_dID, EnglishName = "Intrauterine hypoxia first noted during labour and delivery", VietnameseName = "Giảm oxy máu của thai nhi trong tử cung trong chuyển dạ và trong đẻ", Symptom = "Đang chờ cập nhập!", NumberId = 139 },
+                 new Disease { DiseaseId = ++_dID, EnglishName = "Intrauterine hypoxia, unspecified", VietnameseName = "Giảm oxy máu của thai nhi trong tử cung chưa xác định", Symptom = "Đang chờ cập nhập!", NumberId = 139 },
+                 new Disease { DiseaseId = ++_dID, EnglishName = "Birth asphyxia", VietnameseName = "Ngạt khi sinh", Symptom = "Đang chờ cập nhập!", NumberId = 139 },
+
+                 /// chapter 16 Một số bệnh lý xuất phát trong thời kỳ chu sinh
+                 // Group 146 Nhiễm khuẩn đặc hiệu trong thời kỳ chu sinh
+                 // Number 140
+                 new Disease { DiseaseId = ++_dID, EnglishName = "Congenital viral diseases", VietnameseName = "Bệnh nhiễm virus bẩm sinh", Symptom = "Đang chờ cập nhập!", NumberId = 140 },
+                 new Disease { DiseaseId = ++_dID, EnglishName = "Congenital rubella syndrome", VietnameseName = "Hội chứng rubêon bẩm sinh", Symptom = "Đang chờ cập nhập!", NumberId = 140 },
+                 new Disease { DiseaseId = ++_dID, EnglishName = "Congenital cytomegalovirus infection", VietnameseName = "Nhiễm virus cự bào bẩm sinh", Symptom = "Đang chờ cập nhập!", NumberId = 140 },
+                 new Disease { DiseaseId = ++_dID, EnglishName = "Congenital herpesviral [herpes simplex] infection", VietnameseName = "Nhiễm virus Herpes bẩm sinh", Symptom = "Đang chờ cập nhập!", NumberId = 140 },
+                 new Disease { DiseaseId = ++_dID, EnglishName = "Congenital viral hepatitis", VietnameseName = "Viêm gan virus bẩm sinh", Symptom = "Đang chờ cập nhập!", NumberId = 140 },
+
+                 /// chapter 16 Một số bệnh lý xuất phát trong thời kỳ chu sinh
+                 // Group 147 Các bệnh lý của da và điều hòa thân nhiệt của thai và trẻ sơ sinh
+                 // Number 141
+                 new Disease { DiseaseId = ++_dID, EnglishName = "Hypothermia of newborn", VietnameseName = "Hạ thân nhiệt của trẻ sơ sinh", Symptom = "Đang chờ cập nhập!", NumberId = 141 },
+                 new Disease { DiseaseId = ++_dID, EnglishName = "Cold injury syndrome", VietnameseName = "Hội chứng tổn thương do lạnh", Symptom = "Đang chờ cập nhập!", NumberId = 141 },
+                 new Disease { DiseaseId = ++_dID, EnglishName = "Other hypothermia of newborn", VietnameseName = "Hạ thân nhiệt khác của trẻ sơ sinh ", Symptom = "Đang chờ cập nhập!", NumberId = 141 },
+                 new Disease { DiseaseId = ++_dID, EnglishName = "Hypothermia of newborn, unspecified", VietnameseName = "Hạ thân nhiệt không được định rõ của trẻ sơ sinh", Symptom = "Đang chờ cập nhập!", NumberId = 141 },
+                 new Disease { DiseaseId = ++_dID, EnglishName = "Other disturbances of temperature regulation of newborn", VietnameseName = "Các rối loạn điều nhiệt khác của trẻ sơ sinh", Symptom = "Đang chờ cập nhập!", NumberId = 141 },
+
+                 /// chapter 16 Một số bệnh lý xuất phát trong thời kỳ chu sinh
+                 // Group 148 Các rối loạn của hệ thống tiêu hóa ở thai và trẻ sơ sinh
+                 // Number 142
+                 new Disease { DiseaseId = ++_dID, EnglishName = "Meconium ileus in cystic fibrosis (E84.1† )", VietnameseName = "Tắc ruột phân xu trong bệnh xơ nang (E84.1†)", Symptom = "Đang chờ cập nhập!", NumberId = 142 },
+                 new Disease { DiseaseId = ++_dID, EnglishName = "Other intestinal obstruction of newborn", VietnameseName = "Tắc ruột non khác của trẻ sơ sinh", Symptom = "Đang chờ cập nhập!", NumberId = 142 },
+                 new Disease { DiseaseId = ++_dID, EnglishName = "Meconium plug syndrome", VietnameseName = "Hội chứng nút phân su", Symptom = "Đang chờ cập nhập!", NumberId = 142 },
+                 new Disease { DiseaseId = ++_dID, EnglishName = "Transitory ileus of newborn", VietnameseName = "Tắc ruột tạm thời của trẻ sơ sinh", Symptom = "Đang chờ cập nhập!", NumberId = 142 },
+                 new Disease { DiseaseId = ++_dID, EnglishName = "Intestinal obstruction due to inspissated milk", VietnameseName = "Tắc ruột non do sữa đặc", Symptom = "Đang chờ cập nhập!", NumberId = 142 },
+
+                 /// chapter 16 Một số bệnh lý xuất phát trong thời kỳ chu sinh
+                 // Group 149 Các rối loạn liên quan đến tuổi thai và sự phát triển của thai
+                 // Number 143
+                 new Disease { DiseaseId = ++_dID, EnglishName = "Slow fetal growth and fetal malnutrition", VietnameseName = "Thai nhi chậm phát triển và thai suy dinh dưỡng", Symptom = "Đang chờ cập nhập!", NumberId = 143 },
+                 new Disease { DiseaseId = ++_dID, EnglishName = "Light for gestational age", VietnameseName = "Nhẹ cân so với tuổi thai", Symptom = "Đang chờ cập nhập!", NumberId = 143 },
+                 new Disease { DiseaseId = ++_dID, EnglishName = "Small for gestational age", VietnameseName = "Nhỏ so với tuổi thai", Symptom = "Đang chờ cập nhập!", NumberId = 143 },
+                 new Disease { DiseaseId = ++_dID, EnglishName = "Fetal malnutrition without mention of light or small for gestational age", VietnameseName = "Thai suy dinh dưỡng mà không đề cập đến nhỏ hay nhẹ cân so với tuổi thai", Symptom = "Đang chờ cập nhập!", NumberId = 143 },
+                 new Disease { DiseaseId = ++_dID, EnglishName = "Slow fetal growth, unspecified", VietnameseName = "Thai chậm phát triển, chưa xác định", Symptom = "Đang chờ cập nhập!", NumberId = 143 },
+
+                 /// chapter 16 Một số bệnh lý xuất phát trong thời kỳ chu sinh
+                 // Group 150 Các bệnh lý khác xuất phát từ giai đoạn chu sinh
+                 // Number 144
+                 new Disease { DiseaseId = ++_dID, EnglishName = "Convulsions of newborn", VietnameseName = "Cơn co giật của trẻ sơ sinh    ", Symptom = "Đang chờ cập nhập!", NumberId = 144 },
+                 new Disease { DiseaseId = ++_dID, EnglishName = "Other disturbances of cerebral status of newborn", VietnameseName = "Rối loạn khác của tình trạng não trẻ sơ sinh", Symptom = "Đang chờ cập nhập!", NumberId = 144 },
+                 new Disease { DiseaseId = ++_dID, EnglishName = "Neonatal cerebral ischaemia", VietnameseName = "Thiếu máu cục bộ sơ sinh", Symptom = "Đang chờ cập nhập!", NumberId = 144 },
+                 new Disease { DiseaseId = ++_dID, EnglishName = "Acquired periventricular cysts of newborn", VietnameseName = "Nang quanh não thất mắc phải của trẻ sơ sinh", Symptom = "Đang chờ cập nhập!", NumberId = 144 },
+                 new Disease { DiseaseId = ++_dID, EnglishName = "Neonatal cerebral leukomalacia", VietnameseName = "Nhũn chất trắng não sơ sinh", Symptom = "Đang chờ cập nhập!", NumberId = 144 }
+
+               
+
+
+
              );
         }
     }
