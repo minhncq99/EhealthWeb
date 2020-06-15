@@ -15,7 +15,7 @@ export class NumberDetailComponent implements OnInit {
   }
   public res:any;
   public listDisease: [];
-  public listDiseaseWatched:any = [];
+  listDiseaseWatched:any = [];
   title:string = "gồm các bệnh sau:"
   
   constructor(private http: HttpClient, @Inject('BASE_URL') baseurl: string) { 
@@ -27,14 +27,14 @@ export class NumberDetailComponent implements OnInit {
     this.http.get("https://localhost:44381/" + "api/Diseases/get-by-number-id/" + this.number.numberId).subscribe(result =>{
         this.res = result;
         this.listDisease = this.res.data.data;
-        console.log(this.listDisease);
       }, error => console.error(error));
-      this.listDiseaseWatched = JSON.parse(sessionStorage.getItem('$watched'));
+      this.listDiseaseWatched = JSON.parse(sessionStorage.getItem('$dataWatched'));
   }
 
   saveDiseaseWatched(index){
+    this.listDiseaseWatched = this.listDiseaseWatched || [];
     this.listDiseaseWatched.push(index);
-    sessionStorage.setItem('$watched', JSON.stringify(this.listDiseaseWatched));
+    sessionStorage.setItem('$dataWatched', JSON.stringify(this.listDiseaseWatched));
   }
 
 }

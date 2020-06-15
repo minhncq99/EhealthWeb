@@ -11,7 +11,7 @@ export class DiseasesRecentComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    this.listDiseaseWatched = JSON.parse(sessionStorage.getItem('$watched'));
+    this.listDiseaseWatched = JSON.parse(sessionStorage.getItem('$dataWatched'));
     this.listDiseaseWatched.reverse();
   }
 

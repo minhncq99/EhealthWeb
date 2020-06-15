@@ -1,5 +1,5 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Component, OnInit, Inject } from '@angular/core';
+import { Component, OnInit, Inject, ɵpublishDefaultGlobalUtils } from '@angular/core';
 declare var $:any;
 
 @Component({
@@ -52,7 +52,7 @@ export class DiseaseCatalogComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.listDiseaseWatched = JSON.parse(sessionStorage.getItem('$watched'));
+    this.listDiseaseWatched = JSON.parse(sessionStorage.getItem('$dataWatched'));
   }
 
   loadListChapter(){
@@ -275,7 +275,6 @@ export class DiseaseCatalogComponent implements OnInit {
           this.chapter = res.data;
           this.isEdit = false;
           alert('Đã lưu thành công');
-          location.reload();
         }
       }, error => console.error(error));
     }
@@ -293,7 +292,6 @@ export class DiseaseCatalogComponent implements OnInit {
         if(res.success){
           this.group = res.data;
           alert('Đã lưu thành công');
-          location.reload();
         }
       }, error => console.error(error));
     }
@@ -311,7 +309,6 @@ export class DiseaseCatalogComponent implements OnInit {
         if(res.success){
           this.disease = res.data;
           alert('Đã lưu thành công');
-          location.reload();
         }
       }, error => console.error(error));
     }
@@ -329,7 +326,6 @@ export class DiseaseCatalogComponent implements OnInit {
         if(res.success){
           this.number = res.data;
           alert('Đã lưu thành công');
-          location.reload();
         }
       }, error => console.error(error));
     }
@@ -413,8 +409,10 @@ export class DiseaseCatalogComponent implements OnInit {
   }
 
   saveDiseaseWatched(index){
+    //khởi tạo mảng listDiseaseWatched  nếu mảng null
+    this.listDiseaseWatched = this.listDiseaseWatched || [];
     this.listDiseaseWatched.push(index);
-    sessionStorage.setItem('$watched', JSON.stringify(this.listDiseaseWatched));
+    sessionStorage.setItem('$dataWatched', JSON.stringify(this.listDiseaseWatched));
   }
 
   saveChapterData(index){
