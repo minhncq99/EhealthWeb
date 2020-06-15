@@ -81,9 +81,10 @@ export class FormComponent {
       console.log(typeof(this.id));
       this.http.get(`https://localhost:44381/api/Users/get-by-user-id/`+ this.id,this.users).subscribe(
         result=>{
+          console.log(result);
           this.users = result;
-          this.user = this.users.data.data;
-          console.log(this.useraccount);
+          this.user = this.users.data;
+          console.log(this.user);
         })
         
     }

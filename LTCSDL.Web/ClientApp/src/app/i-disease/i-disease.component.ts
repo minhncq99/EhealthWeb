@@ -35,11 +35,12 @@ export class IDiseaseComponent implements OnInit {
     variant: "success",
     title: "Success"
   }
-  constructor(private http: HttpClient,https: HttpClient, @Inject('BASE_URL') baseUrl: string,private _cookie: CookieService) { 
+  constructor(private http: HttpClient,https: HttpClient, 
+    @Inject('BASE_URL') baseUrl: string,private _cookie: CookieService) { 
     if(this.id != null || this.id != '' || this.id != undefined)
     {
       this.id = this._cookie.get("Id");
-      this.value = Number(this.id);
+      this.value = parseInt(this.id);
     
       http.get(`https://localhost:44381/api/Diseases/get-by-id/`+this.value,this.Diseases)
       .subscribe(result => {
@@ -53,7 +54,7 @@ export class IDiseaseComponent implements OnInit {
           this.Diseases = result;
           if(this.Diseases.data.length == 0)
             this.isShow = true;
-            else
+          else
             this.isShow = false;
       })
     }
@@ -84,7 +85,7 @@ export class IDiseaseComponent implements OnInit {
     this.create.userId = parseInt(this._cookie.get("userId"));
     this.create.saved = true;
     if(this.create.userId === NaN)
-      window.alert("Ban chu dang nhap!")
+      window.alert("Ban chu dang nhap!");
     else{
         this.http.post(`https://localhost:44381/api/DiseasesUsers/create`,this.create).subscribe(result=>{
           var res: any;

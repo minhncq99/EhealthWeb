@@ -1,29 +1,29 @@
 <table class='table  col-xl-12' aria-labelledby="tableLabel" style="background-color: #e9ecef;  margin-bottom: 0%;">
         <tr *ngFor="let i of list" class="listview">
-            <td *ngIf="check(value,i.vietnameseName)"> 
-                <a class="text-dark text-decoration-none" routerLink="/i-disease" id="{{i.numberId}}" (click)="myclick(i.diseaseId)">
-                    {{ i.numberId }}
-                </a>
-            </td>
-            <td *ngIf="check(value,i.vietnameseName)">
-                <a class="text-dark text-decoration-none" routerLink="/i-disease" id="{{i.diseaseId}}" (click)="myclick(i.diseaseId)">
-                        {{ i.diseaseId }}
-                </a>
-            </td>
-            <td *ngIf="check(value,i.vietnameseName)">
-                <a class="text-dark text-decoration-none" routerLink="/i-disease" id="{{i.englishName}}" (click)="myclick(i.diseaseId)">
-                    {{ i.englishName }}
-                </a>
-            </td>
-            <td *ngIf="check(value,i.vietnameseName)">
-                <a class="text-dark text-decoration-none" routerLink="/i-disease" id="{{i.vietnameseName}}" (click)="myclick(i.diseaseId)">
-                    {{ i.vietnameseName }}
-                </a>
-            </td>
-            <td *ngIf="check(value,i.vietnameseName)">
-                <a class="text-dark text-decoration-none" routerLink="/i-disease" id="{{i.symptom}}" >
-                    {{ i.symptom }}
-                </a>
-            </td>
+                <td *ngIf="check(value,i.vietnameseName)"> 
+                    <a class="text-dark text-decoration-none" routerLink="/i-disease" id="{{i.numberId}}" (click)="myclick(i.diseaseId)">
+                        {{ i.numberId }}
+                    </a>
+                </td>
+                <td *ngIf="check(value,i.vietnameseName)">
+                    <a class="text-dark text-decoration-none" routerLink="/i-disease" id="{{i.diseaseId}}" (click)="myclick(i.diseaseId)">
+                            {{ i.diseaseId }}
+                    </a>
+                </td>
+                <td *ngIf="check(value,i.vietnameseName)">
+                    <a class="text-dark text-decoration-none" routerLink="/i-disease" id="{{i.englishName}}" (click)="myclick(i.diseaseId)">
+                        {{ i.englishName }}
+                    </a>
+                </td>
+                <td *ngIf="check(value,i.vietnameseName)">
+                    <a class="text-dark text-decoration-none" routerLink="/i-disease" id="{{i.vietnameseName}}" (click)="myclick(i.diseaseId)">
+                        {{ i.vietnameseName }}
+                    </a>
+                </td>
+                <td *ngIf="check(value,i.vietnameseName)">
+                    <a class="text-dark text-decoration-none" routerLink="/i-disease" id="{{i.symptom}}" >
+                        {{ i.symptom }}
+                    </a>
+                </td>
         </tr>  
 </table>
