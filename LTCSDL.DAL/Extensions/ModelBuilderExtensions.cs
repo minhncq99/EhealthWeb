@@ -1861,7 +1861,7 @@ namespace LTCSDL.DAL.Extensions
                  new Disease { DiseaseId = ++_dID, EnglishName = "Other disturbances of cerebral status of newborn", VietnameseName = "Rối loạn khác của tình trạng não trẻ sơ sinh", Symptom = "Đang chờ cập nhập!", NumberId = 144 },
                  new Disease { DiseaseId = ++_dID, EnglishName = "Neonatal cerebral ischaemia", VietnameseName = "Thiếu máu cục bộ sơ sinh", Symptom = "Đang chờ cập nhập!", NumberId = 144 },
                  new Disease { DiseaseId = ++_dID, EnglishName = "Acquired periventricular cysts of newborn", VietnameseName = "Nang quanh não thất mắc phải của trẻ sơ sinh", Symptom = "Đang chờ cập nhập!", NumberId = 144 },
-                 new Disease { DiseaseId = ++_dID, EnglishName = "Neonatal cerebral leukomalacia", VietnameseName = "Nhũn chất trắng não sơ sinh", Symptom = "Đang chờ cập nhập!", NumberId = 144 }
+                 new Disease { DiseaseId = ++_dID, EnglishName = "Neonatal cerebral leukomalacia", VietnameseName = "Nhũn chất trắng não sơ sinh", Symptom = "Đang chờ cập nhập!", NumberId = 144 },
 
                
 

@@ -1,22 +1,22 @@
 <table class='table  col-xl-12' aria-labelledby="tableLabel" style="background-color: #e9ecef;  margin-bottom: 0%;">
         <tr *ngFor="let i of list" class="listview">
                 <td *ngIf="check(value,i.vietnameseName)"> 
-                    <a class="text-dark text-decoration-none" routerLink="/i-disease" id="{{i.numberId}}" (click)="myclick(i.diseaseId)">
+                    <a class="text-dark text-decoration-none" routerLink="/i-disease" id="{{i.numberId}}" (click)="myclick(i)">
                         {{ i.numberId }}
                     </a>
                 </td>
                 <td *ngIf="check(value,i.vietnameseName)">
-                    <a class="text-dark text-decoration-none" routerLink="/i-disease" id="{{i.diseaseId}}" (click)="myclick(i.diseaseId)">
+                    <a class="text-dark text-decoration-none" routerLink="/i-disease" id="{{i.diseaseId}}" (click)="myclick(i)">
                             {{ i.diseaseId }}
                     </a>
                 </td>
                 <td *ngIf="check(value,i.vietnameseName)">
-                    <a class="text-dark text-decoration-none" routerLink="/i-disease" id="{{i.englishName}}" (click)="myclick(i.diseaseId)">
+                    <a class="text-dark text-decoration-none" routerLink="/i-disease" id="{{i.englishName}}" (click)="myclick(i)">
                         {{ i.englishName }}
                     </a>
                 </td>
                 <td *ngIf="check(value,i.vietnameseName)">
-                    <a class="text-dark text-decoration-none" routerLink="/i-disease" id="{{i.vietnameseName}}" (click)="myclick(i.diseaseId)">
+                    <a class="text-dark text-decoration-none" routerLink="/i-disease" id="{{i.vietnameseName}}" (click)="myclick(i)">
                         {{ i.vietnameseName }}
                     </a>
                 </td>

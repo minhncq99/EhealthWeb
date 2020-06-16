@@ -21,6 +21,7 @@ export class SearchComponent implements OnInit {
   public products: any ={
     data:[]
   }
+  public listDiseaseWatched:any = [];
   constructor(http: HttpClient, @Inject('BASE_URL') baseUrl: string, private _cookieService: CookieService) {
     //if (this.value != null && this.value.length >= this.numChars) {
       http.get(`https://localhost:44381/api/Diseases/get-all`).subscribe(result => {
@@ -48,16 +49,27 @@ export class SearchComponent implements OnInit {
     return true;
   }
 
-  public myclick(id: number): void {
-    console.log(typeof(id));
-    this.a = String(id);
+  public myclick(item : Diseased): void {
+    console.log(typeof(item.diseaseId));
+    this.a = String(item.diseaseId);
     console.log(this.a);
     console.log(typeof(this.a));
     this._cookieService.set("Id",this.a);
     this.value = "";
+    this.listDiseaseWatched = this.listDiseaseWatched || [];
+    this.listDiseaseWatched.push(item);
+    sessionStorage.setItem('$watched', JSON.stringify(this.listDiseaseWatched));
   }
 
   ngOnInit() {
-    
+    this.listDiseaseWatched = JSON.parse(sessionStorage.getItem('$watched'));
   }
+}
+
+interface Diseased{
+  numberId: number,
+  diseaseId: number,
+  englishName: string,
+  vietnameseName: string,
+  symptom: string
 }

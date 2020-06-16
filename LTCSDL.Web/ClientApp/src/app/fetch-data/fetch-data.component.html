@@ -5,10 +5,12 @@
 <p *ngIf="!listy"><em>Loading...</em></p>
 
 <table class='table table-striped' aria-labelledby="tableLabel" *ngIf="listy">
-    <tr *ngFor="let forecast of forecasts">
+    <tr *ngFor="let lt of listy">
       <td>
         <div>
-          <p></p>
+          <p>{{lt.mact}}</p>
+          <p>{{lt.macv}}</p>
+          <p>{{}}</p>
         </div>
       </td>
     </tr>

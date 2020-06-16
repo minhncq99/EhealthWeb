@@ -37,11 +37,12 @@ export class IDiseaseComponent implements OnInit {
   }
   constructor(private http: HttpClient,https: HttpClient, 
     @Inject('BASE_URL') baseUrl: string,private _cookie: CookieService) { 
-    if(this.id != null || this.id != '' || this.id != undefined)
-    {
       this.id = this._cookie.get("Id");
       this.value = parseInt(this.id);
-    
+      this.create.userId = parseInt(this._cookie.get("userId"));
+    if(this.id != null || this.id != '' || this.id != undefined)
+    {
+      
       http.get(`https://localhost:44381/api/Diseases/get-by-id/`+this.value,this.Diseases)
       .subscribe(result => {
         this.Diseases = result;
@@ -49,15 +50,30 @@ export class IDiseaseComponent implements OnInit {
         console.log(this.list);
       }, error => console.error(error));
       
-      https.get(`https://localhost:44381/api/DiseasesUsers/get-by-disease-id/`+ this.value,this.Diseases)
+      if(this.create.userId === NaN){
+        this.create.userId = 0;
+      };
+
+      var a: any={
+        id : this.value,
+        userId : this.create.userId
+      };
+      console.log(a.id);
+      console.log(a.userId);
+      https.get(`https://localhost:44381/api/DiseasesUsers/get-by-id/`+a.userId+"/"+a.id
+      ,this.Diseases)
       .subscribe(result=>{
           this.Diseases = result;
-          if(this.Diseases.data.length == 0)
+          console.log(this.Diseases);
+          console.log(this.Diseases.data);
+          if(this.Diseases.data == null)
             this.isShow = true;
           else
             this.isShow = false;
-      })
-    }
+      });
+      
+      
+    };
   }
 
   public check(id: number): boolean{

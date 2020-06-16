@@ -413,6 +413,7 @@ export class DiseaseCatalogComponent implements OnInit {
   }
 
   saveDiseaseWatched(index){
+    this.listDiseaseWatched = this.listDiseaseWatched || [];
     this.listDiseaseWatched.push(index);
     sessionStorage.setItem('$watched', JSON.stringify(this.listDiseaseWatched));
   }

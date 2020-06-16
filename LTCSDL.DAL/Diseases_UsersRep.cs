@@ -5,6 +5,10 @@ using System;
 using LTCSDL.Common.Rsp;
 using System.Dynamic;
 using System.Security.Cryptography;
+using System.Collections.Generic;
+using Microsoft.Data.SqlClient;
+using System.Data;
+using Microsoft.EntityFrameworkCore;
 
 namespace LTCSDL.DAL
 {
@@ -65,6 +69,8 @@ namespace LTCSDL.DAL
             }
             return res;
         }
+
+       
 
         public SingleRsp UpdateDiseasesUsers(int DiseaseId, int UserId, bool Saved)
         {
@@ -159,6 +165,41 @@ namespace LTCSDL.DAL
                     .ToList();
             res.Data = t;
 
+            return res;
+        }
+
+        public List<object> SUM_Diseasea_Saved()
+        {
+            List<object> res = new List<object>();
+            var cnn = (SqlConnection)Context.Database.GetDbConnection();
+            if (cnn.State == ConnectionState.Closed)
+                cnn.Open();
+            try
+            {
+                SqlDataAdapter da = new SqlDataAdapter();
+                DataSet ds = new DataSet();
+                var cmd = cnn.CreateCommand();
+                cmd.CommandText = "percentDisease";
+                cmd.CommandType = CommandType.StoredProcedure;
+                da.SelectCommand = cmd;
+                da.Fill(ds);
+                if (ds.Tables.Count > 0 && ds.Tables[0].Rows.Count > 0)
+                {
+                    foreach (DataRow row in ds.Tables[0].Rows)
+                    {
+                        var x = new
+                        {
+                            DiseaseId = row["DiseaseId"],
+                            VietnameseName = row["VietnameseName"]
+                        };
+                        res.Add(x);
+                    }
+                }
+            }
+            catch (Exception e)
+            {
+                res = null;
+            }
             return res;
         }
         #endregion

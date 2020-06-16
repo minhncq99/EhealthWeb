@@ -86,6 +86,14 @@ namespace LTCSDL.Web.Controllers
             return Ok(res);
         }
 
+        [HttpGet("get-sum-disease")]
+        public IActionResult getSumDiseaseSaved()
+        {
+            var res = _svc.SUM_Diseasea_Saved();
+
+            return Ok(res);
+        }
+
         private readonly Diseases_UsersSvc _svc;
     }
 }

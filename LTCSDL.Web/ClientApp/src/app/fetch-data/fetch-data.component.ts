@@ -27,13 +27,7 @@ export class FetchDataComponent {
       this.product = result;
     }, error => console.error(error));
 
-    for (let index = 0; index <10; index++) {
-      this.y.makn.push(32);
-      this.y.makn.push(45);
-      this.y.makn.push(22);
-      this.listy.push(this.y);
-      this.y.makn = null;
-    }
+    
   }
 }
 

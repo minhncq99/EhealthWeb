@@ -11,10 +11,15 @@
     </thead>
     <tbody>
       <tr *ngFor="let lt of listDiseases" style="background-color: #d2faf9;">
-        <td>{{ lt.numberId }}</td>
+        <td>{{ lt.numberId }}
+          <div *ngIf="lst.chucvu !=">
+            <p>lst.chucvu</p>
+
+          </div>
+        </td>
         <td>{{ lt.diseaseId }}</td>
         <td>{{ lt.englishName }}</td>
         <td>{{ lt.vietnameseName }}</td>
       </tr>
     </tbody>
-  </table>
+</table>
