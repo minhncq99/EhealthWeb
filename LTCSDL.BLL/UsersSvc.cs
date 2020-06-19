@@ -4,6 +4,7 @@ using LTCSDL.DAL;
 using LTCSDL.DAL.Models;
 using LTCSDL.Common.Req;
 using System.Linq;
+using System.Collections.Generic;
 
 namespace LTCSDL.BLL
 {
@@ -59,6 +60,11 @@ namespace LTCSDL.BLL
             };
 
             return res;
+        }
+
+        public object checkTypeUser(int userId)
+        {
+            return base._rep.checkTypeUser(userId);
         }
     }
 }

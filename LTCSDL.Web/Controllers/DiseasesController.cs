@@ -80,6 +80,22 @@ namespace LTCSDL.Web.Controllers
 
             return Ok(res);
         }
+
+        [HttpGet("get-i-disease/{DiseaseId}")]
+        public IActionResult getiDiseases(int DiseaseId)
+        {
+            var res = _svc.iDiseases(DiseaseId);
+
+            return Ok(res);
+        }
+
+        [HttpGet("get-disease-saved/{userId}")]
+        public IActionResult DiseasesSaved(int userId)
+        {
+            var res = _svc.DiseasesSaved(userId);
+
+            return Ok(res);
+        }
         private readonly DiseasesSvc _svc;
     }
 }

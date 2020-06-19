@@ -1,0 +1,97 @@
+
+<!--<table class="  table-hover text-justify" aria-labelledby="tableLabel" *ngIf="Diseases.data">
+  <thead>
+    <tr>
+      <td>Thông tin bệnh</td>
+      <td></td>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let lst of list">
+      <td *ngIf="check(lst.diseaseId)"class="text-primary td-left"><div>Số thứ tự</div></td>
+      <td *ngIf="check(lst.diseaseId)" class="td-right">{{ lst.numberId }}</td>
+    </tr>
+      <tr *ngFor="let lst of list">
+        <td *ngIf="check(lst.diseaseId)" class="text-primary td-left"><div>Mã bệnh</div></td>
+        <td *ngIf="check(lst.diseaseId)" class="td-right">{{ lst.diseaseId }}</td>
+      </tr>
+      <tr *ngFor="let lst of list">
+        <td *ngIf="check(lst.diseaseId)" class="text-primary td-left"><div>Tên tiếng anh</div></td>
+        <td *ngIf="check(lst.diseaseId)" class="td-right">{{ lst.englishName }}</td>
+      </tr>
+      <tr *ngFor="let lst of list">
+        <td  *ngIf="check(lst.diseaseId)" class="text-primary last-td td-left"><div>Tên tiếng Việt</div></td>
+        <td class="last-td td-right" *ngIf="check(lst.diseaseId)">{{ lst.vietnameseName }}</td>
+      </tr>
+  </tbody>
+</table>-->
+<!--<div id="infomation"class="container my-3" > 
+  <div id="contain">
+    <div class="row-xl-12 my-2">
+      <div class="d-inline-block col-xl-2">Thông tin bệnh</div>
+      <div class="d-inline-block col-xl-10"></div>
+    </div>
+    <div class="row-xl-12 my-2">
+      <div class="d-inline-block col-xl-2" >Số thứ tự</div>
+      <div class="d-inline-block col-xl-10" >{{ list.numberId }}</div>
+    </div>
+    <div class="row-xl-12 my-2">
+      <div class="d-inline-block col-xl-2" >Mã bệnh</div>
+      <div class="d-inline-block col-xl-10" >{{ list.diseaseId }}</div>
+    </div>
+    <div class="row-xl-12 my-2">
+      <div class="d-inline-block col-xl-2" >Tên tiếng anh</div>
+      <div class="d-inline-block col-xl-10" >{{ list.englishName }}</div>
+    </div>
+    <div class="row-xl-12 my-2">
+      <div class="d-inline-block col-xl-2" >Tên tiếng việt</div>
+      <div class="d-inline-block col-xl-10">{{ list.vietnameseName }}</div>
+    </div>
+  </div>
+</div>-->
+<div id="i-disease">
+  <div class="row my-3">
+    <div class="col-5 d-inline-block ">Thong tin benh</div>
+    <div class="col-5 d-inline-block i-header">
+      <button *ngIf="isShow"class="btn btn-success" style="width: 100%;" (click)=" isSave()">Luu</button>
+      <button *ngIf="!isShow"class="btn btn-success" style="width: 100%;" (click)="isNotSave()">Huy Luu</button>
+    </div>
+  </div>
+  <div class="row my-3">
+    <div class="col-5">Ma chuong:</div>
+    <div class="col-5">{{ list.chapterId }}</div>
+  </div>
+  <div class="row my-3">
+    <div class="col-5">Ten chuong:</div>
+    <div class="col-5">{{ list.chapterName }}</div>
+  </div>
+  <div class="row my-3">
+    <div class="col-5">Ma nhom:</div>
+    <div class="col-5">{{ list.groupId }}</div>
+  </div>
+  <div class="row my-3">
+    <div class="col-5">Ten nhom:</div>
+    <div class="col-5">{{ list.groupName }}</div>
+  </div>
+  <div class="row my-3">
+    <div class="col-5">Ma so thu tu:</div>
+    <div class="col-5">{{ list.numberId }}</div>
+  </div>
+  <div class="row my-3">
+    <div class="col-5">Ten thứ tự:</div>
+    <div class="col-5">{{ list.numberName }}</div>
+  </div>
+  <div class="row my-3">
+    <div class="col-5">Mã bệnh:</div>
+    <div class="col-5">{{ list.diseaseId }}</div>
+  </div>
+  <div class="row my-3">
+    <div class="col-5">Tên tiếng anh:</div>
+    <div class="col-5">{{ list.englishName }}</div>
+  </div>
+  <div class="row my-3">
+    <div class="col-5">Tên tiếng việt:</div>
+    <div class="col-5">{{ list.vietnameseName }}</div>
+  </div>
+</div>
+

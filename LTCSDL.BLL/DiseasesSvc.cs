@@ -4,6 +4,7 @@ using LTCSDL.DAL;
 using LTCSDL.DAL.Models;
 using LTCSDL.Common.Req;
 using System.Linq;
+using System.Collections.Generic;
 
 namespace LTCSDL.BLL
 {
@@ -72,6 +73,16 @@ namespace LTCSDL.BLL
             };
 
             return res;
+        }
+
+        public object iDiseases(int diseaseId)
+        {
+            return base._rep.iDiseases(diseaseId);
+        }
+
+        public List<object> DiseasesSaved(int userId)
+        {
+            return base._rep.DiseasesSaved(userId);
         }
     }
 }

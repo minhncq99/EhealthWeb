@@ -4,6 +4,8 @@ using LTCSDL.DAL;
 using LTCSDL.DAL.Models;
 using LTCSDL.Common.Req;
 using System.Linq;
+using System.Collections.Generic;
+using System;
 
 namespace LTCSDL.BLL
 {
@@ -55,6 +57,11 @@ namespace LTCSDL.BLL
             var res = _rep.getTop10();
 
             return res;
+        }
+
+        public List<object> Count_Diseasea_Saved()
+        {
+            return base._rep.Count_Diseasea_Saved();
         }
     }
 }

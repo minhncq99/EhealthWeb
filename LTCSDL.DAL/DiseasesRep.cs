@@ -3,6 +3,10 @@ using System.Linq;
 using LTCSDL.DAL.Models;
 using LTCSDL.Common.Rsp;
 using System;
+using System.Collections.Generic;
+using Microsoft.Data.SqlClient;
+using Microsoft.EntityFrameworkCore;
+using System.Data;
 
 namespace LTCSDL.DAL
 {
@@ -162,6 +166,89 @@ namespace LTCSDL.DAL
 
             return res;
         }
+
+        public object iDiseases(int diseaseId)
+        {
+            object res = new object();
+            var cnn = (SqlConnection)Context.Database.GetDbConnection();
+            if (cnn.State == ConnectionState.Closed)
+                cnn.Open();
+            try
+            {
+                SqlDataAdapter da = new SqlDataAdapter();
+                DataSet ds = new DataSet();
+                var cmd = cnn.CreateCommand();
+                cmd.CommandText = "iDiseases";
+                cmd.Parameters.AddWithValue("@diseaseId", diseaseId);
+                cmd.CommandType = CommandType.StoredProcedure;
+                da.SelectCommand = cmd;
+                da.Fill(ds);
+                if (ds.Tables.Count > 0 && ds.Tables[0].Rows.Count > 0)
+                {
+                    foreach (DataRow row in ds.Tables[0].Rows)
+                    {
+                        var x = new
+                        {
+                            ChapterId = row["ChapterId"],
+                            ChapterName = row["ChapterName"],
+                            GroupId = row["GroupId"],
+                            GroupName = row["GroupName"],
+                            NumberId = row["NumberId"],
+                            NumberName = row["NumberName"],
+                            DiseaseId = row["DiseaseId"],
+                            EnglishName = row["EnglishName"],
+                            VietnameseName = row["VietnameseName"]
+                        };
+                        res = x;
+                    }
+
+                }
+            }
+            catch (Exception e)
+            {
+                res = null;
+            }
+            return res;
+        }
+
+        public List<object> DiseasesSaved(int userId)
+        {
+            List<object> res = new List<object>();
+            var cnn = (SqlConnection)Context.Database.GetDbConnection();
+            if (cnn.State == ConnectionState.Closed)
+                cnn.Open();
+            try
+            {
+                SqlDataAdapter da = new SqlDataAdapter();
+                DataSet ds = new DataSet();
+                var cmd = cnn.CreateCommand();
+                cmd.CommandText = "DiseasesSaved";
+                cmd.Parameters.AddWithValue("@userId", userId);
+                cmd.CommandType = CommandType.StoredProcedure;
+                da.SelectCommand = cmd;
+                da.Fill(ds);
+                if (ds.Tables.Count > 0 && ds.Tables[0].Rows.Count > 0)
+                {
+                    foreach (DataRow row in ds.Tables[0].Rows)
+                    {
+                        var x = new
+                        {
+                            DiseaseId = row["DiseaseId"],
+                            EnglishName = row["EnglishName"],
+                            VietnameseName = row["VietnameseName"]
+                        };
+                        res.Add(x);
+                    }
+                }
+            }
+            catch (Exception e)
+            {
+                res = null;
+            }
+            return res;
+        }
         #endregion
+
+
     }
 }

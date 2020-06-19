@@ -86,6 +86,14 @@ namespace LTCSDL.Web.Controllers
             return Ok(res);
         }
 
+        [HttpGet("get-count-disease")]
+        public IActionResult getCount_Diseasea_Saved()
+        {
+            var res = _svc.Count_Diseasea_Saved();
+
+            return Ok(res);
+        }
+
         private readonly Diseases_UsersSvc _svc;
     }
 }

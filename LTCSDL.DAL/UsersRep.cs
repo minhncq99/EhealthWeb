@@ -4,6 +4,10 @@ using LTCSDL.DAL.Models;
 using System;
 using LTCSDL.Common.Rsp;
 using System.Text.RegularExpressions;
+using System.Collections.Generic;
+using Microsoft.Data.SqlClient;
+using System.Data;
+using Microsoft.EntityFrameworkCore;
 
 namespace LTCSDL.DAL
 {
@@ -195,6 +199,41 @@ namespace LTCSDL.DAL
                         res.SetError(ex.StackTrace);
                     }
                 }
+            }
+            return res;
+        }
+
+        public object checkTypeUser(int userId)
+        {
+            object res = new object();
+            var cnn = (SqlConnection)Context.Database.GetDbConnection();
+            if (cnn.State == ConnectionState.Closed)
+                cnn.Open();
+            try
+            {
+                SqlDataAdapter da = new SqlDataAdapter();
+                DataSet ds = new DataSet();
+                var cmd = cnn.CreateCommand();
+                cmd.CommandText = "checkTypeUser";
+                cmd.Parameters.AddWithValue("@userId", userId);
+                cmd.CommandType = CommandType.StoredProcedure;
+                da.SelectCommand = cmd;
+                da.Fill(ds);
+                if (ds.Tables.Count > 0 && ds.Tables[0].Rows.Count > 0)
+                {
+                    foreach (DataRow row in ds.Tables[0].Rows)
+                    {
+                        var x = new
+                        {
+                            TypeUser = row["TypeUser"]
+                        };
+                        res = x;
+                    }
+                }
+            }
+            catch (Exception e)
+            {
+                res = null;
             }
             return res;
         }

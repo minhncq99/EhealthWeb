@@ -1,0 +1,12 @@
+
+#border{
+    border-radius: 10%;
+}
+
+#last{
+    cursor: pointer;
+}
+
+#last:hover{
+    text-decoration: underline;
+}

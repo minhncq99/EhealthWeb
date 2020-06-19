@@ -1,0 +1,55 @@
+:root{
+    --bg-color : #d1cbb2;
+}
+
+table{
+    width: 100%;
+    border-top-left-radius: 50%;
+}
+
+tbody td{
+    padding: 2%;
+    border-bottom: solid 0.5px;
+    border-color: black;
+}
+
+.td-left{
+     border-left: solid 2px;
+     border-right: solid 1px;
+     border-color: black;
+ }
+
+.td-right{
+    border-right: solid 2px;
+    border-color: black;
+ }
+
+.last-td{
+    border-bottom: solid 2px !important;
+    border-color: black !important;
+ }
+
+thead td:first-child{
+    background-color: rgb(156, 156, 148);
+    text-transform: uppercase;
+    border: solid 2px;
+}
+thead td{
+     padding: 2%;
+     border-bottom: solid 1px !important;
+}
+
+#infomation{
+    border: solid 0.5px;
+    border-radius: 10px;
+}
+
+#i-disease{
+    background-color: #d2faf9;
+    padding: 2%;
+    margin-bottom: 2%;
+    width: 50%;
+    margin-left: 25%;
+    border-radius: 10px;
+
+}

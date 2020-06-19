@@ -1,17 +1,28 @@
 import { Component, Inject } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { stringify } from 'querystring';
 
 @Component({
   selector: 'app-fetch-data',
   templateUrl: './fetch-data.component.html'
 })
 export class FetchDataComponent {
-  public forecasts: WeatherForecast[];
-
+  products:any={
+    data:[],
+  }
+  public product: any={
+    id: 1,
+    key: 'a' 
+  }
+  public y: ct ={
+    mact: "a",
+    macv: 15,
+    makn:[],
+    matd: 1
+  }
+  public listy: ct[] = [];
   constructor(http: HttpClient, @Inject('BASE_URL') baseUrl: string) {
-    http.get<WeatherForecast[]>(baseUrl + 'weatherforecast').subscribe(result => {
-      this.forecasts = result;
-    }, error => console.error(error));
+
   }
 }
 
@@ -20,4 +31,11 @@ interface WeatherForecast {
   temperatureC: number;
   temperatureF: number;
   summary: string;
+}
+
+interface ct{
+  mact: string,
+  macv: number,
+  makn: number[],
+  matd: number,
 }
