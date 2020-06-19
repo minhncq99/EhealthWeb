@@ -90,8 +90,16 @@ namespace LTCSDL.DAL
                     }
                     catch (Exception ex)
                     {
-                        tran.Rollback();
-                        res.SetError(ex.StackTrace);
+                        if (TypeUser != 0 && TypeUser != 1)
+                        {
+                            tran.Rollback();
+                            res.SetError("TypeUser không hợp lệ");
+                        }
+                        else
+                        {
+                            tran.Rollback();
+                            res.SetError(ex.StackTrace);
+                        }
                     }
                 }
             }
