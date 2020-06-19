@@ -15,8 +15,8 @@
             <td>{{lst.userName}}</td>
             <td>{{lst.email}}</td>
             <td>{{lst.job}}</td>
-            <td><button *ngIf="!checkIsShow(lst.userId)" class="btn btn-primary">Add</button></td>
-            <td><button *ngIf="checkIsShow(lst.userId)" class="btn btn-primary">Remove</button></td>
+            <td><button *ngIf="!checkIsShow(lst.typeUser)&&!isShow" class="btn btn-primary px-4"(click)="addAdminAccount(lst)">Add</button>
+            <button *ngIf="checkIsShow(lst.typeUser)&&isShow" class="btn btn-danger" (click)="removeAdminAccount(lst)">Remove</button></td>
         </tr>
     </tbody>
 </table>

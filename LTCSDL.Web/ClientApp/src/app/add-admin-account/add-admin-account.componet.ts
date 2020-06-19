@@ -48,20 +48,33 @@ export class AddAdminAccountComponent implements OnInit {
   }
 
   public checkIsShow(id): boolean{
-    this.http.get(`https://localhost:44381/api/Users/get-check-type-user/`+id).subscribe(result=>{
-        var res : any;
-        var list : typeUser;
-        res = result;
-        list = res;
-        console.log(list);
-        if(list.typeUser == 0)
-          this.isShow = false;
-        else
-          this.isShow = true;
-      })
-    return this.isShow;
+    console.log(id);
+   if(id == 0)
+    this.isShow = false;
+    else
+    this.isShow = true;
+  return this.isShow;
   }
 
+  public addAdminAccount(x:User){
+    x.typeUser = 1;
+    this.http.put(`https://localhost:44381/api/Users/update`,x).subscribe(result=>{
+      this.users = result;
+      if(this.users.success == true){
+        this.isShow = true;
+      }
+    })
+  }
+
+  public removeAdminAccount(x:User){
+    x.typeUser = 0;
+    this.http.put(`https://localhost:44381/api/Users/update`,x).subscribe(result=>{
+      this.users = result;
+      if(this.users.success == true){
+        this.isShow = false;
+      }
+    })
+  }
   ngOnInit() {
   }
 

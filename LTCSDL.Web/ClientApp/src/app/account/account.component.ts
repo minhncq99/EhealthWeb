@@ -15,7 +15,7 @@ export class AccountComponent implements OnInit {
     variant: "success",
     title: "Success"
   }
-
+  public isShow: boolean;
   public user: any={
     data: [],
     success: true,
@@ -43,13 +43,24 @@ export class AccountComponent implements OnInit {
         var res : any;
         res = result;
         this.user = res.data;
-        this.account = this.user.data;
-        console.log(this.account);
+        console.log(this.user);
+        
+        if(this.user.typeUser == 0)
+        this.isShow = false;
+        else
+        this.isShow = true;
+        console.log(this.isShow);
+        console.log(this.account.typeUser);
       }
     );
+    
   }
 
   ngOnInit() {
   }
 
+}
+
+interface typeUser{
+  typeUser : number
 }

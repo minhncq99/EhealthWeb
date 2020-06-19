@@ -12,7 +12,7 @@
 <div class="body--chapter" *ngIf="isShowChapter">
     <button *ngIf="isShow"type="button" class="mybtn btn-form--add" (click)="openModalChapter(true, null)">Add</button>
     <div class="body-list" *ngIf="listChapter">
-        <div class="row" *ngFor="let chapter of listChapter">
+        <div class="row table-striped" *ngFor="let chapter of listChapter">
             <a class="col-sm-10 items--a" routerLink="/chapter-detail" (click)="saveChapterData(chapter)">{{chapter.name}}</a>
             <div class="col-sm-1 items--bt">
                 <button class="mybtn btn-form--edit" (click)="openModalChapter(false, chapter)" *ngIf="isShow">Edit</button>
@@ -27,7 +27,7 @@
 <div class="body--group" *ngIf="isShowGroup">
     <button type="button" class="mybtn btn-form--add" (click)="openModalGroup(true, null)" *ngIf="isShow">Add</button>
     <div class="body-list" *ngIf="listGroup">
-        <div class="row" *ngFor="let group of listGroup">
+        <div class="row table-striped" *ngFor="let group of listGroup">
             <a class="col-sm-10 items--a" routerLink="/group-detail" (click)="saveGroupData(group)">{{group.name}}</a>
             <div class="col-sm-1 items--bt">
                 <button class="mybtn btn-form--edit" (click)="openModalGroup(false, group)" *ngIf="isShow">Edit</button>
@@ -41,7 +41,7 @@
 <div class="body--number" *ngIf="isShowNumber">
     <button type="button" class="mybtn btn-form--add" (click)="openModalNumber(true, null)" *ngIf="isShow">Add</button>
     <div class="body-list" *ngIf="listSTT">
-        <div class="row" *ngFor="let stt of listSTT">
+        <div class="row table-striped" *ngFor="let stt of listSTT">
             <a class="col-sm-10 items--a" routerLink="/number-detail" (click)="saveNumberData(stt)">{{stt.name}}</a>
             <div class="col-sm-1 items--bt">
                 <button class="mybtn btn-form--edit" (click)="openModalNumber(false, stt)" *ngIf="isShow">Edit</button>
@@ -55,7 +55,7 @@
 <div class="body--disease" *ngIf="isShowDiseases">
     <button type="button" class="mybtn btn-form--add" (click)="openModalDisease(true, null)" *ngIf="isShow">Add</button>
     <div class="body-list" *ngIf="listDisease">
-        <div class="row" *ngFor="let disease of listDisease">
+        <div class="row table-striped" *ngFor="let disease of listDisease">
             <a class="col-sm-10 items--a" href="#" (click)="saveDiseaseWatched(disease)">{{disease.vietnameseName}}</a>
             <div class="col-sm-1 items--bt">
                 <button class="mybtn btn-form--edit" (click)="openModalDisease(false, disease)"*ngIf="isShow">Edit</button>
