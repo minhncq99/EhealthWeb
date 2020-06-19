@@ -7,28 +7,12 @@ import { HttpClient } from '@angular/common/http';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent{
-  public lst :string[] = ['1','123','4','99','872','682'];
   public value: string = "";
   public numChars:number=3;
   public res: any;
   public list : [];
 
-  public title = 'Browser market shares at a specific website, 2014';
-  public type = 'PieChart';
-  public data = [
-      ['Firefox', 45.0],
-      ['IE', 26.8],
-      ['Chrome', 12.8],
-      ['Safari', 8.5],
-      ['Opera', 6.2],
-      ['Others', 0.7] 
-   ];
-   public columnNames = ['Browser', 'Percentage'];
-   public options = {
-    colors: ['#e0440e', '#e6693e', '#ec8f6e', '#f3b49f', '#f6c7b6'], is3D: true
- };
- public width = 550;
- public height = 400;
+  
  public ck = false;
  public rs : mes = {
   data: [],
@@ -39,15 +23,8 @@ export class HomeComponent{
   title: ""
 };
 
-public item:Diseases ={
-  diseaseId: 0,
-  englishName: "",
-  vietnameseName: "",
-  symptom: "",
-  numberId: 0,
-  number: null,
-  diseases_Users: null
-}
+
+public arrayList: [];
 public listDiseases: Diseases[] = [];
   constructor(private http: HttpClient, @Inject('BASE_URL') baseUrl: string) {
     http.post(`https://localhost:44381/api/Diseases/get-all`,null).subscribe(result => {
@@ -55,8 +32,13 @@ public listDiseases: Diseases[] = [];
       this.list = this.res.data;
       console.log(this.list);
       
-    }, error => console.error(error));
- 
+    });
+    http.get(`https://localhost:44381/api/DiseasesUsers/get-count-disease`).subscribe(result=>{
+    console.log(result);
+    var r1 : any = result;
+    var r: Diseases[] = r1;
+    this.drawChart(r);
+    })
   }
     
   public check(value: string, key: string): boolean{
@@ -65,6 +47,24 @@ public listDiseases: Diseases[] = [];
     return false;
   }
 
+  public drawChart(chartdata) {
+    var arrData = [["VietName","Benh"]];
+    chartdata.forEach(element => {
+      var item = [];
+      item.push(element.vietnameseName);
+      item.push(element.diseaseId);
+      arrData.push(item);
+    });
+    var data = google.visualization.arrayToDataTable(arrData);
+
+    var options = {
+      title: 'Bieu do cac benh duoc luu'
+    };
+
+    var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+
+    chart.draw(data, options);
+  }
 }
 
 
@@ -77,7 +77,7 @@ interface DiseasesUsers{
 }
 
 interface mes {
-data: DiseasesUsers[],
+data: Diseases[],
 success: boolean,
 code: null,
 message: string,
@@ -87,12 +87,7 @@ title: string
 
 interface Diseases{
 diseaseId: number,
-englishName: string,
 vietnameseName: string,
-symptom: string,
-numberId: number,
-number: null,
-diseases_Users: null
 }
 
 interface ct{

@@ -26,7 +26,7 @@ export class NumberDetailComponent implements OnInit {
     console.log(this.number)
     this.http.get("https://localhost:44381/" + "api/Diseases/get-by-number-id/" + this.number.numberId).subscribe(result =>{
         this.res = result;
-        this.listDisease = this.res.data.data;
+        this.listDisease = this.res.data;
         console.log(this.listDisease);
       }, error => console.error(error));
       this.listDiseaseWatched = JSON.parse(sessionStorage.getItem('$watched'));

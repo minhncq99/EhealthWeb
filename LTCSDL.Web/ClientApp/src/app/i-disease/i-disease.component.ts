@@ -11,14 +11,18 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 export class IDiseaseComponent implements OnInit {
   public id: string;
   public id1:string;
-  public list: Diseases={
-    diseaseId: 0,
-    diseases_Users: null,
-    englishName: "",
-    number: null,
+  public list:  Diseases={
+    chapterId:0,
+    chapterName:"",
+    groupId: 0,
+    groupName: "",
     numberId: 0,
-    symptom: ""
-  };
+    numberName: "",
+    diseaseId: 0,
+    englishName: "",
+    vietnameseName: "",
+}
+;
   public value: number;
   public isShow: boolean;
 
@@ -40,13 +44,17 @@ export class IDiseaseComponent implements OnInit {
       this.id = this._cookie.get("Id");
       this.value = parseInt(this.id);
       this.create.userId = parseInt(this._cookie.get("userId"));
+      if(isNaN(this.create.userId) == true)
+        this.isShow = true;
     if(this.id != null || this.id != '' || this.id != undefined)
     {
       
-      http.get(`https://localhost:44381/api/Diseases/get-by-id/`+this.value,this.Diseases)
+      http.get(`https://localhost:44381/api/Diseases/get-i-disease/`+this.value)
       .subscribe(result => {
-        this.Diseases = result;
-        this.list = this.Diseases.data;
+        var res : any;
+        res = result;
+        this.list = res;
+        
         console.log(this.list);
       }, error => console.error(error));
       
@@ -144,11 +152,14 @@ interface DiseasesUsers{
 }
 
 interface Diseases{
-    diseaseId: number,
-    diseases_Users: null,
-    englishName: string,
-    number: null,
+    chapterId:number,
+    chapterName:string,
+    groupId: number,
+    groupName: string,
     numberId: number,
-    symptom: string
+    numberName: string,
+    diseaseId: number,
+    englishName: string,
+    vietnameseName: string,
 }
 

@@ -1,3 +1,4 @@
+<app-banner></app-banner>
 <div class="container my-2">
     <div class="row">
         <!--<input type="search" class="rounded-left col-xl-11" >  
@@ -16,27 +17,7 @@
       
     </div>
   <div class="my-3" style="z-index: -1;">Các bệnh được lưu nhiều</div>
-  <google-chart
-   [title]="title"
-   [type]="type"
-   [data]="data"
-   [options]="options"
-   [width]="width"
-   [height]="height">
-</google-chart>
+  <div id="piechart" style="width: 900px; height: 500px;"></div>
 </div>
-
-<table class='table table-striped' aria-labelledby="tableLabel" *ngIf="listy">
-  <tr *ngFor="let lt of listy">
-    <td>
-      <div>
-        <p>{{lt.mact}}</p>
-        <p>{{lt.macv}}</p>
-        <p>{{lt.matd}}</p>
-        <p>{{lt.makn}}</p>
-      </div>
-    </td>
-  </tr>
-</table>
 
  

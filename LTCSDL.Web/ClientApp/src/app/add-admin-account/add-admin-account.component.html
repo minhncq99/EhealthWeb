@@ -1,0 +1,22 @@
+<table class='table table-striped'>
+    <thead>
+        <tr>
+            <th>userId</th>
+            <th>fullName</th>
+            <th>userName</th>
+            <th>email</th>
+            <th>job</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let lst of list">
+            <td>{{lst.userId}}</td>
+            <td>{{lst.fullName}}</td>
+            <td>{{lst.userName}}</td>
+            <td>{{lst.email}}</td>
+            <td>{{lst.job}}</td>
+            <td><button *ngIf="!checkIsShow(lst.userId)" class="btn btn-primary">Add</button></td>
+            <td><button *ngIf="checkIsShow(lst.userId)" class="btn btn-primary">Remove</button></td>
+        </tr>
+    </tbody>
+</table>

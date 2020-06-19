@@ -61,6 +61,13 @@ namespace LTCSDL.Web.Controllers
             return Ok(res);
         }
 
+        [HttpGet("get-check-type-user/{userId}")]
+        public IActionResult checkTypeUser(int userId)
+        {
+            var res = _svc.checkTypeUser(userId);
+
+            return Ok(res);
+        }
         private readonly UsersSvc _svc;
     }
 }

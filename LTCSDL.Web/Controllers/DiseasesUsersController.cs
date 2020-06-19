@@ -86,10 +86,10 @@ namespace LTCSDL.Web.Controllers
             return Ok(res);
         }
 
-        [HttpGet("get-sum-disease")]
-        public IActionResult getSumDiseaseSaved()
+        [HttpGet("get-count-disease")]
+        public IActionResult getCount_Diseasea_Saved()
         {
-            var res = _svc.SUM_Diseasea_Saved();
+            var res = _svc.Count_Diseasea_Saved();
 
             return Ok(res);
         }

@@ -1,7 +1,7 @@
 import { Component,OnInit,Input } from '@angular/core'
 import { CookieService } from "ngx-cookie-service";
 import { HttpClient,HttpHeaders } from '@angular/common/http';
-
+import {ActivatedRoute, Router} from '@angular/router';
 @Component({
   selector: 'app-form-component',
   templateUrl: './form.component.html'
@@ -16,6 +16,7 @@ export class FormComponent {
   @Input() accountInformation: boolean;
   @Input() check: boolean;
   show = this.isShow;
+  goToComponent: boolean;
   public list : any [];
   public users: any ={
     data: [],
@@ -36,7 +37,15 @@ export class FormComponent {
     password : ""
 
   }
-
+  public user1: any ={
+    userId : 0,
+    fullName :  "",
+    email : "",
+    job : "",
+    userName: "",
+    password : "",
+    type: 0
+  }
   public showUser = false;
   public useraccount: any ={
     userId : -1,
@@ -53,12 +62,21 @@ export class FormComponent {
   public userName: string;
   public password: string; 
 
+  public isfullName :boolean;
+  public isemail: boolean;
+  public isuserName: boolean;
+  public ispassword: boolean; 
+
   public showAccount : boolean;
-  constructor(private _cookieService: CookieService,private http: HttpClient) {
+  constructor(private _cookieService: CookieService,private http: HttpClient, private route: Router) {
     http.get(`https://localhost:44381/api/Users/get-all`).subscribe(result =>{
       this.users =result;
       console.log(this.users.data)
     })
+    this.isfullName = false;
+    this.isemail = false;
+    this.isuserName = false;
+    this.ispassword = false;
     //this.checkID();
     this.checkUser();
   }
@@ -86,7 +104,6 @@ export class FormComponent {
           this.user = this.users.data;
           console.log(this.user);
         })
-        
     }
 
     //for(var i of this.users.data)
@@ -96,36 +113,20 @@ export class FormComponent {
     var x = this.user;
     this.fullName =this.user.fullName;
     console.log(this.fullName);
-    console.log(this.user.fullName);
-    if(this.checkUserName()== false){
-      alert("Ten tai khong duoc trung ve de trong!");
-      return;
-    }
-          
-    if(this.checkEmail()== false){
-      alert("Email khong duoc trung va de trong!");
-      return;
-    }
-          
+    console.log(x.fullName);
+    x.fullName = String(x.fullName);   
     this.http.post(`https://localhost:44381/api/Users/create`,x).subscribe(result => {
-      var res: any = result;
-      this.user = res.data;
-      console.log(this.user.success);
-      console.log(typeof(this.user.success));
-      
-      if(this.user.success == true){
-        console.log(this.user);
-        this.users = this.users.data;
-        console.log(this.users);
-        console.log(res.data);
-        this.user = null;
-        this.users =null;
-        this.showUser =true;
-        this._cookieService.set(this.user.password,this.fullName);
-        this._cookieService.set("New_Account","true");
-       
-      }
+        this.users = result;
+        console.log(this.users.success);
+        if(this.users.success == true)
+          this.route.navigate(['']);
+        else{
+          console.log(this.users.success);
+          this.kiemtra(this.users.message);
+          this.route.navigate(['/create-account']);
+        }
     })
+    
     
   }
 
@@ -160,17 +161,16 @@ export class FormComponent {
   }
   public Edit(){
     console.log(this.showUser);
+    this.user.userId = parseInt(this._cookieService.get("userId"));
     this.http.put(`https://localhost:44381/api/Users/update`,this.user).subscribe(result=>{
-      var res: any = result;
-      this.users = res.data;
-      if(this.users.success){
-        console.log(this.users);
-        this.users = this.users.data;
-        console.log(this.users);
-        console.log(res.data);
-        alert("Ban da chinh sua thanh cong!");
+      this.users = result;
+      if(this.users.success == true){
+        alert("Ban da chinh sua thanh cong");
+        this.user = this.users.data;
         location.reload();
       }
+      else
+      this.kiemtra(this.users.message);
     })
   }
 
@@ -179,5 +179,17 @@ export class FormComponent {
     if(this.id != null || this.id != undefined || this.id != -1)
      this.showUser = true;
     this.showUser = false;
+  }
+
+  public kiemtra(x){
+    this.isfullName = false;
+    this.ispassword = false;
+    this.isemail = false;
+    if(x =="Username is not valid")
+      this.isuserName = true;
+    else if(x == "Email is not valid!")
+      this.isemail = true;
+    else if(x == "Password is not valid!")
+      this.ispassword = true;
   }
 }

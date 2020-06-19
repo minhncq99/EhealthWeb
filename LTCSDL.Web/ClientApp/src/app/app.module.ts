@@ -7,7 +7,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
-import { RouterModule } from '@angular/router';
+import { Routes,RouterModule } from '@angular/router';
 import { NgbDropdown} from '@ng-bootstrap/ng-bootstrap';
 import {  GoogleChartsModule } from 'angular-google-charts';
 
@@ -28,6 +28,7 @@ import { BannerComponent } from './banner/banner.component';
 import { SearchComponent } from './search/search.component';
 import { IDiseaseComponent } from './i-disease/i-disease.component';
 import { FooterComponent } from './footer/footer.component';
+import { AddAdminAccountComponent } from './add-admin-account/add-admin-account.componet'
 import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 
 @NgModule({
@@ -52,7 +53,8 @@ import { Router, ActivatedRoute, ParamMap } from '@angular/router';
     DiseasesRecentComponent,
     ChapterDetailComponent,
     GroupDetailComponent,
-    NumberDetailComponent
+    NumberDetailComponent,
+    AddAdminAccountComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -79,6 +81,7 @@ import { Router, ActivatedRoute, ParamMap } from '@angular/router';
       { path: 'chapter-detail', component: ChapterDetailComponent },
       { path: 'group-detail', component: GroupDetailComponent },
       { path: 'number-detail', component: NumberDetailComponent },
+      { path: 'add-admin-account', component: AddAdminAccountComponent },
 
     ]),
     NgbModule.forRoot()

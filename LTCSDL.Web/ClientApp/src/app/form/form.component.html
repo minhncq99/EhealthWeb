@@ -7,9 +7,15 @@
                 <span class="input-group-text" >Họ và tên</span>
                 </div>
             </td>
-            <td><input type="text" class="form-control d-inline"  
+            <td>
+              <input type="text" class="form-control d-inline"  
               [(ngModel)]="user.fullName" 
-              [ngModelOptions]="{standalone: true}"></td>
+              [ngModelOptions]="{standalone: true}">
+              <div class="alert alert-danger my-2" *ngIf="isfullName">
+                <p><strong>Ho va ten khong hop le:</strong></p>
+                  <p>+Ho va ten tu 5 - 20 ky tu, khong chua ky tu dac biet</p>
+              </div>
+            </td>
           </tr>
           <tr>
             <td>
@@ -17,9 +23,16 @@
                     <span class="input-group-text" >Địa chỉ mail</span>
                 </div>
             </td>
-            <td><input type="email" class="form-control" 
+            <td>
+              <input type="email" class="form-control" 
               [(ngModel)]="user.email" 
-              [ngModelOptions]="{standalone: true}"></td>
+              [ngModelOptions]="{standalone: true}">
+              <div class="alert alert-danger my-2" *ngIf="isemail">
+                <p><strong>Email khong hop le:</strong></p>
+                <p>+Ten email phai lon hon 5 ky tu</p>
+                <p>+Phai chua ky tu @</p>
+            </div>
+            </td>
           </tr>
           <tr>
             <td>
@@ -40,9 +53,15 @@
                 <span class="input-group-text" >Tên tài khoản </span>
                 </div>
             </td>
-            <td><input type="text" class="form-control"
+            <td>
+              <input type="text" class="form-control"
               [(ngModel)]="user.userName" 
-              [ngModelOptions]="{standalone: true}"></td>
+              [ngModelOptions]="{standalone: true}">
+              <div class="alert alert-danger my-2" *ngIf="isuserName">
+                <p><strong>Ten tai khoan khong hop le:</strong></p>
+                  <p>+Ho va ten tu 5 - 20 ky tu, khong chua ky tu dac biet</p>
+              </div>
+            </td>
           </tr>
           <tr>
             <td>
@@ -50,14 +69,33 @@
                     <span class="input-group-text" >Mật khẩu</span>
                 </div>
             </td>
-            <td><input type="password" class="form-control" 
+            <td>
+              <input type="password" class="form-control" 
               [(ngModel)]="user.password" 
-              [ngModelOptions]="{standalone: true}"></td>
+              [ngModelOptions]="{standalone: true}">
+              <div class="alert alert-danger my-2" *ngIf="ispassword">
+                <p><strong>Mat khau:</strong></p>
+                  <p>+Mat khau it nhat 8 ky tu</p>
+                  <p>+Co it nhat 1 ky tu in hoa</p>
+                  <p>+Co it nhat 1 ky tu thuong</p>
+                  <p>+Co it nhat 1 ky tu so</p>
+              </div>
+            </td>
           </tr>
           <tr>
-            <td *ngIf=btnSigout><a [routerLink]="checkUserName() && checkEmail()?['/']:['/create-account']"><button class="btn btn-primary" (click)="createAccount()">Đăng ký</button></a></td>
-            <td *ngIf=btnEdit><button class="btn btn-primary" (click)="Edit()">Sửa</button></td>
-            <td *ngIf=btnSignin><a [routerLink]="signin()==true?['/']:['/signin']"><button class="btn btn-primary" (click)="signin()">Đăng nhập</button></a></td>
+            <td *ngIf=btnSigout>
+                <button class="btn btn-primary" (click)="createAccount()">Đăng ký
+                </button>
+                
+            </td>
+            <td *ngIf=btnEdit>
+              <button class="btn btn-primary" (click)="Edit()">Sửa</button>
+            </td>
+            <td *ngIf=btnSignin>
+              <a [routerLink]="signin()==true?['/']:['/signin']">
+                <button class="btn btn-primary" (click)="signin()">Đăng nhập</button>
+              </a>
+            </td>
           </tr>
         </table>
         

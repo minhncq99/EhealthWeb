@@ -168,7 +168,7 @@ namespace LTCSDL.DAL
             return res;
         }
 
-        public List<object> SUM_Diseasea_Saved()
+        public List<object> Count_Diseasea_Saved()
         {
             List<object> res = new List<object>();
             var cnn = (SqlConnection)Context.Database.GetDbConnection();
@@ -189,14 +189,14 @@ namespace LTCSDL.DAL
                     {
                         var x = new
                         {
+                            VietnameseName = row["VietnameseName"],
                             DiseaseId = row["DiseaseId"],
-                            VietnameseName = row["VietnameseName"]
                         };
                         res.Add(x);
                     }
                 }
             }
-            catch (Exception e)
+            catch (Exception)
             {
                 res = null;
             }

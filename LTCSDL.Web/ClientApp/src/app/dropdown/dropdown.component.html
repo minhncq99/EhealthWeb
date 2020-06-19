@@ -7,7 +7,7 @@
           <a class="d-block text-dark my-3 mx-2" ngbDropdownItem routerLink="/disease-catalog">Danh mục bệnh</a>
           <a class="d-block text-dark my-3 mx-2" ngbDropdownItem routerLink="/diseases-recent">Bệnh đã xem</a>
           <a class="d-block text-dark my-3 mx-2"  ngbDropdownItem routerLink="/diseases-save">Bệnh đã lưu</a>
-          <a class="d-block text-dark my-3 mx-2" ngbDropdownItem (click)='deleteCookie()'>Đăng xuất</a>
+          <a id="last"class="d-block text-dark my-3 mx-2" ngbDropdownItem (click)='deleteCookie()'>Đăng xuất</a>
         </div>
         <div ngbDropdownMenu aria-labelledby="dropdownBasic1" *ngIf=!showDropDownMenu()>
             <a class="d-block text-dark my-3 mx-2" ngbDropdownItem routerLink="/signin">Đăng Nhập</a>

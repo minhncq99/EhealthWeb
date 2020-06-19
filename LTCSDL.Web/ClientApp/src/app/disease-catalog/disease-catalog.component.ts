@@ -1,5 +1,6 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Component, OnInit, Inject } from '@angular/core';
+import { CookieService } from "ngx-cookie-service";
 declare var $:any;
 
 @Component({
@@ -20,7 +21,7 @@ export class DiseaseCatalogComponent implements OnInit {
   public listSTT: [];
   public listDisease: [];
   public listDiseaseWatched:any = [];
-
+  public isShow: boolean;
   public chapter:any={
     chapterId : 0,
     name : ""
@@ -44,7 +45,22 @@ export class DiseaseCatalogComponent implements OnInit {
   }
 
 
-  constructor( private http: HttpClient, @Inject('BASE_URL') baseurl: string ) {
+  constructor( private http: HttpClient, @Inject('BASE_URL') baseurl: string, private _cookie: CookieService ) {
+    var id : number;
+    id = parseInt(this._cookie.get("userId"));
+    if(isNaN(id) == false){
+      this.http.get(`https://localhost:44381/api/Users/get-check-type-user/`+id).subscribe(result=>{
+        var res : any;
+        var list : typeUser;
+        res = result;
+        list = res;
+        console.log(list);
+        if(list.typeUser == 0)
+          this.isShow = false;
+        else
+          this.isShow = true;
+      })
+    }
     this.loadListChapter();
     this.loadListGroup();
     this.loadListNumber();
@@ -52,7 +68,10 @@ export class DiseaseCatalogComponent implements OnInit {
   }
 
   ngOnInit() {
+    
+    
     this.listDiseaseWatched = JSON.parse(sessionStorage.getItem('$watched'));
+    
   }
 
   loadListChapter(){
@@ -429,3 +448,6 @@ export class DiseaseCatalogComponent implements OnInit {
   }
 }
 
+interface typeUser{
+  typeUser : number
+}

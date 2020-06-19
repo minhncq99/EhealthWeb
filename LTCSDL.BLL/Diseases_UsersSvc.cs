@@ -59,9 +59,9 @@ namespace LTCSDL.BLL
             return res;
         }
 
-        public List<object> SUM_Diseasea_Saved()
+        public List<object> Count_Diseasea_Saved()
         {
-            return base._rep.SUM_Diseasea_Saved();
+            return base._rep.Count_Diseasea_Saved();
         }
     }
 }

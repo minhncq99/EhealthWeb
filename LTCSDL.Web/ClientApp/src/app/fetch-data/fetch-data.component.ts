@@ -22,12 +22,7 @@ export class FetchDataComponent {
   }
   public listy: ct[] = [];
   constructor(http: HttpClient, @Inject('BASE_URL') baseUrl: string) {
-    var x = this.product;
-    http.get(baseUrl + 'weatherforecast',x).subscribe(result => {
-      this.product = result;
-    }, error => console.error(error));
 
-    
   }
 }
 

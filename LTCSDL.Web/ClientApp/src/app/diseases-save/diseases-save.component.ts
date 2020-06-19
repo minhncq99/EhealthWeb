@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { CookieService } from "ngx-cookie-service";
 @Component({
   selector: 'app-diseases-save',
   templateUrl: './diseases-save.component.html',
@@ -7,14 +8,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 })
 export class DiseasesSaveComponent implements OnInit {
 
-  public res : mes = {
-    data: [],
-    success: false,
-    code: null,
-    message: "",
-    variant: "",
-    title: ""
-  };
+  
 
  
   public item:Diseases ={
@@ -26,26 +20,20 @@ export class DiseasesSaveComponent implements OnInit {
     number: null,
     diseases_Users: null
   }
+  public list : [];
   public listDiseases: Diseases[] = [];
-  constructor(private http:HttpClient) { }
+  constructor(private http:HttpClient, private _cookieService: CookieService) { }
 
   ngOnInit() {
-    this.http.get(`https://localhost:44381/api/DiseasesUsers/get-all`).subscribe(result=>{
-      var r : any;
-      r = result;
-      this.res = r;
-      console.log(this.res.data);
-      this.res.data.forEach(index =>{
-
-        this.http.get(`https://localhost:44381/api/Diseases/get-by-id/`+index.diseaseId).subscribe(result=>{
-          var h : any;
-          h = result;
-          this.item = h.data;
-          this.listDiseases.push(this.item);
-        });
-      });
-    });
-    console.log(this.listDiseases);
+    var x : any ={
+      id : 0
+    };
+    x.id = parseInt(this._cookieService.get("userId"));
+    this.http.get(`https://localhost:44381/api/Diseases/get-disease-saved/`+x.id).subscribe(result=>{
+    var   res : any;
+    res = result;
+    this.list = res;
+    })
   }
 
 }
