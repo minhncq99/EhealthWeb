@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { CookieService } from "ngx-cookie-service";
+import {ActivatedRoute, Router} from '@angular/router';
 @Component({
   selector: 'app-diseases-save',
   templateUrl: './diseases-save.component.html',
@@ -22,7 +23,7 @@ export class DiseasesSaveComponent implements OnInit {
   }
   public list : [];
   public listDiseases: Diseases[] = [];
-  constructor(private http:HttpClient, private _cookieService: CookieService) { }
+  constructor(private http:HttpClient, private _cookieService: CookieService, private route: Router) { }
 
   ngOnInit() {
     var x : any ={
@@ -34,6 +35,11 @@ export class DiseasesSaveComponent implements OnInit {
     res = result;
     this.list = res;
     })
+  }
+
+  public myclick(x){
+    console.log(x);
+    this._cookieService.set("Id",x);
   }
 
 }

@@ -1,0 +1,11 @@
+.hover-tr:hover{
+    background-color: #d2fad2;
+}
+
+.hover-tr{
+    background-color: #d2faf9;
+}
+
+a.hover-tr{
+    text-decoration: none;
+}

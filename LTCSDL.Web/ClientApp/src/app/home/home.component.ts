@@ -53,7 +53,7 @@ public listDiseases: Diseases[] = [];
     chartdata.forEach(element => {
       var item = [];
       item.push(element.vietnameseName);
-      item.push(element.sumDiseaseIdSaved);
+      item.push(element.sumDiseaseSaved);
       arrData.push(item);
     });
     var data = google.visualization.arrayToDataTable(arrData);
@@ -87,7 +87,7 @@ title: string
 }
 
 interface Diseases{
-sumDiseaseIdSaved: number,
+sumDiseaseSaved: number,
 vietnameseName: string,
 }
 

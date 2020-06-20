@@ -189,7 +189,7 @@ export class FormComponent {
       this.isuserName = true;
     else if(x == "Email is not valid!")
       this.isemail = true;
-    else if(x == "Password is not valid!")
+    else
       this.ispassword = true;
   }
 }

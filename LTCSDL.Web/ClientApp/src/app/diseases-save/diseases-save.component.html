@@ -3,16 +3,12 @@
 <table class='table table-striped' aria-labelledby="tableLabel" *ngIf="list">
     <thead>
       <tr style="background-color: #06c7be;">
-        <th>diseaseId</th>
-        <th>englishName</th>
-        <th>vietnameseName</th>
+        <th>Danh sách các bệnh đã lưu</th>
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let lt of list" style="background-color: #d2faf9;">
-        <td>{{ lt.diseaseId }}</td>
-        <td>{{ lt.englishName }}</td>
-        <td>{{ lt.vietnameseName }}</td>
+      <tr class="hover-tr"*ngFor="let lt of list" style="background-color: #d2faf9;">
+        <td class="p-0"><a class="hover-tr d-block p-3 text-dark"routerLink="/i-disease"(click)="myclick(lt.diseaseId)">{{ lt.vietnameseName }}</a></td>
       </tr>
     </tbody>
 </table>
