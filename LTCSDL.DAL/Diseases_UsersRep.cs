@@ -190,7 +190,7 @@ namespace LTCSDL.DAL
                         var x = new
                         {
                             VietnameseName = row["VietnameseName"],
-                            DiseaseId = row["DiseaseId"],
+                            SumDiseaseIdSaved = row["SumDiseaseIdSaved"],
                         };
                         res.Add(x);
                     }

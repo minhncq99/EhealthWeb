@@ -37,6 +37,7 @@ public listDiseases: Diseases[] = [];
     console.log(result);
     var r1 : any = result;
     var r: Diseases[] = r1;
+    console.log(r);
     this.drawChart(r);
     })
   }
@@ -52,11 +53,11 @@ public listDiseases: Diseases[] = [];
     chartdata.forEach(element => {
       var item = [];
       item.push(element.vietnameseName);
-      item.push(element.diseaseId);
+      item.push(element.sumDiseaseIdSaved);
       arrData.push(item);
     });
     var data = google.visualization.arrayToDataTable(arrData);
-
+    console.log(data);
     var options = {
       title: 'Bieu do cac benh duoc luu'
     };
@@ -86,7 +87,7 @@ title: string
 }
 
 interface Diseases{
-diseaseId: number,
+sumDiseaseIdSaved: number,
 vietnameseName: string,
 }
 

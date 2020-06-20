@@ -1,6 +1,6 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-
+import { CookieService } from "ngx-cookie-service";
 @Component({
   selector: 'app-number-detail',
   templateUrl: './number-detail.component.html',
@@ -18,7 +18,7 @@ export class NumberDetailComponent implements OnInit {
   public listDiseaseWatched:any = [];
   title:string = "gồm các bệnh sau:"
   
-  constructor(private http: HttpClient, @Inject('BASE_URL') baseurl: string) { 
+  constructor(private http: HttpClient, @Inject('BASE_URL') baseurl: string, private _cookieService: CookieService ) { 
   }
 
   ngOnInit() {
@@ -35,6 +35,8 @@ export class NumberDetailComponent implements OnInit {
   saveDiseaseWatched(index){
     this.listDiseaseWatched = this.listDiseaseWatched || [];
     this.listDiseaseWatched.push(index);
+    var id = index.diseaseId;
+    this._cookieService.set("Id",id);
     sessionStorage.setItem('$watched', JSON.stringify(this.listDiseaseWatched));
   }
 

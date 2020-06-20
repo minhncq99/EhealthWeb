@@ -3,7 +3,7 @@
 <div class="row" *ngFor="let disease of listDisease">
     <div>
         <i class="fas fa-disease iconDisease"></i>
-        <a class="col-sm-11 items--a" href="#" (click)="saveDiseaseWatched(disease)">{{disease.vietnameseName}}</a> 
+        <a class="col-sm-11 items--a" routerLink = "/i-disease"(click)="saveDiseaseWatched(disease)">{{disease.vietnameseName}}</a> 
     </div>
 </div>
 <div *ngIf="listDisease.length == 0">Chưa có bệnh nào!!!</div>
