@@ -7,7 +7,7 @@ namespace LTCSDL.DAL
 {
     ///Sử dụng migration (Tool -> Nuget Package Manager -> Package Manager Console)
     ///Bước 1
-    ///Tạo mới migration: add-migration CreateCosmeticAppDB
+    ///Tạo mới migration: add-migration name
     ///Bước 2
     ///Chuyển dữ liệu qua database: update-database –verbose
     public partial class EhealthContext : DbContext
@@ -24,7 +24,7 @@ namespace LTCSDL.DAL
             if (!optionsBuilder.IsConfigured)
             {
 
-                 optionsBuilder.UseSqlServer("Data Source=.\\SQLEXPRESS;Initial Catalog=EhealthDB;Persist Security Info=True;User ID=sa;Password=123;Pooling=False;MultipleActiveResultSets=False;Encrypt=False;TrustServerCertificate=True;");
+                 optionsBuilder.UseSqlServer("Data Source=.\\SQLEXPRESS;Initial Catalog=EhealthDB;Persist Security Info=True;User ID=sa;Password=123123;Pooling=False;MultipleActiveResultSets=False;Encrypt=False;TrustServerCertificate=True;");
 
             }
         }
