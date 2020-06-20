@@ -1,4 +1,4 @@
-﻿Alter Trigger tg_ins_upd_CheckUser
+﻿Create Trigger tg_ins_upd_CheckUser
 On Users
 For Insert, Update
 As
