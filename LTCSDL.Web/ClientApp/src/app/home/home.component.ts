@@ -59,7 +59,7 @@ public listDiseases: Diseases[] = [];
     var data = google.visualization.arrayToDataTable(arrData);
     console.log(data);
     var options = {
-      title: 'Bieu do cac benh duoc luu'
+      title: 'Biểu đồ các bệnh đã lưu'
     };
 
     var chart = new google.visualization.PieChart(document.getElementById('piechart'));
