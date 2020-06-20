@@ -14,7 +14,7 @@ export class NumberDetailComponent implements OnInit {
     groupId: 0
   }
   public res:any;
-  public listDisease: [];
+  public listDisease: [] = [];
   public listDiseaseWatched:any = [];
   title:string = "gồm các bệnh sau:"
   

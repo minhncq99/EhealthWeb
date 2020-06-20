@@ -7,18 +7,19 @@ import { CookieService } from "ngx-cookie-service";
 })
 export class DiseasesRecentComponent implements OnInit {
   title:string = "Các bệnh đã xem gần đây";
-  public listDiseaseWatched:any = [];
+  public listDiseaseWatched: [] = [];
   constructor(private _cookieService:CookieService) { }
 
   ngOnInit() {
     this.listDiseaseWatched = JSON.parse(sessionStorage.getItem('$watched'));
-    this.listDiseaseWatched.reverse();
+    if(this.listDiseaseWatched != null){
+      this.listDiseaseWatched.reverse();
+    }
+    
   }
 
   saveDiseaseWatched(index){
-
     var id = index.diseaseId;
     this._cookieService.set("Id",id);
-    
   }
 }

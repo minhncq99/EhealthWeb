@@ -13,7 +13,7 @@ export class ChapterDetailComponent implements OnInit {
     name : ""
   }
   public res:any;
-  public listGroup: [];
+  public listGroup: [] = [];
   title:string = "gồm các nhóm bệnh sau:"
   
   constructor(private http: HttpClient, @Inject('BASE_URL') baseurl: string) { 

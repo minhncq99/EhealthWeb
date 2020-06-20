@@ -14,7 +14,7 @@ export class GroupDetailComponent implements OnInit {
     chapterId: 0
   }
   public res:any;
-  public listNumber: [];
+  public listNumber: [] = [];
   title:string = "gồm:"
   
   constructor(private http: HttpClient, @Inject('BASE_URL') baseurl: string) { 
